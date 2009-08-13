@@ -14,5 +14,10 @@ namespace Voltage
         {
             InitializeComponent();
         }
+
+        private void TestForm_Load(object sender, EventArgs e)
+        {
+            this.inputMeasure1.Text = "100.20.30.5";
+        }
     }
 }

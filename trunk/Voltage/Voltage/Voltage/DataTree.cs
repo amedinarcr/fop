@@ -51,8 +51,7 @@ namespace Voltage
                     if (ProtectStationName.Trim() == string.Empty)
                         ProtectStationName = "(无保护站名称)";
                     TreeNode node = new TreeNode(ProtectStationName);
-                    node.Name = "ProtectStationName_" + row["ProtectStationName"].ToString();
-             
+                    node.Name = "ProtectStationName_" + row["ProtectStationName"].ToString();             
                     PipeLineNameNode.Nodes.Add(node);
                 }
             }

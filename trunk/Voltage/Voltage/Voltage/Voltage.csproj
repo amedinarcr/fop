@@ -103,6 +103,12 @@
     <Compile Include="GetDataArithmetic.Designer.cs">
       <DependentUpon>GetDataArithmetic.cs</DependentUpon>
     </Compile>
+    <Compile Include="InputMeasure.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InputMeasure.Designer.cs">
+      <DependentUpon>InputMeasure.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginSystem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +206,9 @@
     <EmbeddedResource Include="GetDataArithmetic.resx">
       <DependentUpon>GetDataArithmetic.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputMeasure.resx">
+      <DependentUpon>InputMeasure.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginSystem.resx">
       <DependentUpon>LoginSystem.cs</DependentUpon>
