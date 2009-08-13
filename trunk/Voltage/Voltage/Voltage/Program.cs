@@ -15,6 +15,8 @@ namespace Voltage
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new TestForm());
+            return;
             if (new LoginSystem().ShowDialog() == DialogResult.OK)
             {
                 Program.mainForm = new MainForm();

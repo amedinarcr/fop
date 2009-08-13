@@ -35,7 +35,22 @@ namespace Voltage
             connection.Close();
             return ds;
         }
+        public static DataSet ExecuteDataset(string commandText)
+        {
+            OleDbCommand cmd = new OleDbCommand();
+            OleDbConnection connection = OleHelper.Conn;
+            PrepareCommand(cmd, connection, null, CommandType.Text, commandText);
 
+            OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+
+            DataSet ds = new DataSet();
+
+            da.Fill(ds);
+
+            cmd.Parameters.Clear();
+            connection.Close();
+            return ds;
+        }
         public static DataSet ExecuteDataset(OleDbConnection connection, CommandType commandType, string commandText, OleDbParameter[] parameters)
         {
 
