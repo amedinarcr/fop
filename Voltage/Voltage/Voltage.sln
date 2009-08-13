@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Voltage", "Voltage\Voltage.csproj", "{AAFBA821-64D0-4404-BE0E-6B48D99DDBD3}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "阴极电位保护软件", "..\SetupVoltage\SetupVoltage\SetupVoltage.vdproj", "{A82BD7BD-2A2E-4D77-91B9-1F072CCB653D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AAFBA821-64D0-4404-BE0E-6B48D99DDBD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAFBA821-64D0-4404-BE0E-6B48D99DDBD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAFBA821-64D0-4404-BE0E-6B48D99DDBD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAFBA821-64D0-4404-BE0E-6B48D99DDBD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A82BD7BD-2A2E-4D77-91B9-1F072CCB653D}.Debug|Any CPU.ActiveCfg = Debug
+		{A82BD7BD-2A2E-4D77-91B9-1F072CCB653D}.Debug|Any CPU.Build.0 = Debug
+		{A82BD7BD-2A2E-4D77-91B9-1F072CCB653D}.Release|Any CPU.ActiveCfg = Release
+		{A82BD7BD-2A2E-4D77-91B9-1F072CCB653D}.Release|Any CPU.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
