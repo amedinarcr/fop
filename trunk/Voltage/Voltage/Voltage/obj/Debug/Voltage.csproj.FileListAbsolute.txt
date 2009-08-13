@@ -1,0 +1,115 @@
+E:\Voltage\Voltage\Voltage\obj\Debug\ResolveAssemblyReference.cache
+E:\Voltage\Voltage\Voltage\obj\Debug\Voltage.Form1.resources
+E:\Voltage\Voltage\Voltage\obj\Debug\Voltage.Properties.Resources.resources
+E:\Voltage\Voltage\Voltage\obj\Debug\Voltage.csproj.GenerateResource.Cache
+E:\Voltage\Voltage\Voltage\bin\Debug\Voltage.exe
+E:\Voltage\Voltage\Voltage\bin\Debug\Voltage.pdb
+E:\Voltage\Voltage\Voltage\obj\Debug\Voltage.exe
+E:\Voltage\Voltage\Voltage\obj\Debug\Voltage.pdb
+E:\Voltage\Voltage\Voltage\obj\Debug\Voltage.MainForm.resources
+E:\Voltage\Voltage\Voltage\obj\Debug\Voltage.GetCollectID.resources
+E:\Voltage\Voltage\Voltage\obj\Debug\Voltage.OutPutData.resources
+E:\Voltage\Voltage\Voltage\obj\Debug\Voltage.DataCharting.resources
+E:\Voltage\Voltage\Voltage\obj\Debug\Voltage.UC_DataGridSearchQuery.resources
+E:\Voltage\Voltage\Voltage\obj\Debug\Voltage.UC_SearchMain.resources
+E:\Voltage\Voltage\Voltage\obj\Debug\Voltage.UC_SerialCommControl.resources
+E:\Voltage\Voltage\Voltage\bin\Debug\dotnetCharting.WinForms.dll
+E:\Voltage\Voltage\Voltage\obj\Debug\Voltage.UC_DataGridCharting.resources
+E:\Voltage\Voltage\Voltage\obj\Debug\Voltage.UC_SearchOneTimeData.resources
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.exe
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.pdb
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\bin\Debug\Voltage.exe
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\bin\Debug\Voltage.pdb
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.DataCharting.resources
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.Form1.resources
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.GetCollectID.resources
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.MainForm.resources
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.OutPutData.resources
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.Properties.Resources.resources
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.UC_DataGridCharting.resources
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.UC_DataGridSearchQuery.resources
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.UC_SearchMain.resources
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.UC_SearchOneTimeData.resources
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.UC_SerialCommControl.resources
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.csproj.GenerateResource.Cache
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\bin\Debug\ZedGraph.dll
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\bin\Debug\ZedGraph.pdb
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\bin\Debug\de\ZedGraph.resources.dll
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\bin\Debug\es\ZedGraph.resources.dll
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\bin\Debug\fr\ZedGraph.resources.dll
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\bin\Debug\hu\ZedGraph.resources.dll
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\bin\Debug\it\ZedGraph.resources.dll
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\bin\Debug\ja\ZedGraph.resources.dll
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\bin\Debug\pt\ZedGraph.resources.dll
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\bin\Debug\ru\ZedGraph.resources.dll
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\bin\Debug\sk\ZedGraph.resources.dll
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\bin\Debug\sv\ZedGraph.resources.dll
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\bin\Debug\tr\ZedGraph.resources.dll
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\bin\Debug\zh-cn\ZedGraph.resources.dll
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\bin\Debug\zh-tw\ZedGraph.resources.dll
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.UC_zendChart.resources
+E:\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.exe
+E:\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.pdb
+E:\project\Voltage\Voltage\Voltage\bin\Debug\Voltage.exe
+E:\project\Voltage\Voltage\Voltage\bin\Debug\Voltage.pdb
+E:\project\Voltage\Voltage\Voltage\obj\Debug\ResolveAssemblyReference.cache
+E:\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.Form1.resources
+E:\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.GetCollectID.resources
+E:\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.MainForm.resources
+E:\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.OutPutData.resources
+E:\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.Properties.Resources.resources
+E:\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.UC_DataGridCharting.resources
+E:\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.UC_DataGridSearchQuery.resources
+E:\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.UC_SearchMain.resources
+E:\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.UC_SearchOneTimeData.resources
+E:\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.UC_SerialCommControl.resources
+E:\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.csproj.GenerateResource.Cache
+E:\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.getCollectorData.resources
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.getCollectorData.resources
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.ViewCollectInfo.resources
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\bin\Debug\Voltage.exe.manifest
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\bin\Debug\Voltage.application
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.TrustInfo.xml
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.exe.manifest
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.application
+C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.SetCollectProperty.resources
+E:\project\Voltage\Voltage\Voltage\bin\Debug\Voltage.exe.manifest
+E:\project\Voltage\Voltage\Voltage\bin\Debug\Voltage.application
+E:\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.SetCollectProperty.resources
+E:\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.ViewCollectInfo.resources
+E:\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.TrustInfo.xml
+E:\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.exe.manifest
+E:\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.application
+E:\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.SetMachineTime.resources
+E:\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.test.resources
+E:\project\Voltage\Voltage\Voltage\bin\Debug\Microsoft.Office.Interop.Excel.dll
+E:\project\Voltage\Voltage\Voltage\bin\Debug\Microsoft.Vbe.Interop.dll
+E:\project\Voltage\Voltage\Voltage\bin\Debug\office.dll
+E:\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.ChoseOupputDataType.resources
+E:\project\Voltage\Voltage\Voltage\bin\Debug\Voltage.exe.config
+E:\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.OpenSerial.resources
+E:\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.ZendChart.resources
+E:\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.OneTimeZendChart.resources
+E:\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.ModifyData.resources
+E:\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.GetDataArithmetic.resources
+E:\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.SetProperty.resources
+E:\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.InputData.resources
+E:\project\Voltage\Voltage\Voltage\bin\Debug\zh-cn\ZedGraph.resources.dll
+E:\project\Voltage\Voltage\Voltage\obj\Debug\Voltage.LoginSystem.resources
+E:\project\Voltage\Voltage\Voltage\bin\Debug\ZedGraph.dll
+E:\project\Voltage\Voltage\Voltage\bin\Debug\Microsoft.Office.Interop.Excel.xml
+E:\project\Voltage\Voltage\Voltage\bin\Debug\office.xml
+E:\project\Voltage\Voltage\Voltage\bin\Debug\ZedGraph.pdb
+E:\project\Voltage\Voltage\Voltage\bin\Debug\zh-tw\ZedGraph.resources.dll
+E:\project\Voltage\Voltage\Voltage\bin\Debug\tr\ZedGraph.resources.dll
+E:\project\Voltage\Voltage\Voltage\bin\Debug\sv\ZedGraph.resources.dll
+E:\project\Voltage\Voltage\Voltage\bin\Debug\sk\ZedGraph.resources.dll
+E:\project\Voltage\Voltage\Voltage\bin\Debug\ru\ZedGraph.resources.dll
+E:\project\Voltage\Voltage\Voltage\bin\Debug\pt\ZedGraph.resources.dll
+E:\project\Voltage\Voltage\Voltage\bin\Debug\ja\ZedGraph.resources.dll
+E:\project\Voltage\Voltage\Voltage\bin\Debug\it\ZedGraph.resources.dll
+E:\project\Voltage\Voltage\Voltage\bin\Debug\hu\ZedGraph.resources.dll
+E:\project\Voltage\Voltage\Voltage\bin\Debug\fr\ZedGraph.resources.dll
+E:\project\Voltage\Voltage\Voltage\bin\Debug\es\ZedGraph.resources.dll
+E:\project\Voltage\Voltage\Voltage\bin\Debug\de\ZedGraph.resources.dll

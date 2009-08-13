@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AAFBA821-64D0-4404-BE0E-6B48D99DDBD3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Voltage</RootNamespace>
+    <AssemblyName>Voltage</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>krdc.ico</ApplicationIcon>
+    <ManifestCertificateThumbprint>45727CA6D4214B93C742EA95CDAF341749A8F575</ManifestCertificateThumbprint>
+    <ManifestKeyFile>Voltage_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <TargetZone>LocalIntranet</TargetZone>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+    <SignManifests>true</SignManifests>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>2.2.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.JScript" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZedGraph, Version=5.1.5.17089, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\zedgraph_source_v515\zedgraph_source_v515\ZedGraph 5.1 (.net 2)\source\bin\Debug\ZedGraph.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChoseOupputDataType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChoseOupputDataType.Designer.cs">
+      <DependentUpon>ChoseOupputDataType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigClass.cs" />
+    <Compile Include="Excel.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="getCollectorData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="getCollectorData.Designer.cs">
+      <DependentUpon>getCollectorData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GetDataArithmetic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GetDataArithmetic.Designer.cs">
+      <DependentUpon>GetDataArithmetic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginSystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginSystem.Designer.cs">
+      <DependentUpon>LoginSystem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModifyData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyData.Designer.cs">
+      <DependentUpon>ModifyData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpenSerial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpenSerial.Designer.cs">
+      <DependentUpon>OpenSerial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SetCollectProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetCollectProperty.Designer.cs">
+      <DependentUpon>SetCollectProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SetMachineTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetMachineTime.Designer.cs">
+      <DependentUpon>SetMachineTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SetProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetProperty.Designer.cs">
+      <DependentUpon>SetProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="test.Designer.cs">
+      <DependentUpon>test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZendChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZendChart.Designer.cs">
+      <DependentUpon>ZendChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GetCollectID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GetCollectID.Designer.cs">
+      <DependentUpon>GetCollectID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lib.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OleHelper.cs" />
+    <Compile Include="OutPutData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OutPutData.Designer.cs">
+      <DependentUpon>OutPutData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PortData.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ChoseOupputDataType.resx">
+      <DependentUpon>ChoseOupputDataType.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="getCollectorData.resx">
+      <DependentUpon>getCollectorData.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GetDataArithmetic.resx">
+      <DependentUpon>GetDataArithmetic.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginSystem.resx">
+      <DependentUpon>LoginSystem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyData.resx">
+      <DependentUpon>ModifyData.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpenSerial.resx">
+      <DependentUpon>OpenSerial.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetCollectProperty.resx">
+      <DependentUpon>SetCollectProperty.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetMachineTime.resx">
+      <DependentUpon>SetMachineTime.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetProperty.resx">
+      <DependentUpon>SetProperty.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="test.resx">
+      <DependentUpon>test.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZendChart.resx">
+      <DependentUpon>ZendChart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GetCollectID.resx">
+      <DependentUpon>GetCollectID.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OutPutData.resx">
+      <DependentUpon>OutPutData.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_DataGridCharting.resx">
+      <DependentUpon>UC_DataGridCharting.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_DataGridSearchQuery.resx">
+      <DependentUpon>UC_DataGridSearchQuery.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_SearchMain.resx">
+      <DependentUpon>UC_SearchMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_SearchOneTimeData.resx">
+      <DependentUpon>UC_SearchOneTimeData.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_SerialCommControl.resx">
+      <DependentUpon>UC_SerialCommControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewCollectInfo.resx">
+      <DependentUpon>ViewCollectInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OneTimeZendChart.resx">
+      <DependentUpon>OneTimeZendChart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InutData.resx">
+      <DependentUpon>InutData.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Voltage_TemporaryKey.pfx" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="UC_DataGridCharting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_DataGridCharting.Designer.cs">
+      <DependentUpon>UC_DataGridCharting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_SearchMain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_SearchMain.Designer.cs">
+      <DependentUpon>UC_SearchMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_DataGridSearchQuery.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_DataGridSearchQuery.Designer.cs">
+      <DependentUpon>UC_DataGridSearchQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_SearchOneTimeData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_SearchOneTimeData.Designer.cs">
+      <DependentUpon>UC_SearchOneTimeData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_SerialCommControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_SerialCommControl.Designer.cs">
+      <DependentUpon>UC_SerialCommControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCollectInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewCollectInfo.Designer.cs">
+      <DependentUpon>ViewCollectInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OneTimeZendChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OneTimeZendChart.Designer.cs">
+      <DependentUpon>OneTimeZendChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InutData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InutData.Designer.cs">
+      <DependentUpon>InutData.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="krdc.ico" />
+    <None Include="Resources\2009040216552188.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
