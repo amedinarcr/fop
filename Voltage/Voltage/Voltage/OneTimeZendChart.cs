@@ -35,6 +35,22 @@ namespace Voltage
             myPane.XAxis.Title.FontSpec.Size = 12;
             myPane.YAxis.Title.FontSpec.Size = 12;
 
+            // Fill the axis background with a color gradient
+            myPane.Chart.Fill = new Fill(Color.FromArgb(255, 255, 245), Color.FromArgb(255, 255, 190), 90F);
+            // Fill the pane background with a gradient
+            myPane.Fill = new Fill(Color.WhiteSmoke, Color.Lavender, 0F);
+            // Draw a box item to highlight a value range
+            BoxObj box = new BoxObj(0, 1.2, 1.4, 0.4, Color.Empty,
+                    Color.FromArgb(150, Color.LightGreen));
+            box.Fill = new Fill(Color.FromArgb(100, Color.FromArgb(255, 0, 0)), Color.FromArgb(200, Color.FromArgb(255, 0, 0)), 45.0F);
+            // Use the BehindAxis zorder to draw the highlight beneath the grid lines
+            box.ZOrder = ZOrder.E_BehindCurves;
+            // Make sure that the boxObj does not extend outside the chart rect if the chart is zoomed
+            box.IsClippedToChartRect = true;
+            // Use a hybrid coordinate system so the X axis always covers the full x range
+            // from chart fraction 0.0 to 1.0
+            box.Location.CoordinateFrame = CoordType.XChartFractionYScale;
+            myPane.GraphObjList.Add(box);
            //GraphPane myPane=this.zedGraphControl1.GraphPane;
            //myPane.Title.Text = "阴极保护";
            //myPane.XAxis.Title.Text = "X轴";
@@ -109,6 +125,7 @@ namespace Voltage
             // Set the titles
 
             myPane.Legend.IsVisible = false;
+
             //ArrayList CollectIdList = this.getCollectIdList(ds);
             //this.comboBox_CollectId.Items.Clear();
             //propertys = new LineItemProperty[CollectIdList.Count];
@@ -238,6 +255,8 @@ namespace Voltage
             PointF p = new PointF(0, 0);
             //this.zedGraphControl1.ZoomPane(this.zedGraphControl1.GraphPane, Convert.ToDouble(this.comboBox_Zoom.Text.Trim('%'))/100, p, false);
         }
+
+
 
 
     }
