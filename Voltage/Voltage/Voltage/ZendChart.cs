@@ -30,8 +30,17 @@ namespace Voltage
             myPane.YAxis.Scale.Max = 1.5;
             // Set the titles
             myPane.Title.Text = "阴极电位采集系统";
+            myPane.Title.FontSpec.IsDropShadow = true;
+            myPane.Title.FontSpec.DropShadowColor = Color.FromArgb(50, 0, 0, 0);
+            myPane.Title.FontSpec.DropShadowOffset = 0.2f;
             myPane.XAxis.Title.Text = "采集时间";
+            myPane.XAxis.Title.FontSpec.IsDropShadow = true;
+            myPane.XAxis.Title.FontSpec.DropShadowColor = Color.FromArgb(50, 0, 0, 0);
+            myPane.XAxis.Title.FontSpec.DropShadowOffset = 0.2f;
             myPane.YAxis.Title.Text = "采集电压";
+            myPane.YAxis.Title.FontSpec.IsDropShadow = true;
+            myPane.YAxis.Title.FontSpec.DropShadowColor = Color.FromArgb(50, 0, 0, 0);
+            myPane.YAxis.Title.FontSpec.DropShadowOffset = 0.2f;
 
 
             myPane.XAxis.Title.FontSpec.Size = 12;
@@ -43,7 +52,7 @@ namespace Voltage
             // Draw a box item to highlight a value range
             BoxObj box = new BoxObj(0, 1.2, 1.4, 0.4, Color.Empty,
                     Color.FromArgb(150, Color.LightGreen));
-            box.Fill = new Fill(Color.FromArgb(100, Color.FromArgb(255, 0, 0)), Color.FromArgb(200, Color.FromArgb(255, 0, 0)), 45.0F);
+            box.Fill = new Fill(Color.FromArgb(100, Color.FromArgb(88, 88, 88)), Color.FromArgb(200, Color.FromArgb(88, 88, 88)), 45.0F);
             // Use the BehindAxis zorder to draw the highlight beneath the grid lines
             box.ZOrder = ZOrder.E_BehindCurves;
             // Make sure that the boxObj does not extend outside the chart rect if the chart is zoomed
@@ -333,6 +342,9 @@ namespace Voltage
             ViewCollectInfo view = new ViewCollectInfo(this.comboBox_CollectId.Text);
             view.ShowDialog();
         }
+
+
+
     }
 
 
