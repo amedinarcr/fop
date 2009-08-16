@@ -91,6 +91,7 @@
             this.zedGraphControl1.ScrollMinY2 = 0;
             this.zedGraphControl1.Size = new System.Drawing.Size(770, 465);
             this.zedGraphControl1.TabIndex = 1;
+
             // 
             // groupBox3
             // 

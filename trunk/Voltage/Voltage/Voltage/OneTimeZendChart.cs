@@ -32,6 +32,7 @@ namespace Voltage
             myPane.Title.Text = "阴极电位保护系统";
             myPane.XAxis.Title.Text = "里程";
             myPane.YAxis.Title.Text = "电压";
+            myPane.Title.FontSpec.GetFont(1111);
             myPane.XAxis.Title.FontSpec.Size = 12;
             myPane.YAxis.Title.FontSpec.Size = 12;
 
@@ -42,7 +43,7 @@ namespace Voltage
             // Draw a box item to highlight a value range
             BoxObj box = new BoxObj(0, 1.2, 1.4, 0.4, Color.Empty,
                     Color.FromArgb(150, Color.LightGreen));
-            box.Fill = new Fill(Color.FromArgb(100, Color.FromArgb(255, 0, 0)), Color.FromArgb(200, Color.FromArgb(255, 0, 0)), 45.0F);
+            box.Fill = new Fill(Color.FromArgb(100, Color.FromArgb(88,88, 88)), Color.FromArgb(200, Color.FromArgb(88, 88, 88)), 45.0F);
             // Use the BehindAxis zorder to draw the highlight beneath the grid lines
             box.ZOrder = ZOrder.E_BehindCurves;
             // Make sure that the boxObj does not extend outside the chart rect if the chart is zoomed
@@ -255,9 +256,6 @@ namespace Voltage
             PointF p = new PointF(0, 0);
             //this.zedGraphControl1.ZoomPane(this.zedGraphControl1.GraphPane, Convert.ToDouble(this.comboBox_Zoom.Text.Trim('%'))/100, p, false);
         }
-
-
-
 
     }
 
