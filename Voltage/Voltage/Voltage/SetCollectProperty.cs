@@ -115,33 +115,42 @@ namespace Voltage
         private void SetLineItemProperty_Load(object sender, EventArgs e)
         {
             //load property
-            DataSet ds = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text, "Select * from CollectInfo where CollectId='" + this.CollectId + "'");
-            if (ds.Tables[0].Rows.Count > 0)
+            try
             {
-                this.isExist = true;
-                DataRow row = ds.Tables[0].Rows[0];
-                this.numericUpDown_LineWidth.Value = Convert.ToDecimal(row["LineWidth"].ToString());
-                this.comboBox_LineStyle.SelectedIndex = Convert.ToInt32(row["LineStyle"].ToString());
-                this.textBox_LineColor.BackColor = Color.FromArgb(Convert.ToInt32(row["LineColor"].ToString()));
-                this.comboBox_SymbolType.SelectedIndex = Convert.ToInt32(row["SymbolType"].ToString());
+                DataSet ds = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text, "Select * from CollectInfo where CollectId='" + this.CollectId + "'");
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    this.isExist = true;
+                    DataRow row = ds.Tables[0].Rows[0];
+                    this.numericUpDown_LineWidth.Value = Convert.ToDecimal(row["LineWidth"].ToString());
+                    this.comboBox_LineStyle.SelectedIndex = Convert.ToInt32(row["LineStyle"].ToString());
+                    this.textBox_LineColor.BackColor = Color.FromArgb(Convert.ToInt32(row["LineColor"].ToString()));
+                    this.comboBox_SymbolType.SelectedIndex = Convert.ToInt32(row["SymbolType"].ToString());
 
-                this.textBox_ProtectStationName.Text = row["ProtectStationName"].ToString();
-                this.textBox_PipelineName.Text = row["PipelineName"].ToString();
-                this.textBox_Mileage.Text = row["Mileage"].ToString();
-                this.textBox_TestPileID.Text = row["TestPileID"].ToString();
-                string Latitude = row["Latitude"].ToString();
-                //this.textBox_Latitude.Text = 
-                this.inputMeasure1.Text = Latitude.Substring(0,Latitude.IndexOf('&'));
-                this.inputMeasure2.Text = Latitude.Substring(Latitude.IndexOf('&') + 1);
-                this.textBox_remark.Text = row["Remark"].ToString();
-                //this.comboBox_SymbolType.Text = Enum.GetName(typeof(SymbolType), (SymbolType)Enum.Parse(typeof(SymbolType),row["SymbolType"].ToString()));
+                    this.textBox_ProtectStationName.Text = row["ProtectStationName"].ToString();
+                    this.textBox_PipelineName.Text = row["PipelineName"].ToString();
+                    this.textBox_Mileage.Text = row["Mileage"].ToString();
+                    this.textBox_TestPileID.Text = row["TestPileID"].ToString();
+                    string Latitude = row["Latitude"].ToString();
+                    //this.textBox_Latitude.Text = 
+
+                    this.inputMeasure1.Text = Latitude.Substring(0, Latitude.IndexOf('&'));
+                    this.inputMeasure2.Text = Latitude.Substring(Latitude.IndexOf('&') + 1);
+                    this.textBox_remark.Text = row["Remark"].ToString();
+                    //this.comboBox_SymbolType.Text = Enum.GetName(typeof(SymbolType), (SymbolType)Enum.Parse(typeof(SymbolType),row["SymbolType"].ToString()));
+                }
+                else
+                {
+                    this.isExist = false;
+                    this.textBox_LineColor.BackColor = Color.Red;
+                    this.textBox_ProtectStationName.Text = Voltage.Properties.Settings.Default.ProtectStationName;
+                    this.textBox_PipelineName.Text = Voltage.Properties.Settings.Default.PipelineName;
+                }
             }
-            else
+            catch (Exception)
             {
-                this.isExist = false;
-                this.textBox_LineColor.BackColor = Color.Red;
-                this.textBox_ProtectStationName.Text = Voltage.Properties.Settings.Default.ProtectStationName;
-                this.textBox_PipelineName.Text = Voltage.Properties.Settings.Default.PipelineName;
+                MessageBox.Show("加载熟悉失败!");
+                this.Close();
             }
     
         }
