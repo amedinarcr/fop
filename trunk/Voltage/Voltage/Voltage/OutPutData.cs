@@ -88,18 +88,25 @@ namespace Voltage
                 MessageBox.Show("请先选择采集编号");
                 return;
             }
-            if (this.saveFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                this.label_info.Text = "正在导出数据，请稍候...";
-                bWorker = new BackgroundWorker();
-                bWorker.WorkerSupportsCancellation = true;
-                bWorker.DoWork += new DoWorkEventHandler(bWorker_DoWork);
-                bWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bWorker_RunWorkerCompleted);
-                bWorker.RunWorkerAsync(this.saveFileDialog1.FileName); 
-                
-            }
-        }
 
+            this.label_info.Text = "正在导出数据，请稍候...";
+            bWorker = new BackgroundWorker();
+            bWorker.WorkerSupportsCancellation = true;
+            bWorker.DoWork += new DoWorkEventHandler(bWorker_DoWork);
+            bWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bWorker_RunWorkerCompleted);
+            // bWorker.RunWorkerAsync(this.saveFileDialog1.FileName);
+            string fileName = Lib.GetNewFileName();
+            if (this.DataType == 0)
+            {
+                fileName += ".xml";
+            }
+            if (this.DataType == 1)
+            {
+                fileName += ".xls";
+            }
+            bWorker.RunWorkerAsync(fileName);
+        }
+       
         void bWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             string fileName = e.Argument.ToString();
