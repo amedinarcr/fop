@@ -83,14 +83,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Voltage.exe" size="444416">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Voltage.exe" size="454656">
       <assemblyIdentity name="Voltage" version="2.0.2.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>xnBUknuOS3MPdpemCI47TuJUHgE=</dsig:DigestValue>
+        <dsig:DigestValue>VCMbNk6+kGY6Qn4lgtu0zPYD8So=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

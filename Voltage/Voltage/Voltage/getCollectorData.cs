@@ -97,7 +97,8 @@ namespace Voltage
                     {
                         DataRow row = dt.NewRow();
                         row["CollectId"] = CollectorId.Replace(" ", "");
-                        row["DataTime"] = this.parseDateTime(m_strRXData.Substring(baseNum + i * 24, 17));
+                        string datatime = m_strRXData.Substring(baseNum + i * 24, 17);
+                        row["DataTime"] = this.parseDateTime(datatime);
                         row["DataValue"] = Convert.ToDouble(m_strRXData.Substring(baseNum + i * 24 + 18, 5).Replace(" ", "")) / 1000;
                         row["DataTableId"] = DataTableId;
                         j++;
