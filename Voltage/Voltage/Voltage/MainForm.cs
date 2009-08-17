@@ -31,7 +31,7 @@ namespace Voltage
             //DataSet ds = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text, "select CollectId,DataTime,DataValue from DataTable where CollectId in ('0001','0002') and DataTime>=#2008-12-20 8:00:01# and DataTime<#2008-12-20 8:00:20#");
             Program.mainForm.ShowCharting(3, null);
             //this.LoadSerialMenuItem(); //开启手动打开串口服务
-            this.StartSerialService();  //打开检测串口服务
+            //this.StartSerialService();  //打开检测串口服务
 
             this.StartOutPutTimerService();//打开定时导出服务
         }

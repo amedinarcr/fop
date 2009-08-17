@@ -18,6 +18,22 @@ namespace Voltage
                 return new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=SerialData.mdb");
             }
         }
+        public static DataSet ExecuteDataset(string commandText)
+        {
+            OleDbCommand cmd = new OleDbCommand();
+
+            PrepareCommand(cmd, OleHelper.Conn, null, CommandType.Text, commandText);
+
+            OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+
+            DataSet ds = new DataSet();
+
+            da.Fill(ds);
+
+            cmd.Parameters.Clear();
+            OleHelper.Conn.Close();
+            return ds;
+        }
 
         public static DataSet ExecuteDataset(OleDbConnection connection, CommandType commandType, string commandText)
         {
