@@ -10,13 +10,26 @@ namespace Voltage
 {
     public partial class DataTree : UserControl
     {
+        public UC_DataGridCharting grid;
         public DataTree()
         {
+            
             InitializeComponent();
         }
 
+        public DataTree(UserControl grid)
+        {
+            this.grid = grid as UC_DataGridCharting;
+            InitializeComponent();
+        }
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
+            switch (e.Node.Name.Substring(0, e.Node.Name.IndexOf('_')))
+            {
+                case "CollectId":
+                    this.grid.ShowData("('" + e.Node.Text + "')");
+                    break;
+            }
 
         }
 
@@ -63,7 +76,7 @@ namespace Voltage
                 if (ProtectStationNameNode.Nodes.IndexOfKey("CollectId_" + row["CollectId"].ToString()) == -1)
                 {
                     TreeNode node = new TreeNode(row["CollectId"].ToString());
-                    node.Name = row["CollectId"].ToString();
+                    node.Name = "CollectId_"+row["CollectId"].ToString();
                     ProtectStationNameNode.Nodes.Add(node);                    
                 }
             }
