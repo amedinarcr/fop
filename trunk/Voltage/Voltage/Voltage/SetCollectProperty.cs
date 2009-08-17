@@ -49,7 +49,11 @@ namespace Voltage
                 OleDbParameter p_TestPileID = new OleDbParameter("@TestPileID", this.textBox_TestPileID.Text);
                 OleDbParameter p_PipelineName = new OleDbParameter("@PipelineName", this.textBox_PipelineName.Text);
                 OleDbParameter p_Mileage = new OleDbParameter("@Mileage", this.textBox_Mileage.Text);
-                OleDbParameter p_Latitude = new OleDbParameter("@Latitude", this.textBox_Latitude.Text);
+
+                string Latitude = "";
+                Latitude = this.inputMeasure1.Text + "&" + this.inputMeasure2.Text;
+                OleDbParameter p_Latitude = new OleDbParameter("@Latitude", Latitude);
+
                 OleDbParameter p_Remark = new OleDbParameter("@Remark", this.textBox_remark.Text);
                 OleDbParameter p_LineWidth = new OleDbParameter("@LineWidth", this.numericUpDown_LineWidth.Value);
                 p_LineWidth.OleDbType = OleDbType.Integer;
@@ -60,6 +64,7 @@ namespace Voltage
                 OleDbParameter p_SymbolType = new OleDbParameter("@SymbolType", this.comboBox_SymbolType.SelectedIndex);
                 p_SymbolType.OleDbType = OleDbType.Integer;
 
+              
                 OleHelper.ExecuteNonQuery(OleHelper.Conn, CommandType.Text, updateSql, new OleDbParameter[] { p_ProtectStationName, p_TestPileID, p_PipelineName, p_Mileage,p_Latitude, p_Remark, p_LineWidth, p_LineStyle, p_LineColor, p_SymbolType });
 
             }
@@ -71,7 +76,11 @@ namespace Voltage
                 OleDbParameter p_TestPileID = new OleDbParameter("@TestPileID", this.textBox_TestPileID.Text);
                 OleDbParameter p_PipelineName = new OleDbParameter("@PipelineName", this.textBox_PipelineName.Text);
                 OleDbParameter p_Mileage = new OleDbParameter("@Mileage", this.textBox_Mileage.Text);
-                OleDbParameter p_Latitude = new OleDbParameter("@Latitude", this.textBox_Latitude.Text);
+
+                string Latitude = "";
+                Latitude = this.inputMeasure1.Text + "&" + this.inputMeasure2.Text;
+                OleDbParameter p_Latitude = new OleDbParameter("@Latitude", Latitude);
+
                 OleDbParameter p_Remark = new OleDbParameter("@Remark", this.textBox_remark.Text);
                 OleDbParameter p_LineWidth = new OleDbParameter("@LineWidth", this.numericUpDown_LineWidth.Value);
                 p_LineWidth.OleDbType = OleDbType.Integer;
@@ -120,7 +129,10 @@ namespace Voltage
                 this.textBox_PipelineName.Text = row["PipelineName"].ToString();
                 this.textBox_Mileage.Text = row["Mileage"].ToString();
                 this.textBox_TestPileID.Text = row["TestPileID"].ToString();
-                this.textBox_Latitude.Text = row["Latitude"].ToString();
+                string Latitude = row["Latitude"].ToString();
+                //this.textBox_Latitude.Text = 
+                this.inputMeasure1.Text = Latitude.Substring(0,Latitude.IndexOf('&'));
+                this.inputMeasure2.Text = Latitude.Substring(Latitude.IndexOf('&') + 1);
                 this.textBox_remark.Text = row["Remark"].ToString();
                 //this.comboBox_SymbolType.Text = Enum.GetName(typeof(SymbolType), (SymbolType)Enum.Parse(typeof(SymbolType),row["SymbolType"].ToString()));
             }
@@ -132,6 +144,11 @@ namespace Voltage
                 this.textBox_PipelineName.Text = Voltage.Properties.Settings.Default.PipelineName;
             }
     
+        }
+
+        private void textBox_TestPileID_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
