@@ -173,11 +173,12 @@ namespace Voltage
         public int CurrentIndex;
         public void ChangeView()
         {
+            this.isDetail = false;
             if (this.isDetail)
             {
                
                 this.isDetail = false;
-                this.button1.Text = "查看详细";
+                //this.button1.Text = "查看详细";
                 this.dataGridView1.DataSource = this.CollectDataTable;
                 this.dataGridView1.Columns["CollectInfo.CollectId"].Visible = false;
                 this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
@@ -187,6 +188,8 @@ namespace Voltage
             }
             else
             {
+                if (this.dataGridView1.Columns["DataId"] != null)
+                    return;
                 if (this.dataGridView1.SelectedRows.Count <= 0)
                 {
                     MessageBox.Show("你还没有选择行，请选择");
@@ -195,9 +198,9 @@ namespace Voltage
                 else
                 {
                     this.CurrentIndex = this.dataGridView1.SelectedRows[0].Index;
-                    this.isDetail = true;
+                    //this.isDetail = true;
                     this.ViewDetail(this.dataGridView1.SelectedRows[0].Index);                  
-                    this.button1.Text = "返回";
+                    //this.button1.Text = "返回";
                     this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
 
                 }
@@ -269,7 +272,10 @@ namespace Voltage
             }
             else
             {
+
+             
                 string CollectId=this.dataGridView1.SelectedRows[0].Cells["DataTable.CollectId"].Value.ToString();
+
                 SetCollectProperty set = new SetCollectProperty(null,CollectId );
                 if (set.ShowDialog() == DialogResult.OK)
                 {

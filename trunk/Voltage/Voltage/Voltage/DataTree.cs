@@ -39,6 +39,15 @@ namespace Voltage
         }
         public void LoadData()
         {
+
+            this.treeView1.Nodes.Clear();
+            this.treeView1.ImageList = this.imageList1;
+            TreeNode rootNode = new TreeNode("管线");
+            rootNode.Name = "Root_PipeLine";
+            rootNode.ImageIndex = 3;
+            rootNode.SelectedImageIndex = 3;
+            this.treeView1.Nodes.Add(rootNode);
+
             DataSet CollectInfoDataSet = OleHelper.ExecuteDataset("Select * from CollectInfo");
             foreach (DataRow row in CollectInfoDataSet.Tables[0].Rows)
             {
@@ -50,6 +59,8 @@ namespace Voltage
                     TreeNode PipeLineNameNode = new TreeNode(PipeLineName);
                     PipeLineNameNode.Name = "PipeLineName_" + row["PipeLineName"].ToString();
                     //PipeLineNameNode.Tag = row["ID"].ToString();
+                    PipeLineNameNode.ImageIndex = 0;
+                    PipeLineNameNode.SelectedImageIndex = 0;
                     this.treeView1.Nodes.Add(PipeLineNameNode);
                 }
             }
@@ -64,7 +75,9 @@ namespace Voltage
                     if (ProtectStationName.Trim() == string.Empty)
                         ProtectStationName = "(无保护站名称)";
                     TreeNode node = new TreeNode(ProtectStationName);
-                    node.Name = "ProtectStationName_" + row["ProtectStationName"].ToString();             
+                    node.Name = "ProtectStationName_" + row["ProtectStationName"].ToString();
+                    node.ImageIndex = 1;
+                    node.SelectedImageIndex = 1;
                     PipeLineNameNode.Nodes.Add(node);
                 }
             }
@@ -77,9 +90,13 @@ namespace Voltage
                 {
                     TreeNode node = new TreeNode(row["CollectId"].ToString());
                     node.Name = "CollectId_"+row["CollectId"].ToString();
+                    node.ImageIndex = 2;
+                    node.SelectedImageIndex = 2;
                     ProtectStationNameNode.Nodes.Add(node);                    
                 }
             }
+
+            this.treeView1.ExpandAll();
         }
     }
 }
