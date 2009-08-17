@@ -15,7 +15,7 @@ namespace Voltage
         {
             get 
             {
-                return new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=SerialData.mdb");
+                return new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\Voltage\bin\Debug\SerialData.mdb");
             }
         }
         public static DataSet ExecuteDataset(string commandText)

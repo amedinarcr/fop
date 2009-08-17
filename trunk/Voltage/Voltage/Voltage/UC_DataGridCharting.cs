@@ -25,6 +25,16 @@ namespace Voltage
            
         }
 
+        public void ShowData(string CollectIdList)
+        {
+            string querySql = "Select * from DataTable where CollectId in "+CollectIdList+" order by DataTime desc";
+            DataSet ds = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text, querySql);
+            this.oneCollectDataSet = ds;
+            this.dataGridView1.DataSource = ds.Tables[0];
+            this.dataGridView1.Columns["DataValue"].DefaultCellStyle.Format = "F3";
+            this.dataGridView1.Columns["DataTime"].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss";
+            this.dataGridView1.Columns["DataId"].Visible = false;
+        }
         private void UC_DataGridCharting_Load(object sender, EventArgs e)
         {
             this.dataGridView1.RowHeadersWidth = 18;
@@ -110,7 +120,7 @@ namespace Voltage
 
                     try
                     {
-
+                      
                         string titude = newRow["Latitude"].ToString();
                         newRow["Latitude"]= Lib.parseLatitude(titude.Substring(titude.IndexOf('&') + 1));
                         newRow["Longtitude"] = Lib.parseLatitude(titude.Substring(0, titude.IndexOf('&')));
@@ -152,6 +162,7 @@ namespace Voltage
             DataSet ds = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text, querySql);
             this.oneCollectDataSet = ds;
             this.dataGridView1.DataSource = ds.Tables[0];
+            this.dataGridView1.Columns["DataValue"].DefaultCellStyle.Format = "F3";
             this.dataGridView1.Columns["DataTime"].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss"; 
             this.dataGridView1.Columns["DataId"].Visible = false;
         }
@@ -361,6 +372,11 @@ namespace Voltage
         {
             GetDataArithmetic get = new GetDataArithmetic();
             get.ShowDialog();
+        }
+
+        private void dataTree1_Load(object sender, EventArgs e)
+        {
+
         }
 
 
