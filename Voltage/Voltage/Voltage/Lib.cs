@@ -154,8 +154,28 @@ namespace Voltage
             return System.Drawing.Color.FromArgb(int_Red, int_Green, int_Blue);
         }
 
+        public static string GetNewFileName()
+        {
+            string dir = Voltage.Properties.Settings.Default.OutPutDataDir;
+            return dir + System.DateTime.Now.ToString(Voltage.Properties.Settings.Default.PipelineName + "_" + Voltage.Properties.Settings.Default.ProtectStationName + "_yyyyMMddHHmmss");
+        }
 
+        public static string parseLatitude(string latitude)
+        {
+            try
+            {
+                int index1 = latitude.IndexOf(',');
+                string a = latitude.Substring(0, index1);
+                int index2 = latitude.IndexOf(',', index1 + 1);
+                string b = latitude.Substring(index1 + 1, index2 - index1 - 1);
+                string c = latitude.Substring(index2 + 1);
 
+                return a + "°" + b + "'" + c + "''";
+            }catch(Exception ex)
+            {
+                return "";
+            }
+        }
 
 
 

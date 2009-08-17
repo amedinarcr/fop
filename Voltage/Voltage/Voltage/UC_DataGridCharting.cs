@@ -31,7 +31,6 @@ namespace Voltage
             Thread task = new Thread(new ThreadStart(InitData));
             task.Start();
             //this.InitData();
-            this.dataGridView1.Controls.Add(this.dateTimePicker1);
         }
         public void ShowCharting(DataSet ds)
         {
@@ -64,6 +63,15 @@ namespace Voltage
                 case "DataTableId":
                     e.Column.HeaderText = "数据表编号";
                     break;
+                case "Longtitude":
+                    e.Column.HeaderText = "经度";
+                    break;
+                case "Latitude":
+                    e.Column.HeaderText = "纬度";
+                    break;
+                case "Mileage":
+                    e.Column.HeaderText = "里程";
+                    break;
             }
         }
         /// <summary>
@@ -73,7 +81,7 @@ namespace Voltage
         {
             if (this.CollectDataTable == null)
             {
-                string sql = "select distinct CollectId from DataTable order by CollectId asc";
+                string sql = "select distinct CollectId from DataTable   order by CollectId asc";
                 DataSet CollectDataSet = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text, sql);
                 CollectDataTable = new DataTable();
                 CollectDataTable.Columns.Add("ProtectStationName");
@@ -82,7 +90,9 @@ namespace Voltage
                 CollectDataTable.Columns.Add("CollectInfo.CollectId");
                 CollectDataTable.Columns.Add("DataTime");
                 CollectDataTable.Columns.Add("DataValue");
-               
+                CollectDataTable.Columns.Add("Mileage");
+                CollectDataTable.Columns.Add("Longtitude");
+                CollectDataTable.Columns.Add("Latitude");                
 
                 foreach (DataRow row in CollectDataSet.Tables[0].Rows)
                 {
@@ -93,8 +103,24 @@ namespace Voltage
                     DataRow newRow= CollectDataTable.NewRow();
                     foreach (DataColumn column in CollectDataTable.Columns)
                     {
-                        newRow[column.ColumnName] = topRow[column.ColumnName].ToString();
+                        if(topDataSet.Tables[0].Columns[column.ColumnName.ToString()]!=null)
+                            newRow[column.ColumnName] = topRow[column.ColumnName].ToString();
+                        
                     }
+
+                    try
+                    {
+
+                        string titude = newRow["Latitude"].ToString();
+                        newRow["Latitude"]= Lib.parseLatitude(titude.Substring(titude.IndexOf('&') + 1));
+                        newRow["Longtitude"] = Lib.parseLatitude(titude.Substring(0, titude.IndexOf('&')));
+                    }
+                    catch (Exception)
+                    {
+                        newRow["Latitude"] = "格式错误";
+                        newRow["Longtitude"] = "格式错误";
+                    }
+
                     this.CollectDataTable.Rows.Add(newRow);
                     //CollectDataTable.Rows.Add(new object[] { topRow["DataTable.CollectId"].ToString(), topRow["DataTime"].ToString(), topRow["DataValue"].ToString() });
                 }
@@ -126,12 +152,7 @@ namespace Voltage
             DataSet ds = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text, querySql);
             this.oneCollectDataSet = ds;
             this.dataGridView1.DataSource = ds.Tables[0];
-            foreach (DataGridViewRow row in this.dataGridView1.Rows)
-            {
-
-                string dd = row.Cells["DataTime"].Value.ToString();
-                row.Cells["DataTime"].Value = Convert.ToDateTime(row.Cells["DataTime"].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
-            }
+            this.dataGridView1.Columns["DataTime"].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss"; 
             this.dataGridView1.Columns["DataId"].Visible = false;
         }
         private void button1_Click(object sender, EventArgs e)
@@ -248,7 +269,7 @@ namespace Voltage
                     //selectRow.Cells["TestPileID"].Value = datarow["TestPileID"].ToString();
                     ////selectRow.Cells["DataTableId"].Value = datarow["DataTableId"].ToString();
                     //selectRow.DefaultCellStyle.BackColor = Color.White;
-                    Program.mainForm.ShowCharting(3, null);
+                    //Program.mainForm.ShowCharting(3, null);
                 }
             }
             
@@ -286,7 +307,8 @@ namespace Voltage
                 DateTime DataTime = Convert.ToDateTime(this.dataGridView1.Rows[rowIndex].Cells["DataTime"].Value.ToString());
 
                 this.dataGridView1.Rows[rowIndex].Cells["DataTime"].Value = DataTime.ToString("yyyy-MM-dd HH:mm:ss");
-                
+ 
+
             }
         }
 
@@ -329,7 +351,7 @@ namespace Voltage
                     //selectRow.DefaultCellStyle.BackColor = Color.White;                    
                     //this.dataGridView1.Refresh();
 
-                    Program.mainForm.ShowCharting(3, null);
+                    //Program.mainForm.ShowCharting(3, null);
                 }
          
             }

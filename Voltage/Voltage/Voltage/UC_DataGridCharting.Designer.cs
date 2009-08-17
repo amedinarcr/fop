@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
             this.button_property = new System.Windows.Forms.Button();
@@ -52,7 +51,6 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.dateTimePicker1);
             this.splitContainer1.Panel1.Controls.Add(this.dataGridView1);
             // 
             // splitContainer1.Panel2
@@ -62,25 +60,14 @@
             this.splitContainer1.Panel2.Controls.Add(this.button3);
             this.splitContainer1.Panel2.Controls.Add(this.button2);
             this.splitContainer1.Panel2.Controls.Add(this.button1);
-            this.splitContainer1.Size = new System.Drawing.Size(844, 367);
+            this.splitContainer1.Size = new System.Drawing.Size(844, 398);
             this.splitContainer1.SplitterDistance = 701;
             this.splitContainer1.TabIndex = 0;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CustomFormat = "yyyy-MM-dd HH:mm:ss";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(641, 343);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 21);
-            this.dateTimePicker1.TabIndex = 3;
-            this.dateTimePicker1.Visible = false;
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -91,7 +78,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(701, 367);
+            this.dataGridView1.Size = new System.Drawing.Size(701, 398);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellLeave);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
@@ -102,9 +89,9 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(13, 168);
+            this.button4.Location = new System.Drawing.Point(13, 182);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(112, 31);
+            this.button4.Size = new System.Drawing.Size(112, 34);
             this.button4.TabIndex = 4;
             this.button4.Text = "计算";
             this.button4.UseVisualStyleBackColor = true;
@@ -112,9 +99,9 @@
             // 
             // button_property
             // 
-            this.button_property.Location = new System.Drawing.Point(13, 129);
+            this.button_property.Location = new System.Drawing.Point(13, 140);
             this.button_property.Name = "button_property";
-            this.button_property.Size = new System.Drawing.Size(112, 31);
+            this.button_property.Size = new System.Drawing.Size(112, 34);
             this.button_property.TabIndex = 3;
             this.button_property.Text = "设置属性";
             this.button_property.UseVisualStyleBackColor = true;
@@ -122,9 +109,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(13, 40);
+            this.button3.Location = new System.Drawing.Point(13, 43);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(112, 31);
+            this.button3.Size = new System.Drawing.Size(112, 34);
             this.button3.TabIndex = 2;
             this.button3.Text = "修改";
             this.button3.UseVisualStyleBackColor = true;
@@ -132,9 +119,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(13, 75);
+            this.button2.Location = new System.Drawing.Point(13, 81);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 31);
+            this.button2.Size = new System.Drawing.Size(112, 34);
             this.button2.TabIndex = 1;
             this.button2.Text = "删除";
             this.button2.UseVisualStyleBackColor = true;
@@ -144,7 +131,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(13, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 31);
+            this.button1.Size = new System.Drawing.Size(112, 34);
             this.button1.TabIndex = 0;
             this.button1.Text = "查看详细";
             this.button1.UseVisualStyleBackColor = true;
@@ -152,11 +139,11 @@
             // 
             // UC_DataGridCharting
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.splitContainer1);
             this.Name = "UC_DataGridCharting";
-            this.Size = new System.Drawing.Size(844, 367);
+            this.Size = new System.Drawing.Size(844, 398);
             this.Load += new System.EventHandler(this.UC_DataGridCharting_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -173,7 +160,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button button_property;
         private System.Windows.Forms.Button button4;
 
