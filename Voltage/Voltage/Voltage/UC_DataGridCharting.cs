@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -17,6 +18,7 @@ namespace Voltage
         public UC_DataGridCharting()
         {
             InitializeComponent();
+            this.dataTree1.grid = this;
         }
 
 
@@ -27,20 +29,22 @@ namespace Voltage
 
         public void ShowData(string CollectIdList)
         {
-            string querySql = "Select * from DataTable where CollectId in "+CollectIdList+" order by DataTime desc";
+            string querySql = "Select * from DataTable where CollectInfoId in "+CollectIdList+" order by DataTime desc";
             DataSet ds = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text, querySql);
             this.oneCollectDataSet = ds;
             this.dataGridView1.DataSource = ds.Tables[0];
+            this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.dataGridView1.Columns["DataValue"].DefaultCellStyle.Format = "F3";
             this.dataGridView1.Columns["DataTime"].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss";
             this.dataGridView1.Columns["DataId"].Visible = false;
+            this.dataGridView1.Columns["CollectInfoId"].Visible = false;
+            this.isDetail = true;
         }
         private void UC_DataGridCharting_Load(object sender, EventArgs e)
         {
             this.dataGridView1.RowHeadersWidth = 18;
-            Thread task = new Thread(new ThreadStart(InitData));
+            Thread task = new Thread(new ThreadStart(this.ShowAllCollectInfo));
             task.Start();
-            //this.InitData();
         }
         public void ShowCharting(DataSet ds)
         {
@@ -52,7 +56,7 @@ namespace Voltage
         {
             switch (e.Column.Name)
             {
-                case "DataTable.CollectId":
+                case "CollectInfo.CollectId":
                     e.Column.HeaderText = "采集器编号";
                     break;
                 case "CollectId":
@@ -84,70 +88,69 @@ namespace Voltage
                     break;
             }
         }
+        public void ShowAllCollectInfo()
+        {
+            ArrayList AllCollectInfoIdList = new ArrayList();
+            DataSet CollectInfoIdDataSet = OleHelper.ExecuteDataset("select id from CollectInfo");
+            foreach (DataRow row in CollectInfoIdDataSet.Tables[0].Rows)
+            {
+                AllCollectInfoIdList.Add(row["id"].ToString());
+            }
+
+            this.ShowCollectInfo(AllCollectInfoIdList);
+        }
         /// <summary>
         /// 初始化数据，显示所有采集点的最新一条信息，双击显示该采集点的所有采集数据
         /// </summary>
-        public void InitData()
+        public void ShowCollectInfo(ArrayList CollectInfoList)
         {
-            if (this.CollectDataTable == null)
+
+            CollectDataTable = new DataTable();
+            CollectDataTable.Columns.Add("ProtectStationName");
+            CollectDataTable.Columns.Add("TestPileID");
+            CollectDataTable.Columns.Add("CollectId");
+            CollectDataTable.Columns.Add("DataTime");
+            CollectDataTable.Columns.Add("DataValue");
+            CollectDataTable.Columns.Add("Mileage");
+            CollectDataTable.Columns.Add("Longtitude");
+            CollectDataTable.Columns.Add("Latitude");
+            CollectDataTable.Columns.Add("ID");
+            foreach (string CollectInfoId in CollectInfoList)
             {
-                string sql = "select distinct CollectId from DataTable   order by CollectId asc";
-                DataSet CollectDataSet = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text, sql);
-                CollectDataTable = new DataTable();
-                CollectDataTable.Columns.Add("ProtectStationName");
-                CollectDataTable.Columns.Add("TestPileID");
-                CollectDataTable.Columns.Add("DataTable.CollectId");
-                CollectDataTable.Columns.Add("CollectInfo.CollectId");
-                CollectDataTable.Columns.Add("DataTime");
-                CollectDataTable.Columns.Add("DataValue");
-                CollectDataTable.Columns.Add("Mileage");
-                CollectDataTable.Columns.Add("Longtitude");
-                CollectDataTable.Columns.Add("Latitude");                
+                DataSet topDataSet = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text, "select top 1 * from DataTable left join CollectInfo on DataTable.CollectInfoId=CollectInfo.ID where CollectInfo.ID=" + CollectInfoId + " order by DataTime desc");
+                if (topDataSet.Tables[0].Rows.Count == 0)
+                    continue;
+                DataRow topRow = topDataSet.Tables[0].Rows[0];
 
-                foreach (DataRow row in CollectDataSet.Tables[0].Rows)
+                DataRow newRow = CollectDataTable.NewRow();
+                foreach (DataColumn column in CollectDataTable.Columns)
                 {
-                    DataSet topDataSet = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text, "select * from DataTable left join CollectInfo on DataTable.CollectId=CollectInfo.CollectId where DataTable.CollectId='" + row["CollectId"].ToString() + "' order by DataTime desc");
-          
-                    DataRow topRow = topDataSet.Tables[0].Rows[0];
-
-                    DataRow newRow= CollectDataTable.NewRow();
-                    foreach (DataColumn column in CollectDataTable.Columns)
-                    {
-                        if(topDataSet.Tables[0].Columns[column.ColumnName.ToString()]!=null)
-                            newRow[column.ColumnName] = topRow[column.ColumnName].ToString();
-                        
-                    }
-
-                    try
-                    {
-                      
-                        string titude = newRow["Latitude"].ToString();
-                        newRow["Latitude"]= Lib.parseLatitude(titude.Substring(titude.IndexOf('&') + 1));
-                        newRow["Longtitude"] = Lib.parseLatitude(titude.Substring(0, titude.IndexOf('&')));
-                    }
-                    catch (Exception)
-                    {
-                        newRow["Latitude"] = "格式错误";
-                        newRow["Longtitude"] = "格式错误";
-                    }
-
-                    this.CollectDataTable.Rows.Add(newRow);
-                    //CollectDataTable.Rows.Add(new object[] { topRow["DataTable.CollectId"].ToString(), topRow["DataTime"].ToString(), topRow["DataValue"].ToString() });
+                    if (topDataSet.Tables[0].Columns[column.ColumnName.ToString()] != null)
+                        newRow[column.ColumnName] = topRow[column.ColumnName].ToString();
                 }
+
+                try
+                {
+                    string titude = newRow["Latitude"].ToString();
+                    newRow["Latitude"] = Lib.parseLatitude(titude.Substring(titude.IndexOf('&') + 1));
+                    newRow["Longtitude"] = Lib.parseLatitude(titude.Substring(0, titude.IndexOf('&')));
+                }
+                catch (Exception)
+                {
+                    newRow["Latitude"] = "格式错误";
+                    newRow["Longtitude"] = "格式错误";
+                }
+
+                this.CollectDataTable.Rows.Add(newRow);
             }
+
             UpdateForm update = delegate()
             {
                 this.dataGridView1.DataSource = CollectDataTable;
-                this.dataGridView1.Columns["CollectInfo.CollectId"].Visible = false;
+                this.dataGridView1.Columns["ID"].Visible = false;
             };
             this.Invoke(update);
-
-            //foreach (DataGridViewColumn column in this.dataGridView1.Columns)
-            //{
-            //    column.Visible = false;
-            //}
-      
-
+            this.isDetail = false;
         }
         public delegate void UpdateForm();
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -157,14 +160,16 @@ namespace Voltage
         public void ViewDetail(int rowIndex)
         {
             this.dataGridView1.Rows[rowIndex].Selected = true;
-            string CollectId = this.dataGridView1.Rows[rowIndex].Cells["DataTable.CollectId"].Value.ToString();
-            string querySql = "Select * from DataTable where CollectId='" + CollectId + "' order by DataTime desc";
+            string CollectInfoId = this.dataGridView1.Rows[rowIndex].Cells["ID"].Value.ToString();
+            string querySql = "Select * from DataTable where CollectInfoId=" + CollectInfoId + " order by DataTime desc";
             DataSet ds = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text, querySql);
             this.oneCollectDataSet = ds;
             this.dataGridView1.DataSource = ds.Tables[0];
             this.dataGridView1.Columns["DataValue"].DefaultCellStyle.Format = "F3";
             this.dataGridView1.Columns["DataTime"].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss"; 
             this.dataGridView1.Columns["DataId"].Visible = false;
+            this.dataGridView1.Columns["CollectInfoId"].Visible = false;
+
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -173,17 +178,16 @@ namespace Voltage
         public int CurrentIndex;
         public void ChangeView()
         {
-            this.isDetail = false;
-            if (this.isDetail)
-            {
-               
-                this.isDetail = false;
-                //this.button1.Text = "查看详细";
-                this.dataGridView1.DataSource = this.CollectDataTable;
-                this.dataGridView1.Columns["CollectInfo.CollectId"].Visible = false;
-                this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
-                this.dataGridView1.Rows[0].Selected=false;
-                this.dataGridView1.Rows[this.CurrentIndex].Selected = true;
+           
+            if (this.isDetail) //如果是详细页面，则不做任何处理
+            {               
+                //this.isDetail = false;
+                ////this.button1.Text = "查看详细";
+                //this.dataGridView1.DataSource = this.CollectDataTable;
+                //this.dataGridView1.Columns["CollectInfo.CollectId"].Visible = false;
+                //this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
+                //this.dataGridView1.Rows[0].Selected=false;
+                //this.dataGridView1.Rows[this.CurrentIndex].Selected = true;
      
             }
             else
@@ -198,11 +202,9 @@ namespace Voltage
                 else
                 {
                     this.CurrentIndex = this.dataGridView1.SelectedRows[0].Index;
-                    //this.isDetail = true;
                     this.ViewDetail(this.dataGridView1.SelectedRows[0].Index);                  
-                    //this.button1.Text = "返回";
                     this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-
+                    this.isDetail = true;
                 }
 
             }
@@ -273,10 +275,11 @@ namespace Voltage
             else
             {
 
-             
-                string CollectId=this.dataGridView1.SelectedRows[0].Cells["DataTable.CollectId"].Value.ToString();
 
-                SetCollectProperty set = new SetCollectProperty(null,CollectId );
+                string CollectInfoId = this.dataGridView1.SelectedRows[0].Cells["ID"].Value.ToString();
+           
+
+                SetCollectProperty set = new SetCollectProperty(null,CollectInfoId );
                 if (set.ShowDialog() == DialogResult.OK)
                 {
                     //DataSet ds = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text, "select * from CollectInfo where CollectId='" + CollectId.ToString()+"'");
@@ -333,25 +336,29 @@ namespace Voltage
         {
             if (this.isDetail)
                 return;
-            if (this.dataGridView1.Columns["CollectInfo.CollectId"] != null)
-            {
-                if (this.dataGridView1.Rows[e.RowIndex].Cells["CollectInfo.CollectId"].Value.ToString().Trim() == "")
-                {
-                    this.dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Orange;
-                }
-            }
+            //if (this.dataGridView1.Columns["CollectId"] != null)
+            //{
+            //    if (this.dataGridView1.Rows[e.RowIndex].Cells["CollectId"].Value.ToString().Trim() == "")
+            //    {
+            //        this.dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Orange;
+            //    }
+            //}
             if (this.dataGridView1.Columns[e.ColumnIndex].Name == "DataValue")
             {
-                Double DataValue =Convert.ToDouble( this.dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
-                e.Value=DataValue.ToString("f3");         
+                string dataValue = this.dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                if (dataValue == "")
+                    e.Value = "无数据";
+                else
+                {
+                    Double DataValue = Convert.ToDouble(dataValue);
+                    e.Value = DataValue.ToString("f3");
+                }
             }
         }
 
         private void button_property_Click(object sender, EventArgs e)
         {
-            string ColumnName="DataTable.CollectId";
-            if (this.isDetail)
-                ColumnName = "CollectId";
+            string ColumnName="CollectId";
             if (this.dataGridView1.SelectedRows.Count > 0)
             {
                 string CollectId= this.dataGridView1.SelectedRows[0].Cells[ColumnName].Value.ToString();

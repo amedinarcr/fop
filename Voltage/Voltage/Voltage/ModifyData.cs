@@ -29,12 +29,19 @@ namespace Voltage
             DataRow row=ds.Tables[0].Rows[0];
             if (row != null)
             {
-                this.textBox_DataId.Text = DataId.ToString();
-                this.textBox_CollectId.Text = row["CollectId"].ToString();
+                this.label_DataId.Text = DataId.ToString();
                 this.textBox_DataTableId.Text = row["DataTableId"].ToString();
                 this.textBox_DataValue.Text = row["DataValue"].ToString();
                 this.dateTimePicker1.Value = Convert.ToDateTime(row["DataTime"].ToString());
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string sql = "update DataTable set DataValue=" + this.textBox_DataValue.Text + ",DataTime='" + this.dateTimePicker1.Value + "',DataTableId='"+this.textBox_DataTableId.Text+"' where DataId="+this.label_DataId.Text;
+
+            OleHelper.ExecuteNonQuery(OleHelper.Conn, CommandType.Text, sql);
+            DialogResult = DialogResult.OK;
         }
     }
 }

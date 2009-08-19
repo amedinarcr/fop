@@ -32,11 +32,14 @@ namespace Voltage
         private void button1_Click(object sender, EventArgs e)
         {
             ArrayList list = new ArrayList();
-            GetCollectID get = new GetCollectID(list,this.textBox_CollectId.Text.Split(','));
-            if (get.ShowDialog() == DialogResult.OK)
-            {
-                this.textBox_CollectId.Text = list[0].ToString();
-            }
+            //GetCollectID get = new GetCollectID(list,this.textBox_CollectId.Text.Split(','));
+            //if (get.ShowDialog() == DialogResult.OK)
+            //{
+            //    this.textBox_CollectId.Text = list[0].ToString();
+            //}
+
+            GetCollectInfoId get = new GetCollectInfoId();
+            get.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)

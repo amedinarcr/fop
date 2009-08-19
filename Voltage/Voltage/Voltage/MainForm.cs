@@ -68,9 +68,14 @@ namespace Voltage
         {
             if (this.OpenSerial())
             {
-                portData.ReceiveEventFlag = false;
-                this.portData.Received += new PortDataReceivedEventHandle(this.portData_Received);
-                this.Text = this.AppName + "(已联机)";
+                
+                if (!this.IsOld)
+                {
+                    this.SerialString = new StringBuilder();
+                    portData.ReceiveEventFlag = false;
+                    this.portData.Received += new PortDataReceivedEventHandle(this.portData_Received);
+                    this.Text = this.AppName + "(已联机)";
+                }
             }
             else
             {
@@ -78,20 +83,39 @@ namespace Voltage
                 this.Text = this.AppName + "(未联机)";
             }
         }
+        public int PortCount = 0;
+        public bool IsOld = false;
         public bool OpenSerial()
         {
 
             try
             {
+
+                
+                //this.SerialInfo.Text = SerialPort.GetPortNames().Length.ToString();
+                //if (PortCount == SerialPort.GetPortNames().Length)
+                //{
+                //    this.IsOld = true;
+                //    return true;
+                //}
+                //else
+                //{
+                //    this.IsOld = false;
+                //    PortCount = SerialPort.GetPortNames().Length;
+                //}
                 foreach (string portName in SerialPort.GetPortNames())
                 {
                     if (this.portData != null && this.portData.port.PortName == portName)
                     {
 
                         if (this.portData.port.IsOpen)
+                        {
+                            this.IsOld = true;
                             return true;
+                        }
                         else
                         {
+
                             this.portData = null;
                             //return true;
                         }
@@ -115,6 +139,7 @@ namespace Voltage
                         if (receiveString.Length == 4 && receiveString == command.Substring(0, 4))
                         {
                             this.portData = tempPort;
+                            this.IsOld = false;
                             return true;
                         }
                         else

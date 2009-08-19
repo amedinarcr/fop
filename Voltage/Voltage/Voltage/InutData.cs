@@ -156,7 +156,14 @@ namespace Voltage
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int ColumnIndex=this.dataGridView1.Columns.Add("状态","状态");
+            int ColumnIndex = 0;
+
+            if (this.dataGridView1.Columns["状态"] == null)
+                ColumnIndex = this.dataGridView1.Columns.Add("状态", "状态");
+            else
+            {
+                ColumnIndex = this.dataGridView1.Columns["状态"].Index;
+            }
             this.dataGridView1.Columns[ColumnIndex].DefaultCellStyle.ForeColor = Color.Green;
             //this.label1.Text = "正在导入数据";
             task=new Thread(new ThreadStart(insertData));
@@ -367,8 +374,13 @@ namespace Voltage
                     case "xls":
                         ReadXlsData(); break;
                 }
+                foreach (DataRow row in this.SerialDataTable.Rows)
+                {
+                    row["DataValue"] = (Convert.ToDouble(row["DataValue"].ToString())).ToString("F3");
+                    row["DataTime"] = (Convert.ToDateTime(row["DataTime"].ToString())).ToString("yyyy-MM-dd HH:mm:ss");
+                }
                 this.dataGridView1.DataSource = this.SerialDataTable;
-
+          
                 this.button2_Click(null, null);
             }
         }
