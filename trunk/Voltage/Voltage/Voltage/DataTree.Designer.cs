@@ -37,6 +37,8 @@
             // treeView1
             // 
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView1.HideSelection = false;
+            this.treeView1.HotTracking = true;
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(215, 617);
@@ -50,7 +52,7 @@
             this.imageList1.Images.SetKeyName(0, "03841.ico");
             this.imageList1.Images.SetKeyName(1, "04161.ico");
             this.imageList1.Images.SetKeyName(2, "04868.ico");
-            this.imageList1.Images.SetKeyName(3, "06066.ico");
+            this.imageList1.Images.SetKeyName(3, "00610.ico");
             // 
             // DataTree
             // 
@@ -66,7 +68,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.ImageList imageList1;
+        public System.Windows.Forms.TreeView treeView1;
     }
 }

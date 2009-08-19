@@ -44,7 +44,7 @@ namespace Voltage
             {
                 string updateSql = "Update CollectInfo set ProtectStationName=@ProtectStationName,TestPileID=@TestPileID,PipelineName=@PipelineName,Mileage=@Mileage,Latitude=@Latitude,Remark=@Remark,"
                     + "LineWidth=@LineWidth,LineStyle=@LineStyle,LineColor=@LineColor,SymbolType=@SymbolType"
-                    + " where CollectId='" + this.label_CollectId.Text + "'";
+                    + " where ID=" + this.CollectId;
                 OleDbParameter p_ProtectStationName = new OleDbParameter("@ProtectStationName", this.textBox_ProtectStationName.Text);
                 OleDbParameter p_TestPileID = new OleDbParameter("@TestPileID", this.textBox_TestPileID.Text);
                 OleDbParameter p_PipelineName = new OleDbParameter("@PipelineName", this.textBox_PipelineName.Text);
@@ -70,7 +70,7 @@ namespace Voltage
             }
             else
             {
-                string insertSql = "insert into COllectInfo(CollectId,ProtectStationName,TestPileID,PipelineName,Mileage,Latitude,Remark,LineWidth,LineStyle,LineColor,SymbolType) values(@CollectId,@ProtectStationName,@TestPileID,@PipelineName,@Mileage,@Latitude,@Remark,@LineWidth,@LineStyle,@LineColor,@SymbolType)";
+                string insertSql = "insert into CollectInfo(CollectId,ProtectStationName,TestPileID,PipelineName,Mileage,Latitude,Remark,LineWidth,LineStyle,LineColor,SymbolType) values(@CollectId,@ProtectStationName,@TestPileID,@PipelineName,@Mileage,@Latitude,@Remark,@LineWidth,@LineStyle,@LineColor,@SymbolType)";
                 OleDbParameter p_CollectId = new OleDbParameter("@CollectId", this.label_CollectId.Text);
                 OleDbParameter p_ProtectStationName = new OleDbParameter("@ProtectStationName", this.textBox_ProtectStationName.Text);
                 OleDbParameter p_TestPileID = new OleDbParameter("@TestPileID", this.textBox_TestPileID.Text);
@@ -117,7 +117,7 @@ namespace Voltage
             //load property
             try
             {
-                DataSet ds = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text, "Select * from CollectInfo where CollectId='" + this.CollectId + "'");
+                DataSet ds = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text, "Select * from CollectInfo where Id=" + this.CollectId);
                 if (ds.Tables[0].Rows.Count > 0)
                 {
                     this.isExist = true;
@@ -149,7 +149,8 @@ namespace Voltage
             }
             catch (Exception)
             {
-                MessageBox.Show("加载熟悉失败!");
+                MessageBox.Show("加载属性失败!");
+                DialogResult = DialogResult.Abort;
                 this.Close();
             }
     

@@ -99,7 +99,7 @@ namespace Voltage
                         row["CollectId"] = CollectorId.Replace(" ", "");
                         string datatime = m_strRXData.Substring(baseNum + i * 24, 17);
                         row["DataTime"] = this.parseDateTime(datatime);
-                        row["DataValue"] = Convert.ToDouble(m_strRXData.Substring(baseNum + i * 24 + 18, 5).Replace(" ", "")) / 1000;
+                        row["DataValue"] = (Convert.ToDouble(m_strRXData.Substring(baseNum + i * 24 + 18, 5).Replace(" ", "")) / 1000).ToString("F3");
                         row["DataTableId"] = DataTableId;
                         j++;
                         dt.Rows.Add(row);
@@ -155,9 +155,16 @@ namespace Voltage
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int ColumnIndex=this.dataGridView1.Columns.Add("状态","状态");
+            int ColumnIndex=0;
+
+            if (this.dataGridView1.Columns["状态"] == null)
+                ColumnIndex = this.dataGridView1.Columns.Add("状态", "状态");
+            else
+            {
+                ColumnIndex = this.dataGridView1.Columns["状态"].Index;
+            }
             this.dataGridView1.Columns[ColumnIndex].DefaultCellStyle.ForeColor = Color.Green;
-            this.label1.Text = "正在导入数据";
+            this.label1.Text = "正在导入数据...";
             task=new Thread(new ThreadStart(insertData));
             task.Start();
         }
@@ -222,6 +229,10 @@ namespace Voltage
                     break;
                 case "DataValue":
                     e.Column.HeaderText = "电位值";
+                    break;
+
+                case "DataTableId":
+                    e.Column.HeaderText = "数据表";
                     break;
             }
   

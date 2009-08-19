@@ -28,39 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox_CollectId = new System.Windows.Forms.TextBox();
             this.textBox_DataTableId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox_DataValue = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox_DataId = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.label_DataId = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 51);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 12);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "采集器编号";
-            // 
-            // textBox_CollectId
-            // 
-            this.textBox_CollectId.Location = new System.Drawing.Point(98, 48);
-            this.textBox_CollectId.Name = "textBox_CollectId";
-            this.textBox_CollectId.Size = new System.Drawing.Size(125, 21);
-            this.textBox_CollectId.TabIndex = 1;
             // 
             // textBox_DataTableId
             // 
-            this.textBox_DataTableId.Location = new System.Drawing.Point(98, 81);
+            this.textBox_DataTableId.Location = new System.Drawing.Point(98, 54);
             this.textBox_DataTableId.Name = "textBox_DataTableId";
             this.textBox_DataTableId.Size = new System.Drawing.Size(125, 21);
             this.textBox_DataTableId.TabIndex = 3;
@@ -68,7 +49,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 84);
+            this.label2.Location = new System.Drawing.Point(27, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 12);
             this.label2.TabIndex = 2;
@@ -76,7 +57,7 @@
             // 
             // textBox_DataValue
             // 
-            this.textBox_DataValue.Location = new System.Drawing.Point(98, 113);
+            this.textBox_DataValue.Location = new System.Drawing.Point(98, 20);
             this.textBox_DataValue.Name = "textBox_DataValue";
             this.textBox_DataValue.Size = new System.Drawing.Size(125, 21);
             this.textBox_DataValue.TabIndex = 5;
@@ -84,7 +65,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(51, 116);
+            this.label3.Location = new System.Drawing.Point(51, 23);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 12);
             this.label3.TabIndex = 4;
@@ -93,7 +74,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(39, 149);
+            this.label4.Location = new System.Drawing.Point(39, 91);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 12);
             this.label4.TabIndex = 6;
@@ -103,31 +84,14 @@
             // 
             this.dateTimePicker1.CustomFormat = "yyyy-MM-dd HH:mm:ss";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(98, 145);
+            this.dateTimePicker1.Location = new System.Drawing.Point(98, 87);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 21);
             this.dateTimePicker1.TabIndex = 7;
             // 
-            // textBox_DataId
-            // 
-            this.textBox_DataId.Enabled = false;
-            this.textBox_DataId.Location = new System.Drawing.Point(98, 18);
-            this.textBox_DataId.Name = "textBox_DataId";
-            this.textBox_DataId.Size = new System.Drawing.Size(125, 21);
-            this.textBox_DataId.TabIndex = 9;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(39, 21);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 12);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "数据编号";
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(250, 182);
+            this.button1.Location = new System.Drawing.Point(221, 130);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 10;
@@ -137,30 +101,37 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(169, 182);
+            this.button2.Location = new System.Drawing.Point(140, 130);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 11;
             this.button2.Text = "修改";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label_DataId
+            // 
+            this.label_DataId.AutoSize = true;
+            this.label_DataId.Location = new System.Drawing.Point(256, 56);
+            this.label_DataId.Name = "label_DataId";
+            this.label_DataId.Size = new System.Drawing.Size(0, 12);
+            this.label_DataId.TabIndex = 12;
+            this.label_DataId.Visible = false;
             // 
             // ModifyData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(337, 213);
+            this.ClientSize = new System.Drawing.Size(322, 167);
+            this.Controls.Add(this.label_DataId);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox_DataId);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox_DataValue);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox_DataTableId);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox_CollectId);
-            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -176,17 +147,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox_CollectId;
         private System.Windows.Forms.TextBox textBox_DataTableId;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox_DataValue;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox_DataId;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label_DataId;
     }
 }

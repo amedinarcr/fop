@@ -22,12 +22,38 @@ namespace Voltage
             this.grid = grid as UC_DataGridCharting;
             InitializeComponent();
         }
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        public void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
             switch (e.Node.Name.Substring(0, e.Node.Name.IndexOf('_')))
             {
                 case "CollectId":
-                    this.grid.ShowData("('" + e.Node.Text + "')");
+                    string CollectInfoId = e.Node.Name.Substring(e.Node.Name.IndexOf('_') + 1);
+                    this.grid.ShowData("(" + CollectInfoId + ")");
+                    break;
+
+                case "ProtectStationName":
+                    System.Collections.ArrayList CollectInfoList = new System.Collections.ArrayList();
+                    foreach (TreeNode node in e.Node.Nodes)
+                    {
+                        CollectInfoList.Add(node.Name.Substring(node.Name.IndexOf('_') + 1));
+                    }
+                    this.grid.ShowCollectInfo(CollectInfoList);
+                    break;
+
+                case "PipeLineName":
+                    CollectInfoList = new System.Collections.ArrayList();                  
+                    foreach (TreeNode node in e.Node.Nodes)
+                    {
+                        foreach (TreeNode CollectNode in node.Nodes)
+                        {
+                            CollectInfoList.Add(CollectNode.Name.Substring(CollectNode.Name.IndexOf('_') + 1));
+                        }
+                    }
+                    this.grid.ShowCollectInfo(CollectInfoList);
+                    break;
+
+                case "Root":
+                    this.grid.ShowAllCollectInfo();
                     break;
             }
 
@@ -61,7 +87,7 @@ namespace Voltage
                     //PipeLineNameNode.Tag = row["ID"].ToString();
                     PipeLineNameNode.ImageIndex = 0;
                     PipeLineNameNode.SelectedImageIndex = 0;
-                    this.treeView1.Nodes.Add(PipeLineNameNode);
+                    rootNode.Nodes.Add(PipeLineNameNode);
                 }
             }
 
@@ -89,7 +115,7 @@ namespace Voltage
                 if (ProtectStationNameNode.Nodes.IndexOfKey("CollectId_" + row["CollectId"].ToString()) == -1)
                 {
                     TreeNode node = new TreeNode(row["CollectId"].ToString());
-                    node.Name = "CollectId_"+row["CollectId"].ToString();
+                    node.Name = "CollectId_"+row["ID"].ToString();
                     node.ImageIndex = 2;
                     node.SelectedImageIndex = 2;
                     ProtectStationNameNode.Nodes.Add(node);                    

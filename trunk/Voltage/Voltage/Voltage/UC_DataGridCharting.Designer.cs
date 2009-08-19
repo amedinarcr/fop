@@ -31,11 +31,11 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
-            this.button_property = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.dataTree1 = new Voltage.DataTree();
+            this.button_property = new System.Windows.Forms.Button();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -63,8 +63,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.button_property);
             this.splitContainer1.Panel2.Controls.Add(this.button3);
             this.splitContainer1.Panel2.Controls.Add(this.button2);
-            this.splitContainer1.Size = new System.Drawing.Size(699, 367);
-            this.splitContainer1.SplitterDistance = 562;
+            this.splitContainer1.Size = new System.Drawing.Size(729, 367);
+            this.splitContainer1.SplitterDistance = 592;
             this.splitContainer1.TabIndex = 0;
             // 
             // dataGridView1
@@ -81,7 +81,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(562, 367);
+            this.dataGridView1.Size = new System.Drawing.Size(592, 367);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellLeave);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
@@ -99,16 +99,6 @@
             this.button4.Text = "计算";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button_property
-            // 
-            this.button_property.Location = new System.Drawing.Point(13, 90);
-            this.button_property.Name = "button_property";
-            this.button_property.Size = new System.Drawing.Size(112, 31);
-            this.button_property.TabIndex = 3;
-            this.button_property.Text = "设置属性";
-            this.button_property.UseVisualStyleBackColor = true;
-            this.button_property.Click += new System.EventHandler(this.button_property_Click);
             // 
             // button3
             // 
@@ -144,7 +134,7 @@
             // 
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer1);
             this.splitContainer2.Size = new System.Drawing.Size(844, 367);
-            this.splitContainer2.SplitterDistance = 141;
+            this.splitContainer2.SplitterDistance = 111;
             this.splitContainer2.TabIndex = 1;
             // 
             // dataTree1
@@ -152,9 +142,20 @@
             this.dataTree1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataTree1.Location = new System.Drawing.Point(0, 0);
             this.dataTree1.Name = "dataTree1";
-            this.dataTree1.Size = new System.Drawing.Size(141, 367);
+            this.dataTree1.Size = new System.Drawing.Size(111, 367);
             this.dataTree1.TabIndex = 0;
             this.dataTree1.Load += new System.EventHandler(this.dataTree1_Load);
+            // 
+            // button_property
+            // 
+            this.button_property.Location = new System.Drawing.Point(13, 90);
+            this.button_property.Name = "button_property";
+            this.button_property.Size = new System.Drawing.Size(112, 31);
+            this.button_property.TabIndex = 3;
+            this.button_property.Text = "设置属性";
+            this.button_property.UseVisualStyleBackColor = true;
+            this.button_property.Visible = false;
+            this.button_property.Click += new System.EventHandler(this.button_property_Click);
             // 
             // UC_DataGridCharting
             // 
@@ -181,10 +182,10 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button_property;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private DataTree dataTree1;
+        private System.Windows.Forms.Button button_property;
 
     }
 }

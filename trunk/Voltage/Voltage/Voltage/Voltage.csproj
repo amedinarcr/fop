@@ -93,6 +93,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GetCollectInfoId.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GetCollectInfoId.Designer.cs">
+      <DependentUpon>GetCollectInfoId.cs</DependentUpon>
+    </Compile>
     <Compile Include="getCollectorData.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +207,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GetCollectInfoId.resx">
+      <DependentUpon>GetCollectInfoId.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="getCollectorData.resx">
