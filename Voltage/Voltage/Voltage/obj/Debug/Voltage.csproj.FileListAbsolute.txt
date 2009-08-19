@@ -180,3 +180,4 @@ E:\Voltage Google\Voltage\Voltage\Voltage\obj\Debug\Voltage.TrustInfo.xml
 E:\Voltage Google\Voltage\Voltage\Voltage\obj\Debug\Voltage.exe.manifest
 E:\Voltage Google\Voltage\Voltage\Voltage\obj\Debug\Voltage.application
 E:\Voltage Google\Voltage\Voltage\Voltage\obj\Debug\Voltage.DataTree.resources
+E:\Voltage Google\Voltage\Voltage\Voltage\obj\Debug\Voltage.GetCollectInfoId.resources
