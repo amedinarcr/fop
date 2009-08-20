@@ -48,11 +48,11 @@ namespace Voltage
             this.dateTimePicker_StartTime.CustomFormat = "yyyy-MM-dd         hh:mm:ss";
             this.dateTimePicker_EndTime.CustomFormat = "yyyy-MM-dd         hh:mm:ss";
 
-            DataSet CollectDataSet = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text, "select distinct CollectId from DataTable order by CollectId asc");
+            DataSet CollectDataSet = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text, "select distinct CollectInfoId from DataTable order by CollectInfoId asc");
             StringBuilder Collectbuilder = new StringBuilder();
             foreach (DataRow row in CollectDataSet.Tables[0].Rows)
             {
-                Collectbuilder.Append("'" + row[0].ToString() + "',");
+                Collectbuilder.Append(row[0].ToString() + ",");
             }
             if (Collectbuilder.ToString().Length > 1)
             {
