@@ -1,0 +1,11 @@
+C:\Downloads\Source\Source\TabStripApp\bin\Debug\TabStripApp.exe
+C:\Downloads\Source\Source\TabStripApp\bin\Debug\TabStripApp.pdb
+C:\Downloads\Source\Source\TabStripApp\bin\Debug\TabStripControlLibrary.dll
+C:\Downloads\Source\Source\TabStripApp\bin\Debug\TabStripControlLibrary.pdb
+C:\Downloads\Source\Source\TabStripApp\obj\Debug\ResolveAssemblyReference.cache
+C:\Downloads\Source\Source\TabStripApp\obj\Debug\TabStripApp.Form1.resources
+C:\Downloads\Source\Source\TabStripApp\obj\Debug\TabStripApp.Properties.Resources.resources
+C:\Downloads\Source\Source\TabStripApp\obj\Debug\TabStripApp.csproj.GenerateResource.Cache
+C:\Downloads\Source\Source\TabStripApp\obj\Debug\TabStripApp.exe
+C:\Downloads\Source\Source\TabStripApp\obj\Debug\TabStripApp.pdb
+C:\Downloads\Source\Source\TabStripApp\obj\Debug\TabStripApp.Form2.resources
