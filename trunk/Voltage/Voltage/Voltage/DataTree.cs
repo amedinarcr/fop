@@ -77,7 +77,7 @@ namespace Voltage
             DataSet CollectInfoDataSet = OleHelper.ExecuteDataset("Select * from CollectInfo");
             foreach (DataRow row in CollectInfoDataSet.Tables[0].Rows)
             {
-                if (this.treeView1.Nodes.IndexOfKey("PipeLineName_" + row["PipeLineName"].ToString()) == -1)
+                if (this.treeView1.Nodes[0].Nodes.IndexOfKey("PipeLineName_" + row["PipeLineName"].ToString()) == -1)
                 {
                     string PipeLineName = row["PipeLineName"].ToString();
                     if (PipeLineName.Trim() == string.Empty)
@@ -94,7 +94,7 @@ namespace Voltage
             //绑定保护站
             foreach (DataRow row in CollectInfoDataSet.Tables[0].Rows)
             {
-                TreeNode PipeLineNameNode = this.treeView1.Nodes.Find("PipeLineName_" + row["PipeLineName"].ToString(),false)[0];
+                TreeNode PipeLineNameNode = this.treeView1.Nodes.Find("PipeLineName_" + row["PipeLineName"].ToString(),true)[0];
                 if (PipeLineNameNode.Nodes.IndexOfKey("ProtectStationName_" + row["ProtectStationName"].ToString()) == -1)
                 {
                     string ProtectStationName = row["ProtectStationName"].ToString();

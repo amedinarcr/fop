@@ -15,7 +15,7 @@ namespace Voltage
         {
             get 
             {
-                return new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=E:\Voltage Google\Voltage\Voltage\Voltage\bin\Debug\SerialData.mdb");
+                return new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\(E-drive)\Voltage Google\Voltage\Voltage\Voltage\bin\Debug\SerialData.mdb");
                 //return new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source="+System.Windows.Forms.Application.StartupPath+"\\SerialData.mdb");
             }
         }

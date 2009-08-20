@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.dataTree1 = new Voltage.DataTree();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dataTree1 = new Voltage.DataTree();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -56,13 +56,15 @@
             this.splitContainer1.SplitterDistance = 440;
             this.splitContainer1.TabIndex = 0;
             // 
-            // dataTree1
+            // button2
             // 
-            this.dataTree1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataTree1.Location = new System.Drawing.Point(0, 0);
-            this.dataTree1.Name = "dataTree1";
-            this.dataTree1.Size = new System.Drawing.Size(259, 440);
-            this.dataTree1.TabIndex = 0;
+            this.button2.Location = new System.Drawing.Point(92, 9);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "取消";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -72,15 +74,16 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "确定";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // dataTree1
             // 
-            this.button2.Location = new System.Drawing.Point(92, 9);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "取消";
-            this.button2.UseVisualStyleBackColor = true;
+            this.dataTree1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataTree1.Location = new System.Drawing.Point(0, 0);
+            this.dataTree1.Margin = new System.Windows.Forms.Padding(10);
+            this.dataTree1.Name = "dataTree1";
+            this.dataTree1.Size = new System.Drawing.Size(259, 440);
+            this.dataTree1.TabIndex = 0;
             // 
             // GetCollectInfoId
             // 

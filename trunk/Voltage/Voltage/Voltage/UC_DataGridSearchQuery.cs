@@ -37,9 +37,17 @@ namespace Voltage
             //{
             //    this.textBox_CollectId.Text = list[0].ToString();
             //}
-
-            GetCollectInfoId get = new GetCollectInfoId();
-            get.ShowDialog();
+            ArrayList CollectInfoList=new ArrayList();
+            GetCollectInfoId get = new GetCollectInfoId(CollectInfoList);
+            if (get.ShowDialog() == DialogResult.OK)
+            {
+                string CollectInfoListString = "";
+                foreach (string CollectInfoId in CollectInfoList)
+                    CollectInfoListString += CollectInfoId + ",";
+                if (CollectInfoList.Count != 0)
+                    CollectInfoListString = CollectInfoListString.Substring(0, CollectInfoListString.Length - 1);
+                this.textBox_CollectId.Text = CollectInfoListString;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -50,7 +58,7 @@ namespace Voltage
                 MessageBox.Show("请先选择采集编号");
                 return;
             }
-            this.ds = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text, "select CollectId,DataTime,DataValue from DataTable where CollectId in (" + this.textBox_CollectId.Text + ") and DataTime>=#" + this.dateTimePicker_StartTime.Value.ToString() + "# and DataTime<=#" + this.dateTimePicker_EndTime.Value.ToString() + "# order by DataTime asc");
+            this.ds = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text, "select CollectInfo.CollectId as CollectId,DataTime,DataValue from DataTable left join CollectInfo on DataTable.CollectInfoId=CollectInfo.ID where DataTable.CollectInfoId in (" + this.textBox_CollectId.Text + ") and DataTime>=#" + this.dateTimePicker_StartTime.Value.ToString() + "# and DataTime<=#" + this.dateTimePicker_EndTime.Value.ToString() + "# order by DataTime asc");
             if (ds.Tables[0].Rows.Count > 0)
             {
                 ZendChart zend=this.ParentForm as ZendChart;
@@ -59,8 +67,7 @@ namespace Voltage
             }
                 
             else
-                MessageBox.Show("没有数据");
-                
+                MessageBox.Show("没有数据");                
         }
 
         private void UC_DataGridSearchQuery_Load(object sender, EventArgs e)
