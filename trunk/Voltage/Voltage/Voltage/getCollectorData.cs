@@ -177,7 +177,13 @@ namespace Voltage
             {
                 string CollectId = row["CollectId"].ToString();
                 DateTime dataTime = Convert.ToDateTime(row["DataTime"].ToString());
-            
+
+                //首先检查采集器信息表中是否有相应的配置信息，如果没有则添加默认配置
+                string CollectInfoId = OleHelper.ExecuteScalar(OleHelper.Conn, CommandType.Text, "select ID from CollectInfo where CollectId='" + CollectId + "' and PipeLineName='" + Voltage.Properties.Settings.Default.PipelineName + "'").ToString();
+                if (CollectInfoId == null)
+                {
+                    
+                }
                 string querySql = "Select DataId from DataTable where CollectId='" + CollectId + "' and DataTime=#" + dataTime.ToString() + "#";
               
                 if (OleHelper.ExecuteScalar(OleHelper.Conn, CommandType.Text, querySql) == null)
