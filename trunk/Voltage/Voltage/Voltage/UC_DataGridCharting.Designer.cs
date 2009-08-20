@@ -31,11 +31,11 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
+            this.button_property = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.dataTree1 = new Voltage.DataTree();
-            this.button_property = new System.Windows.Forms.Button();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -89,6 +89,7 @@
             this.dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView1_RowsAdded);
             this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEnter);
             this.dataGridView1.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dataGridView1_ColumnAdded);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // button4
             // 
@@ -99,6 +100,17 @@
             this.button4.Text = "计算";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button_property
+            // 
+            this.button_property.Location = new System.Drawing.Point(13, 90);
+            this.button_property.Name = "button_property";
+            this.button_property.Size = new System.Drawing.Size(112, 31);
+            this.button_property.TabIndex = 3;
+            this.button_property.Text = "设置属性";
+            this.button_property.UseVisualStyleBackColor = true;
+            this.button_property.Visible = false;
+            this.button_property.Click += new System.EventHandler(this.button_property_Click);
             // 
             // button3
             // 
@@ -145,17 +157,6 @@
             this.dataTree1.Size = new System.Drawing.Size(111, 367);
             this.dataTree1.TabIndex = 0;
             this.dataTree1.Load += new System.EventHandler(this.dataTree1_Load);
-            // 
-            // button_property
-            // 
-            this.button_property.Location = new System.Drawing.Point(13, 90);
-            this.button_property.Name = "button_property";
-            this.button_property.Size = new System.Drawing.Size(112, 31);
-            this.button_property.TabIndex = 3;
-            this.button_property.Text = "设置属性";
-            this.button_property.UseVisualStyleBackColor = true;
-            this.button_property.Visible = false;
-            this.button_property.Click += new System.EventHandler(this.button_property_Click);
             // 
             // UC_DataGridCharting
             // 

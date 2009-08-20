@@ -178,14 +178,14 @@ namespace Voltage
                 int i = 0;
                 foreach (DataRow row in this.SerialDataTable.Rows)
                 {
-                    string CollectId = row["CollectId"].ToString();
+                    string CollectId = row["CollectInfoId"].ToString();
                     DateTime dataTime = Convert.ToDateTime(row["DataTime"].ToString());
 
-                    string querySql = "Select DataId from DataTable where CollectId='" + CollectId + "' and DataTime=#" + dataTime.ToString() + "#";
+                    string querySql = "Select DataId from DataTable where CollectInfoId=" + CollectId + " and DataTime=#" + dataTime.ToString() + "#";
 
                     if (OleHelper.ExecuteScalar(OleHelper.Conn, CommandType.Text, querySql) == null)
                     {
-                        string insertSql = "insert into DataTable(CollectId,DataTime,DataValue,DataTableId) values('" + CollectId + "',#" + dataTime.ToString() + "#," + row["DataValue"].ToString() + ",'" + row["DataTableId"].ToString() + "')";
+                        string insertSql = "insert into DataTable(CollectInfoId,DataTime,DataValue,DataTableId) values(" + CollectId + ",#" + dataTime.ToString() + "#," + row["DataValue"].ToString() + ",'" + row["DataTableId"].ToString() + "')";
                         OleHelper.ExecuteNonQuery(OleHelper.Conn, CommandType.Text, insertSql);
                         insertCount++;
                         UpdateForm update = delegate()
@@ -215,13 +215,14 @@ namespace Voltage
                 foreach (DataRow row in this.CollectInfoTable.Rows)
                 {
                     string PipelineName = row["PipelineName"].ToString();
-                    string CollectId = row["CollectId"].ToString();
+                    string ID = row["ID"].ToString();
                     OleDbParameter p_PipelineName = new OleDbParameter("PipelineName", PipelineName);
-                    OleDbParameter p_CollectId = new OleDbParameter("CollectId", CollectId);
-                    object CollectIdObject = OleHelper.ExecuteScalar(OleHelper.Conn, CommandType.Text, "select CollectId from CollectInfo where PipelineName=@PipelineName and CollectId=@CollectId", new OleDbParameter[] { p_PipelineName, p_CollectId });
+                    OleDbParameter p_CollectId = new OleDbParameter("CollectId", ID);
+                    p_CollectId.OleDbType = OleDbType.Integer;
+                    object CollectIdObject = OleHelper.ExecuteScalar(OleHelper.Conn, CommandType.Text, "select CollectId from CollectInfo where PipelineName=@PipelineName and ID=@CollectId", new OleDbParameter[] { p_PipelineName, p_CollectId });
                     if (CollectIdObject == null)
                     {
-                        string insertSql = "insert into COllectInfo(CollectId,ProtectStationName,TestPileID,PipelineName,Mileage,Latitude,Remark,LineWidth,LineStyle,LineColor,SymbolType) values(@CollectId,@ProtectStationName,@TestPileID,@PipelineName,@Mileage,@Latitude,@Remark,@LineWidth,@LineStyle,@LineColor,@SymbolType)";
+                        string insertSql = "insert into CollectInfo(CollectId,ProtectStationName,TestPileID,PipelineName,Mileage,Latitude,Remark,LineWidth,LineStyle,LineColor,SymbolType) values(@CollectId,@ProtectStationName,@TestPileID,@PipelineName,@Mileage,@Latitude,@Remark,@LineWidth,@LineStyle,@LineColor,@SymbolType)";
                         //OleDbParameter p_CollectId = new OleDbParameter("@CollectId", CollectId);
                         OleDbParameter p_ProtectStationName = new OleDbParameter("@ProtectStationName", row["ProtectStationName"].ToString());
                         OleDbParameter p_TestPileID = new OleDbParameter("@TestPileID", row["TestPileID"].ToString());
@@ -343,12 +344,12 @@ namespace Voltage
                 int insertCount = 0;
                 foreach (DataRow row in ds.Tables[0].Rows)
                 {
-                    string CollectId = row["CollectId"].ToString();
+                    string CollectId = row["CollectInfoId"].ToString();
                     DateTime dataTime = Convert.ToDateTime(row["DataTime"].ToString());
-                    string querySql = "Select DataId from DataTable where CollectId='" + CollectId + "' and DataTime=#" + dataTime.ToString() + "#";
+                    string querySql = "Select DataId from DataTable where CollectInfoId='" + CollectId + "' and DataTime=#" + dataTime.ToString() + "#";
                     if (OleHelper.ExecuteScalar(OleHelper.Conn, CommandType.Text, querySql) == null)
                     {
-                        string insertSql = "insert into DataTable(CollectId,DataTime,DataValue) values('" + CollectId + "',#" + row["DataTime"].ToString() + "#," + row["DataValue"].ToString() + ")";
+                        string insertSql = "insert into DataTable(CollectInfoId,DataTime,DataValue) values('" + CollectId + "',#" + row["DataTime"].ToString() + "#," + row["DataValue"].ToString() + ")";
                         OleHelper.ExecuteNonQuery(OleHelper.Conn, CommandType.Text, insertSql);
                         insertCount++;
                     }
@@ -380,7 +381,7 @@ namespace Voltage
                     row["DataTime"] = (Convert.ToDateTime(row["DataTime"].ToString())).ToString("yyyy-MM-dd HH:mm:ss");
                 }
                 this.dataGridView1.DataSource = this.SerialDataTable;
-          
+                this.dataGridView1.Columns["CollectInfoId"].Visible = false;
                 this.button2_Click(null, null);
             }
         }

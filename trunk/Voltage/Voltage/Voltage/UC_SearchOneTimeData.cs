@@ -40,7 +40,7 @@ namespace Voltage
         private void button2_Click(object sender, EventArgs e)
         {
             ArrayList CollectInfoList = new ArrayList();
-            GetCollectInfoId get = new GetCollectInfoId(CollectInfoList);
+            GetCollectInfoId2 get = new GetCollectInfoId2(CollectInfoList);
             if (get.ShowDialog() == DialogResult.OK)
             {
                 string CollectInfoListString = "";

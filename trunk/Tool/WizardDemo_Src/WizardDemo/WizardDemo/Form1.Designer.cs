@@ -55,7 +55,7 @@ namespace WizardDemo
             this.wizardControl1.Name = "wizardControl1";
             this.wizardControl1.NextButtonEnabled = true;
             this.wizardControl1.NextButtonVisible = true;
-            this.wizardControl1.Size = new System.Drawing.Size(532, 392);
+            this.wizardControl1.Size = new System.Drawing.Size(532, 362);
             this.wizardControl1.WizardSteps.AddRange(new WizardBase.WizardStep[] {
             this.startStep1,
             this.licenceStep1,
@@ -104,9 +104,9 @@ namespace WizardDemo
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(532, 392);
+            this.ClientSize = new System.Drawing.Size(532, 362);
             this.Controls.Add(this.wizardControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;

@@ -10,3 +10,15 @@ C:\Downloads\WizardDemo_Src\WizardDemo\WizardDemo\obj\Debug\WizardDemo.exe.licen
 C:\Downloads\WizardDemo_Src\WizardDemo\WizardDemo\obj\Debug\WizardDemo.exe
 C:\Downloads\WizardDemo_Src\WizardDemo\WizardDemo\obj\Debug\WizardDemo.pdb
 C:\Downloads\WizardDemo_Src\WizardDemo\WizardDemo\obj\Debug\WizardDemo.Form2.resources
+D:\(E-drive)\Voltage Google\Tool\WizardDemo_Src\WizardDemo\WizardDemo\obj\Debug\WizardDemo.exe
+D:\(E-drive)\Voltage Google\Tool\WizardDemo_Src\WizardDemo\WizardDemo\obj\Debug\WizardDemo.pdb
+D:\(E-drive)\Voltage Google\Tool\WizardDemo_Src\WizardDemo\WizardDemo\obj\Debug\ResolveAssemblyReference.cache
+D:\(E-drive)\Voltage Google\Tool\WizardDemo_Src\WizardDemo\WizardDemo\obj\Debug\WizardDemo.Form1.resources
+D:\(E-drive)\Voltage Google\Tool\WizardDemo_Src\WizardDemo\WizardDemo\obj\Debug\WizardDemo.Form2.resources
+D:\(E-drive)\Voltage Google\Tool\WizardDemo_Src\WizardDemo\WizardDemo\obj\Debug\WizardDemo.Properties.Resources.resources
+D:\(E-drive)\Voltage Google\Tool\WizardDemo_Src\WizardDemo\WizardDemo\obj\Debug\WizardDemo.csproj.GenerateResource.Cache
+D:\(E-drive)\Voltage Google\Tool\WizardDemo_Src\WizardDemo\WizardDemo\obj\Debug\WizardDemo.exe.licenses
+D:\(E-drive)\Voltage Google\Tool\WizardDemo_Src\WizardDemo\WizardDemo\bin\Debug\WizardDemo.exe
+D:\(E-drive)\Voltage Google\Tool\WizardDemo_Src\WizardDemo\WizardDemo\bin\Debug\WizardDemo.pdb
+D:\(E-drive)\Voltage Google\Tool\WizardDemo_Src\WizardDemo\WizardDemo\bin\Debug\WizardBase.dll
+D:\(E-drive)\Voltage Google\Tool\WizardDemo_Src\WizardDemo\WizardDemo\bin\Debug\WizardBase.pdb

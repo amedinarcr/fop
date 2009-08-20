@@ -193,7 +193,6 @@ D:\(E-drive)\Voltage Google\Voltage\Voltage\Voltage\obj\Debug\ResolveAssemblyRef
 D:\(E-drive)\Voltage Google\Voltage\Voltage\Voltage\obj\Debug\Voltage.ChoseOupputDataType.resources
 D:\(E-drive)\Voltage Google\Voltage\Voltage\Voltage\obj\Debug\Voltage.DataTree.resources
 D:\(E-drive)\Voltage Google\Voltage\Voltage\Voltage\obj\Debug\Voltage.Form1.resources
-D:\(E-drive)\Voltage Google\Voltage\Voltage\Voltage\obj\Debug\Voltage.GetCollectInfoId.resources
 D:\(E-drive)\Voltage Google\Voltage\Voltage\Voltage\obj\Debug\Voltage.getCollectorData.resources
 D:\(E-drive)\Voltage Google\Voltage\Voltage\Voltage\obj\Debug\Voltage.GetDataArithmetic.resources
 D:\(E-drive)\Voltage Google\Voltage\Voltage\Voltage\obj\Debug\Voltage.InputMeasure.resources
@@ -222,3 +221,4 @@ D:\(E-drive)\Voltage Google\Voltage\Voltage\Voltage\obj\Debug\Voltage.csproj.Gen
 D:\(E-drive)\Voltage Google\Voltage\Voltage\Voltage\obj\Debug\Voltage.TrustInfo.xml
 D:\(E-drive)\Voltage Google\Voltage\Voltage\Voltage\obj\Debug\Voltage.exe.manifest
 D:\(E-drive)\Voltage Google\Voltage\Voltage\Voltage\obj\Debug\Voltage.application
+D:\(E-drive)\Voltage Google\Voltage\Voltage\Voltage\obj\Debug\Voltage.GetCollectInfoId2.resources

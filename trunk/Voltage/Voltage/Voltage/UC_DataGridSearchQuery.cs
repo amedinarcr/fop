@@ -38,7 +38,7 @@ namespace Voltage
             //    this.textBox_CollectId.Text = list[0].ToString();
             //}
             ArrayList CollectInfoList=new ArrayList();
-            GetCollectInfoId get = new GetCollectInfoId(CollectInfoList);
+            GetCollectInfoId2 get = new GetCollectInfoId2(CollectInfoList);
             if (get.ShowDialog() == DialogResult.OK)
             {
                 string CollectInfoListString = "";

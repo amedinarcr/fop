@@ -9,15 +9,15 @@ using System.Windows.Forms;
 
 namespace Voltage
 {
-    public partial class GetCollectInfoId : Form
+    public partial class GetCollectInfoId2 : Form
     {
         public ArrayList CollectInfoList;
-        public GetCollectInfoId()
+        public GetCollectInfoId2()
         {
             InitializeComponent();
           
         }
-        public GetCollectInfoId(ArrayList CollectInfoList)
+        public GetCollectInfoId2(ArrayList CollectInfoList)
         {
             this.CollectInfoList = CollectInfoList;
             InitializeComponent();
