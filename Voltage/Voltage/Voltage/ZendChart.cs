@@ -30,6 +30,12 @@ namespace Voltage
             myPane.YAxis.Scale.Max = 1.5;
             // Set the titles
             myPane.Title.Text = "阴极电位采集系统";
+            myPane.Title.IsVisible = false;
+            myPane.XAxis.Title.IsVisible = false;
+            myPane.YAxis.Title.IsVisible = false;
+            myPane.XAxis.Title.FontSpec.Size = 12;
+            myPane.YAxis.Title.FontSpec.Size = 9;
+
             myPane.Title.FontSpec.IsDropShadow = true;
             myPane.Title.FontSpec.DropShadowColor = Color.FromArgb(50, 0, 0, 0);
             myPane.Title.FontSpec.DropShadowOffset = 0.2f;
@@ -43,8 +49,7 @@ namespace Voltage
             myPane.YAxis.Title.FontSpec.DropShadowOffset = 0.2f;
 
 
-            myPane.XAxis.Title.FontSpec.Size = 12;
-            myPane.YAxis.Title.FontSpec.Size = 12;
+
             // Fill the axis background with a color gradient
             myPane.Chart.Fill = new Fill(Color.FromArgb(255, 255, 245), Color.FromArgb(255, 255, 190), 90F);
             // Fill the pane background with a gradient

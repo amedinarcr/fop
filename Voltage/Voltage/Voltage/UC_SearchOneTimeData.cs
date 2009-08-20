@@ -25,7 +25,7 @@ namespace Voltage
                 MessageBox.Show("请先选择采集编号");
                 return;
             }
-            string sql = "select DataTable.CollectId as CollectId,DataValue,Mileage from DataTable left join CollectInfo on DataTable.CollectId=CollectInfo.CollectId where DataTable.CollectId in (" + this.textBox_CollectId.Text + ") and DataTime=#" + this.dateTimePicker1.Value.ToString() + "#";
+            string sql = "select CollectInfo.CollectId as CollectId,DataValue,Mileage from DataTable left join CollectInfo on DataTable.CollectInfoId=CollectInfo.ID where DataTable.CollectInfoId in (" + this.textBox_CollectId.Text + ") and DataTime=#" + this.dateTimePicker1.Value.ToString() + "#";
             DataSet ds = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text,sql);
             OneTimeZendChart zend = this.ParentForm as OneTimeZendChart;
             zend.ShowChartingForOneTime(ds);
@@ -39,11 +39,16 @@ namespace Voltage
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ArrayList list = new ArrayList();
-            GetCollectID get = new GetCollectID(list, this.textBox_CollectId.Text.Split(','));
+            ArrayList CollectInfoList = new ArrayList();
+            GetCollectInfoId get = new GetCollectInfoId(CollectInfoList);
             if (get.ShowDialog() == DialogResult.OK)
             {
-                this.textBox_CollectId.Text = list[0].ToString();
+                string CollectInfoListString = "";
+                foreach (string CollectInfoId in CollectInfoList)
+                    CollectInfoListString += CollectInfoId + ",";
+                if (CollectInfoList.Count != 0)
+                    CollectInfoListString = CollectInfoListString.Substring(0, CollectInfoListString.Length - 1);
+                this.textBox_CollectId.Text = CollectInfoListString;
             }
         }
     }

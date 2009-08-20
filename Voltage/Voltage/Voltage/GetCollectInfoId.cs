@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,10 +11,16 @@ namespace Voltage
 {
     public partial class GetCollectInfoId : Form
     {
+        public ArrayList CollectInfoList;
         public GetCollectInfoId()
         {
             InitializeComponent();
           
+        }
+        public GetCollectInfoId(ArrayList CollectInfoList)
+        {
+            this.CollectInfoList = CollectInfoList;
+            InitializeComponent();
         }
 
         private void GetCollectInfoId_Load(object sender, EventArgs e)
@@ -32,6 +39,28 @@ namespace Voltage
             {
               // foreach(TreeNode node in 
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.GetNode(this.dataTree1.treeView1.Nodes[0]);
+            DialogResult = DialogResult.OK;
+        }
+
+        public void GetNode(TreeNode parentNode)
+        {
+            foreach (TreeNode node in parentNode.Nodes)
+            {
+                if (node.Name.IndexOf("CollectId_") != -1&&node.Checked==true)
+                    this.CollectInfoList.Add(node.Name.Substring(node.Name.IndexOf('_') + 1));
+                if (node.Nodes.Count != 0)
+                    this.GetNode(node);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
         }
     }
 }
