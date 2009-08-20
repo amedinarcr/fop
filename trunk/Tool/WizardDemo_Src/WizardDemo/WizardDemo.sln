@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WizardDemo", "WizardDemo\WizardDemo.csproj", "{67E5EC3F-005C-4DF5-9C65-5D236937172C}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WizardBase", "WizardBase\WizardBase.csproj", "{C742E00B-3933-4834-BC41-19848E1E3AF2}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{67E5EC3F-005C-4DF5-9C65-5D236937172C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67E5EC3F-005C-4DF5-9C65-5D236937172C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67E5EC3F-005C-4DF5-9C65-5D236937172C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67E5EC3F-005C-4DF5-9C65-5D236937172C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C742E00B-3933-4834-BC41-19848E1E3AF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C742E00B-3933-4834-BC41-19848E1E3AF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C742E00B-3933-4834-BC41-19848E1E3AF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C742E00B-3933-4834-BC41-19848E1E3AF2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

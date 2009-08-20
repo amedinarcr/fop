@@ -1,0 +1,7 @@
+C:\Downloads\WizardDemo_Src\WizardDemo\WizardBase\bin\Debug\WizardBase.dll
+C:\Downloads\WizardDemo_Src\WizardDemo\WizardBase\bin\Debug\WizardBase.pdb
+C:\Downloads\WizardDemo_Src\WizardDemo\WizardBase\obj\Debug\ResolveAssemblyReference.cache
+C:\Downloads\WizardDemo_Src\WizardDemo\WizardBase\obj\Debug\WizardBase.Properties.Resources.resources
+C:\Downloads\WizardDemo_Src\WizardDemo\WizardBase\obj\Debug\WizardBase.csproj.GenerateResource.Cache
+C:\Downloads\WizardDemo_Src\WizardDemo\WizardBase\obj\Debug\WizardBase.dll
+C:\Downloads\WizardDemo_Src\WizardDemo\WizardBase\obj\Debug\WizardBase.pdb
