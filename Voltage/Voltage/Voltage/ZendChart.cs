@@ -8,13 +8,15 @@ using System.Windows.Forms;
 using ZedGraph;
 using System.Collections;
 using System.Drawing.Drawing2D;
+using ComponentFactory.Krypton.Toolkit;
 
 namespace Voltage
 {
-    public partial class ZendChart : Form
+    public partial class ZendChart : KryptonForm
     {
         public ZendChart()
         {
+           
             InitializeComponent();
             //this.comboBox_Zoom.Items.AddRange(new object[] { "50%", "80%", "100%", "150%", "200%", "300%" });
             //this.comboBox_Zoom.SelectedIndex = 2;

@@ -80,7 +80,7 @@ public class PortData
                 while (num++ < Overtime)
                 {
                     if (port.BytesToRead >= ReceiveData.Length) break;
-                    System.Threading.Thread.Sleep(1); 
+                    System.Threading.Thread.Sleep(100); 
                 }
                 if (port.BytesToRead == ReceiveData.Length) 
                     ret = port.Read(ReceiveData, 0, ReceiveData.Length);
