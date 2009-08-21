@@ -8,10 +8,11 @@ using System.Configuration;
 using System.Text;
 using System.Windows.Forms;
 using System.IO.Ports;
+using ComponentFactory.Krypton.Toolkit;
 
 namespace Voltage
 {
-    public partial class MainForm : Form
+    public partial class MainForm : KryptonForm
     {
         public PortData portData;
         public  string AppName="阴极保护电位自动采集系统";
@@ -31,7 +32,7 @@ namespace Voltage
             //DataSet ds = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text, "select CollectId,DataTime,DataValue from DataTable where CollectId in ('0001','0002') and DataTime>=#2008-12-20 8:00:01# and DataTime<#2008-12-20 8:00:20#");
             Program.mainForm.ShowCharting(3, null);
             this.LoadSerialMenuItem(); //开启手动打开串口服务
-            //this.StartSerialService();  //打开检测串口服务
+            this.StartSerialService();  //打开检测串口服务
 
             this.StartOutPutTimerService();//打开定时导出服务
         }
@@ -85,6 +86,7 @@ namespace Voltage
         }
         public int PortCount = 0;
         public bool IsOld = false;
+        public ArrayList BadPortList = new ArrayList();
         public bool OpenSerial()
         {
 
@@ -123,7 +125,8 @@ namespace Voltage
                 }
                 foreach (string portName in SerialPort.GetPortNames())
                 {
-
+                    if (this.BadPortList.IndexOf(portName) != -1)
+                        continue;
                     PortData tempPort = new PortData(portName, 9600, Parity.None);
                     tempPort.ReceiveEventFlag = true;
                     //tempPort.Received -= new PortDataReceivedEventHandle(this.tempPort_Received);
@@ -134,7 +137,7 @@ namespace Voltage
                         // for (int i = 0; i < 5; i++)
                         //{
                         byte[] receiveData = new byte[2];
-                        tempPort.SendCommand(command, ref receiveData, 1000);
+                        tempPort.SendCommand(command, ref receiveData, 5);
                         string receiveString = Lib.byteToHexStr(receiveData);
                         if (receiveString.Length == 4 && receiveString == command.Substring(0, 4))
                         {
@@ -143,7 +146,10 @@ namespace Voltage
                             return true;
                         }
                         else
+                        {
+                            this.BadPortList.Add(portName);
                             tempPort.Close();
+                        }
                     }
                 }
                 //portData.Close();
@@ -456,6 +462,14 @@ namespace Voltage
         private void MenuItem_Serial_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //关闭串口
+            if (this.portData != null)
+                if (this.portData.port != null && this.portData.port.IsOpen == false)
+                    this.portData.port.Close();
         }
     }
 }
