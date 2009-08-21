@@ -34,7 +34,14 @@ namespace Voltage
                         ds.WriteXml(fileName);
                         break;
                     case 1:
-                        ds = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text, "select CollectInfo.PipelineName,'',CollectInfo.TestPileID,DataValue,DataTime,CollectInfo.AdminName from DataTable left join CollectInfo on DataTable.CollectId=Collectinfo.CollectId  where DataTime>=#" + startTime + "# and DataTime<=#" + endTime + "#");
+                        ds = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text, "select CollectInfo.PipelineName,'',CollectInfo.TestPileID,DataValue,DataTime,CollectInfo.AdminName from DataTable left join CollectInfo on DataTable.CollectInfoId=Collectinfo.ID  where DataTime>=#" + startTime + "# and DataTime<=#" + endTime + "#");
+
+                       
+                        foreach (DataRow row in ds.Tables[0].Rows)
+                        {
+                            row["DataValue"] = Convert.ToDouble(row["DataValue"].ToString()).ToString("f3");
+                            row["DataTime"] = Convert.ToDateTime(row["DataTime"].ToString()).ToString("yyyy-MM-dd hh:mm:ss");
+                        }
 
                         Excel.ExcelEdit excel = new Excel.ExcelEdit();
                        
