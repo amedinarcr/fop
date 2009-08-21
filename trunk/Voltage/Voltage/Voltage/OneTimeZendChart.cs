@@ -17,8 +17,8 @@ namespace Voltage
         {
             InitializeComponent();
 
-            this.comboBox_Zoom.Items.AddRange(new object[] { "50%", "80%", "100%", "150%", "200%", "300%" });
-            this.comboBox_Zoom.SelectedIndex = 2;
+            //this.comboBox_Zoom.Items.AddRange(new object[] { "50%", "80%", "100%", "150%", "200%", "300%" });
+            //this.comboBox_Zoom.SelectedIndex = 2;
         }
         public LineItemProperty[] propertys;
         public LineItem[] lineItem;
@@ -255,6 +255,41 @@ namespace Voltage
         {
             PointF p = new PointF(0, 0);
             //this.zedGraphControl1.ZoomPane(this.zedGraphControl1.GraphPane, Convert.ToDouble(this.comboBox_Zoom.Text.Trim('%'))/100, p, false);
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            this.zedGraphControl1.Copy(true);
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            this.zedGraphControl1.SaveAsBitmap();
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            this.zedGraphControl1.ZoomOut(this.zedGraphControl1.GraphPane);
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            this.zedGraphControl1.ZoomOutAll(this.zedGraphControl1.GraphPane);
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            this.zedGraphControl1.DoPageSetup();
+        }
+
+        private void toolStripButton6_Click(object sender, EventArgs e)
+        {
+            this.zedGraphControl1.DoPrintPreview();
+        }
+
+        private void toolStripButton7_Click(object sender, EventArgs e)
+        {
+            this.zedGraphControl1.DoPrint();
         }
 
     }

@@ -398,6 +398,12 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Tool\WizardDemo_Src\WizardDemo\WizardBase\WizardBase.csproj">
+      <Project>{C742E00B-3933-4834-BC41-19848E1E3AF2}</Project>
+      <Name>WizardBase</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
