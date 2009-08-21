@@ -1,0 +1,8 @@
+C:\Downloads\VistaForm\Code\VistaForm\bin\Release\VistaForm.dll
+C:\Downloads\VistaForm\Code\VistaForm\bin\Release\VistaForm.pdb
+C:\Downloads\VistaForm\Code\VistaForm\obj\Release\ResolveAssemblyReference.cache
+C:\Downloads\VistaForm\Code\VistaForm\obj\Release\VistaForm.Properties.Resources.resources
+C:\Downloads\VistaForm\Code\VistaForm\obj\Release\VistaForm.VistaForm.resources
+C:\Downloads\VistaForm\Code\VistaForm\obj\Release\VistaForm.csproj.GenerateResource.Cache
+C:\Downloads\VistaForm\Code\VistaForm\obj\Release\VistaForm.dll
+C:\Downloads\VistaForm\Code\VistaForm\obj\Release\VistaForm.pdb
