@@ -1,0 +1,12 @@
+C:\Downloads\VistaForm\Code\DEMO\obj\Release\DEMO.exe
+C:\Downloads\VistaForm\Code\DEMO\obj\Release\DEMO.pdb
+C:\Downloads\VistaForm\Code\DEMO\bin\Release\DEMO.exe
+C:\Downloads\VistaForm\Code\DEMO\bin\Release\DEMO.pdb
+C:\Downloads\VistaForm\Code\DEMO\bin\Release\VistaForm.dll
+C:\Downloads\VistaForm\Code\DEMO\bin\Release\VistaForm.pdb
+C:\Downloads\VistaForm\Code\DEMO\obj\Release\ResolveAssemblyReference.cache
+C:\Downloads\VistaForm\Code\DEMO\obj\Release\DEMO.Form1.resources
+C:\Downloads\VistaForm\Code\DEMO\obj\Release\DEMO.Properties.Resources.resources
+C:\Downloads\VistaForm\Code\DEMO\obj\Release\DEMO.csproj.GenerateResource.Cache
+C:\Downloads\VistaForm\Code\DEMO\obj\Release\DEMO.Form2.resources
+C:\Downloads\VistaForm\Code\DEMO\obj\Release\DEMO.exe.licenses
