@@ -40,6 +40,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker_StartTime = new System.Windows.Forms.DateTimePicker();
             this.finishStep1 = new WizardBase.FinishStep();
+            this.label5 = new System.Windows.Forms.Label();
             this.label_info = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
@@ -80,24 +81,30 @@
             // wizardControl1
             // 
             this.wizardControl1.BackButtonEnabled = true;
+            this.wizardControl1.BackButtonText = "< 返回";
             this.wizardControl1.BackButtonVisible = true;
             this.wizardControl1.CancelButtonEnabled = true;
+            this.wizardControl1.CancelButtonText = "取消";
             this.wizardControl1.CancelButtonVisible = true;
             this.wizardControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.wizardControl1.EulaButtonEnabled = true;
             this.wizardControl1.EulaButtonText = "";
             this.wizardControl1.EulaButtonVisible = true;
+            this.wizardControl1.FinishButtonText = "完成";
             this.wizardControl1.HelpButtonEnabled = true;
-            this.wizardControl1.HelpButtonVisible = true;
+            this.wizardControl1.HelpButtonVisible = false;
             this.wizardControl1.Location = new System.Drawing.Point(0, 0);
             this.wizardControl1.Name = "wizardControl1";
             this.wizardControl1.NextButtonEnabled = true;
+            this.wizardControl1.NextButtonText = "下一步 >";
             this.wizardControl1.NextButtonVisible = true;
             this.wizardControl1.Size = new System.Drawing.Size(566, 400);
             this.wizardControl1.WizardSteps.AddRange(new WizardBase.WizardStep[] {
             this.startStep1,
             this.startStep2,
             this.finishStep1});
+            this.wizardControl1.NextButtonClick +=new WizardBase.GenericCancelEventHandler<WizardBase.WizardControl>(wizardControl1_NextButtonClick);
+            this.wizardControl1.BackButtonClick += new System.ComponentModel.CancelEventHandler(wizardControl1_BackButtonClick);
             this.wizardControl1.FinishButtonClick += new System.EventHandler(this.wizardControl1_FinishButtonClick);
             this.wizardControl1.CancelButtonClick += new System.EventHandler(this.wizardControl1_CancelButtonClick);
             // 
@@ -120,6 +127,8 @@
             this.startStep2.Controls.Add(this.dateTimePicker_StartTime);
             this.startStep2.Icon = null;
             this.startStep2.Name = "startStep2";
+            this.startStep2.Subtitle = "choose the range of the time";
+            this.startStep2.Title = "选择时间范围";
             // 
             // dateTimePicker_EndTime
             // 
@@ -158,9 +167,19 @@
             // finishStep1
             // 
             this.finishStep1.BindingImage = ((System.Drawing.Image)(resources.GetObject("finishStep1.BindingImage")));
+            this.finishStep1.Controls.Add(this.label5);
             this.finishStep1.Controls.Add(this.label_info);
             this.finishStep1.Controls.Add(this.label4);
             this.finishStep1.Name = "finishStep1";
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.Location = new System.Drawing.Point(177, 201);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(225, 34);
+            this.label5.TabIndex = 11;
+            this.label5.Visible = false;
             // 
             // label_info
             // 
@@ -173,11 +192,11 @@
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(166, 181);
+            this.label4.Location = new System.Drawing.Point(177, 153);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(225, 34);
             this.label4.TabIndex = 0;
-            this.label4.Text = "点击 Finish 确定导出数据";
+            this.label4.Text = "正在保存数据......";
             // 
             // ChoseOupputDataType
             // 
@@ -220,5 +239,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Label label_info;
+        private System.Windows.Forms.Label label5;
     }
 }

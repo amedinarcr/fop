@@ -12,6 +12,7 @@ namespace Voltage
     {
         private int DataType;
         public BackgroundWorker bWorker;
+        private static int nNextBackCount;
         public ChoseOupputDataType()
         {
             InitializeComponent();
@@ -24,6 +25,7 @@ namespace Voltage
         
         private void ChoseOupputDataType_Load(object sender, EventArgs e)
         {
+            nNextBackCount = 0;
             this.comboBox1.Items.Add("标准通信格式");
             this.comboBox1.Items.Add("Excel文件格式");
             this.comboBox1.SelectedIndex = 0;
@@ -63,50 +65,60 @@ namespace Voltage
             output.ShowDialog();
             this.Close();
         }
-
+        private void wizardControl1_NextButtonClick(object sender, EventArgs e)
+        {
+            nNextBackCount+=1;
+            if (nNextBackCount==2)
+            {
+                this.label4.Text = "正在导出数据，请稍候...";
+                switch (DataType)
+                {
+                    case 0:
+                        this.saveFileDialog1.Filter = "XML文件|*.xml";
+                        break;
+                    case 1:
+                        this.saveFileDialog1.Filter = "Excel文件|*.xls";
+                        break;
+                }
+                bWorker = new BackgroundWorker();
+                bWorker.WorkerSupportsCancellation = true;
+                bWorker.DoWork += new DoWorkEventHandler(bWorker_DoWork);
+                bWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bWorker_RunWorkerCompleted);
+                // bWorker.RunWorkerAsync(this.saveFileDialog1.FileName);
+                string fileName = Lib.GetNewFileName();
+                if (this.DataType == 0)
+                {
+                    fileName += ".xml";
+                }
+                if (this.DataType == 1)
+                {
+                    fileName += ".xls";
+                }
+                bWorker.RunWorkerAsync(fileName);
+            }
+        }
+        private void wizardControl1_BackButtonClick(object sender, EventArgs e)
+        {
+            nNextBackCount -= 1;
+        }
         private void wizardControl1_CancelButtonClick(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        
         private void wizardControl1_FinishButtonClick(object sender, EventArgs e)
         {
-            switch (DataType)
-            {
-                case 0:
-                    this.saveFileDialog1.Filter = "XML文件|*.xml";
-                    break;
-                case 1:
-                    this.saveFileDialog1.Filter = "Excel文件|*.xls";
-                    break;
-            }
-            bWorker = new BackgroundWorker();
-            bWorker.WorkerSupportsCancellation = true;
-            bWorker.DoWork += new DoWorkEventHandler(bWorker_DoWork);
-            bWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bWorker_RunWorkerCompleted);
-            // bWorker.RunWorkerAsync(this.saveFileDialog1.FileName);
-            string fileName = Lib.GetNewFileName();
-            if (this.DataType == 0)
-            {
-                fileName += ".xml";
-            }
-            if (this.DataType == 1)
-            {
-                fileName += ".xls";
-            }
-            bWorker.RunWorkerAsync(fileName);
+            this.Close();
         }
         void bWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             if (!e.Cancelled && e.Error == null)
             {
-                MessageBox.Show("导出成功");
-                this.label_info.Text = "导出成功";
-                this.Close();
+                this.label4.Text = "导出成功";
             }
             if (e.Cancelled)
             {
-                this.label_info.Text = "导出取消";
+                this.label4.Text = "导出取消";
             }
         }
         void bWorker_DoWork(object sender, DoWorkEventArgs e)
