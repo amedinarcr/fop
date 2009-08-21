@@ -79,13 +79,13 @@
             // 
             // wizardControl1
             // 
-            this.wizardControl1.BackButtonEnabled = false;
+            this.wizardControl1.BackButtonEnabled = true;
             this.wizardControl1.BackButtonVisible = true;
             this.wizardControl1.CancelButtonEnabled = true;
             this.wizardControl1.CancelButtonVisible = true;
             this.wizardControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.wizardControl1.EulaButtonEnabled = true;
-            this.wizardControl1.EulaButtonText = "eula";
+            this.wizardControl1.EulaButtonText = "";
             this.wizardControl1.EulaButtonVisible = true;
             this.wizardControl1.HelpButtonEnabled = true;
             this.wizardControl1.HelpButtonVisible = true;
@@ -106,7 +106,7 @@
             this.startStep1.BindingImage = ((System.Drawing.Image)(resources.GetObject("startStep1.BindingImage")));
             this.startStep1.Controls.Add(this.label1);
             this.startStep1.Controls.Add(this.comboBox1);
-            this.startStep1.Icon = ((System.Drawing.Image)(resources.GetObject("startStep1.Icon")));
+            this.startStep1.Icon = null;
             this.startStep1.Name = "startStep1";
             this.startStep1.Subtitle = "choose the format of the output file";
             this.startStep1.Title = "选择导出文件格式";
@@ -118,7 +118,7 @@
             this.startStep2.Controls.Add(this.label2);
             this.startStep2.Controls.Add(this.label3);
             this.startStep2.Controls.Add(this.dateTimePicker_StartTime);
-            this.startStep2.Icon = ((System.Drawing.Image)(resources.GetObject("startStep2.Icon")));
+            this.startStep2.Icon = null;
             this.startStep2.Name = "startStep2";
             // 
             // dateTimePicker_EndTime
