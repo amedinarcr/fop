@@ -54,7 +54,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ComponentFactory.Krypton.Toolkit, Version=3.5.2.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e" />
+    <Reference Include="ComponentFactory.Krypton.Toolkit, Version=3.5.2.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.JScript" />
     <Reference Include="Microsoft.Office.Interop.Excel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
     <Reference Include="System" />
