@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="ConsoleApp">
+</Property><Property Name="Solution File" Value="C:\Documents and Settings\yongfazh\Desktop\Log4net Test\Log4net Test\src\ConsoleApp.sln">
+</Property><Property Name="Date" Value="2009年8月21日">
+</Property><Property Name="Time" Value="15:44">
+</Property></Properties><Event ErrorLevel="0" Project="ConsoleApp" Source="ConsoleApp.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="ConsoleApp" Source="ConsoleApp.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="ConsoleApp.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="ConsoleApp.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="ConsoleApp" Source="ConsoleApp.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>
