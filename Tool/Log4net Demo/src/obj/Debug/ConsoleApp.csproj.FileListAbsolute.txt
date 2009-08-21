@@ -1,0 +1,6 @@
+C:\Documents and Settings\yongfazh\Desktop\Log4net Test\Log4net Test\build\debug\ConsoleApp.exe.config
+C:\Documents and Settings\yongfazh\Desktop\Log4net Test\Log4net Test\src\obj\Debug\ConsoleApp.exe
+C:\Documents and Settings\yongfazh\Desktop\Log4net Test\Log4net Test\src\obj\Debug\ConsoleApp.pdb
+C:\Documents and Settings\yongfazh\Desktop\Log4net Test\Log4net Test\build\debug\ConsoleApp.exe
+C:\Documents and Settings\yongfazh\Desktop\Log4net Test\Log4net Test\build\debug\ConsoleApp.pdb
+C:\Documents and Settings\yongfazh\Desktop\Log4net Test\Log4net Test\src\obj\Debug\ResolveAssemblyReference.cache
