@@ -30,14 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox_CollectId = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.textBox_CollectId = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.button1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker_StartTime = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker_EndTime = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker_StartTime = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
+            this.dateTimePicker_EndTime = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.button3 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.label_info = new System.Windows.Forms.Label();
@@ -47,7 +47,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 9);
+            this.label1.Location = new System.Drawing.Point(25, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 12);
             this.label1.TabIndex = 0;
@@ -59,7 +59,7 @@
             this.textBox_CollectId.Enabled = false;
             this.textBox_CollectId.Location = new System.Drawing.Point(90, 5);
             this.textBox_CollectId.Name = "textBox_CollectId";
-            this.textBox_CollectId.Size = new System.Drawing.Size(212, 21);
+            this.textBox_CollectId.Size = new System.Drawing.Size(252, 25);
             this.textBox_CollectId.TabIndex = 1;
             this.textBox_CollectId.Visible = false;
             // 
@@ -67,10 +67,10 @@
             // 
             this.button1.Location = new System.Drawing.Point(308, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(44, 23);
+            this.button1.Size = new System.Drawing.Size(44, 25);
             this.button1.TabIndex = 2;
             this.button1.Text = "获取";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseMnemonic = true;
             this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -89,7 +89,7 @@
             this.dateTimePicker_StartTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker_StartTime.Location = new System.Drawing.Point(90, 41);
             this.dateTimePicker_StartTime.Name = "dateTimePicker_StartTime";
-            this.dateTimePicker_StartTime.Size = new System.Drawing.Size(262, 21);
+            this.dateTimePicker_StartTime.Size = new System.Drawing.Size(262, 25);
             this.dateTimePicker_StartTime.TabIndex = 4;
             // 
             // dateTimePicker_EndTime
@@ -97,7 +97,7 @@
             this.dateTimePicker_EndTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker_EndTime.Location = new System.Drawing.Point(90, 79);
             this.dateTimePicker_EndTime.Name = "dateTimePicker_EndTime";
-            this.dateTimePicker_EndTime.Size = new System.Drawing.Size(262, 21);
+            this.dateTimePicker_EndTime.Size = new System.Drawing.Size(262, 25);
             this.dateTimePicker_EndTime.TabIndex = 6;
             // 
             // label3
@@ -113,20 +113,20 @@
             // 
             this.button2.Location = new System.Drawing.Point(183, 125);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(75, 25);
             this.button2.TabIndex = 7;
             this.button2.Text = "导出";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseMnemonic = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(277, 125);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(75, 25);
             this.button3.TabIndex = 8;
             this.button3.Text = "关闭";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseMnemonic = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // saveFileDialog1
@@ -140,7 +140,7 @@
             // label_info
             // 
             this.label_info.AutoSize = true;
-            this.label_info.Location = new System.Drawing.Point(23, 130);
+            this.label_info.Location = new System.Drawing.Point(25, 130);
             this.label_info.Name = "label_info";
             this.label_info.Size = new System.Drawing.Size(0, 12);
             this.label_info.TabIndex = 9;
@@ -177,14 +177,14 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox_CollectId;
-        private System.Windows.Forms.Button button1;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBox_CollectId;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton button1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker_StartTime;
-        private System.Windows.Forms.DateTimePicker dateTimePicker_EndTime;
+        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dateTimePicker_StartTime;
+        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dateTimePicker_EndTime;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton button2;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton button3;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label label_info;

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Voltage
 {
-    public partial class GetCollectID : Form
+    public partial class GetCollectID : ComponentFactory.Krypton.Toolkit.KryptonForm
     {
         public ArrayList resultList;
         public GetCollectID(ArrayList list,string [] inList)

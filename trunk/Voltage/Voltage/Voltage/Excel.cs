@@ -192,22 +192,17 @@ namespace Excel
 
         }
 
-
-        public void AddTable(System.Data.DataTable dt, string ws, int startX, int startY)
-//将内存中数据表格添加到Excel指定工作表的指定位置一
+        //将内存中数据表格添加到Excel指定工作表的指定位置一
+        public void AddTable(System.Data.DataTable dt, string ws, int startX, int startY)            
         {
-
             for (int i = 0; i <= dt.Rows.Count - 1; i++)
             {
                 for (int j = 0; j <= dt.Columns.Count - 1; j++)
                 {
-
                     GetSheet(ws).Cells[i + startX, j + startY] = dt.Rows[i][j];
-
+                   
                 }
-
             }
-
         }
         public void AddTable2(System.Data.DataTable dt, string ws, int startX, int startY)
         //将内存中数据表格添加到Excel指定工作表的指定位置一

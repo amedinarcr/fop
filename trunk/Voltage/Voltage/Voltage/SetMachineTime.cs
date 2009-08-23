@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Voltage
 {
-    public partial class SetMachineTime : Form
+    public partial class SetMachineTime : ComponentFactory.Krypton.Toolkit.KryptonForm
     {
         private PortData portData;
         public SetMachineTime(PortData portData)

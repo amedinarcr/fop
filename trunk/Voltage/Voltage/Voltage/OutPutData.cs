@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Voltage
 {
-    public partial class OutPutData : Form
+    public partial class OutPutData : ComponentFactory.Krypton.Toolkit.KryptonForm
     {
         private int DataType;
         public BackgroundWorker bWorker;

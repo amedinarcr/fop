@@ -34,34 +34,35 @@
             this.inputMeasure2 = new Voltage.InputMeasure();
             this.label11 = new System.Windows.Forms.Label();
             this.inputMeasure1 = new Voltage.InputMeasure();
-            this.textBox_TestPileID = new System.Windows.Forms.TextBox();
+            this.textBox_TestPileID = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox_PipelineName = new System.Windows.Forms.TextBox();
+            this.textBox_PipelineName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox_remark = new System.Windows.Forms.TextBox();
-            this.textBox_ProtectStationName = new System.Windows.Forms.TextBox();
+            this.textBox_remark = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.textBox_ProtectStationName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox_Mileage = new System.Windows.Forms.TextBox();
+            this.textBox_Mileage = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.comboBox_SymbolType = new System.Windows.Forms.ComboBox();
+            this.comboBox_SymbolType = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox_LineColor = new System.Windows.Forms.TextBox();
+            this.button1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.textBox_LineColor = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox_LineStyle = new System.Windows.Forms.ComboBox();
+            this.comboBox_LineStyle = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.numericUpDown_LineWidth = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown_LineWidth = new ComponentFactory.Krypton.Toolkit.KryptonNumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.button3 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.label_CollectId = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_LineWidth)).BeginInit();
+         
+            //((System.ComponentModel.ISupportInitialize)(this.numericUpDown_LineWidth)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -100,7 +101,7 @@
             // 
             // inputMeasure2
             // 
-            this.inputMeasure2.Location = new System.Drawing.Point(92, 127);
+            this.inputMeasure2.Location = new System.Drawing.Point(92, 128);
             this.inputMeasure2.Name = "inputMeasure2";
             this.inputMeasure2.Size = new System.Drawing.Size(173, 25);
             this.inputMeasure2.TabIndex = 33;
@@ -108,7 +109,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(55, 130);
+            this.label11.Location = new System.Drawing.Point(55, 131);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(29, 12);
             this.label11.TabIndex = 32;
@@ -116,16 +117,18 @@
             // 
             // inputMeasure1
             // 
-            this.inputMeasure1.Location = new System.Drawing.Point(93, 98);
+            this.inputMeasure1.Location = new System.Drawing.Point(93, 97);
             this.inputMeasure1.Name = "inputMeasure1";
-            this.inputMeasure1.Size = new System.Drawing.Size(173, 22);
+            this.inputMeasure1.Size = new System.Drawing.Size(173, 25);
             this.inputMeasure1.TabIndex = 31;
             // 
             // textBox_TestPileID
             // 
+            this.textBox_TestPileID.InputControlStyle = ComponentFactory.Krypton.Toolkit.InputControlStyle.Standalone;
             this.textBox_TestPileID.Location = new System.Drawing.Point(92, 69);
             this.textBox_TestPileID.Name = "textBox_TestPileID";
-            this.textBox_TestPileID.Size = new System.Drawing.Size(95, 21);
+            this.textBox_TestPileID.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
+            this.textBox_TestPileID.Size = new System.Drawing.Size(95, 23);
             this.textBox_TestPileID.TabIndex = 30;
             // 
             // label7
@@ -139,9 +142,11 @@
             // 
             // textBox_PipelineName
             // 
+            this.textBox_PipelineName.InputControlStyle = ComponentFactory.Krypton.Toolkit.InputControlStyle.Standalone;
             this.textBox_PipelineName.Location = new System.Drawing.Point(92, 16);
             this.textBox_PipelineName.Name = "textBox_PipelineName";
-            this.textBox_PipelineName.Size = new System.Drawing.Size(257, 21);
+            this.textBox_PipelineName.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
+            this.textBox_PipelineName.Size = new System.Drawing.Size(257, 23);
             this.textBox_PipelineName.TabIndex = 28;
             // 
             // label5
@@ -156,7 +161,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(56, 102);
+            this.label10.Location = new System.Drawing.Point(56, 101);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(29, 12);
             this.label10.TabIndex = 25;
@@ -173,24 +178,28 @@
             // 
             // textBox_remark
             // 
+            this.textBox_remark.InputControlStyle = ComponentFactory.Krypton.Toolkit.InputControlStyle.Standalone;
             this.textBox_remark.Location = new System.Drawing.Point(93, 158);
             this.textBox_remark.Multiline = true;
             this.textBox_remark.Name = "textBox_remark";
+            this.textBox_remark.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.textBox_remark.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBox_remark.Size = new System.Drawing.Size(345, 61);
-            this.textBox_remark.TabIndex = 23;
+            this.textBox_remark.TabIndex = 25;
             // 
             // textBox_ProtectStationName
             // 
-            this.textBox_ProtectStationName.Location = new System.Drawing.Point(92, 43);
+            this.textBox_ProtectStationName.InputControlStyle = ComponentFactory.Krypton.Toolkit.InputControlStyle.Standalone;
+            this.textBox_ProtectStationName.Location = new System.Drawing.Point(92, 42);
             this.textBox_ProtectStationName.Name = "textBox_ProtectStationName";
-            this.textBox_ProtectStationName.Size = new System.Drawing.Size(257, 21);
+            this.textBox_ProtectStationName.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
+            this.textBox_ProtectStationName.Size = new System.Drawing.Size(257, 23);
             this.textBox_ProtectStationName.TabIndex = 18;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(19, 46);
+            this.label8.Location = new System.Drawing.Point(19, 45);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(65, 12);
             this.label8.TabIndex = 17;
@@ -198,9 +207,11 @@
             // 
             // textBox_Mileage
             // 
+            this.textBox_Mileage.InputControlStyle = ComponentFactory.Krypton.Toolkit.InputControlStyle.Standalone;
             this.textBox_Mileage.Location = new System.Drawing.Point(244, 68);
             this.textBox_Mileage.Name = "textBox_Mileage";
-            this.textBox_Mileage.Size = new System.Drawing.Size(105, 21);
+            this.textBox_Mileage.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
+            this.textBox_Mileage.Size = new System.Drawing.Size(105, 23);
             this.textBox_Mileage.TabIndex = 16;
             // 
             // label9
@@ -237,7 +248,7 @@
             this.comboBox_SymbolType.FormattingEnabled = true;
             this.comboBox_SymbolType.Location = new System.Drawing.Point(79, 115);
             this.comboBox_SymbolType.Name = "comboBox_SymbolType";
-            this.comboBox_SymbolType.Size = new System.Drawing.Size(121, 20);
+            this.comboBox_SymbolType.Size = new System.Drawing.Size(125, 20);
             this.comboBox_SymbolType.TabIndex = 15;
             // 
             // label4
@@ -251,20 +262,29 @@
             // 
             // button1
             // 
+            this.button1.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Standalone;
             this.button1.Location = new System.Drawing.Point(146, 83);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(39, 21);
+            this.button1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
+            this.button1.Size = new System.Drawing.Size(39, 25);
             this.button1.TabIndex = 13;
             this.button1.Text = "Get";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Values.ExtraText = "";
+            this.button1.Values.Image = null;
+            this.button1.Values.ImageStates.ImageCheckedNormal = null;
+            this.button1.Values.ImageStates.ImageCheckedPressed = null;
+            this.button1.Values.ImageStates.ImageCheckedTracking = null;
+            this.button1.Values.Text = "Get";
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox_LineColor
             // 
             this.textBox_LineColor.Enabled = false;
+            this.textBox_LineColor.InputControlStyle = ComponentFactory.Krypton.Toolkit.InputControlStyle.Standalone;
             this.textBox_LineColor.Location = new System.Drawing.Point(79, 83);
             this.textBox_LineColor.Name = "textBox_LineColor";
-            this.textBox_LineColor.Size = new System.Drawing.Size(61, 21);
+            this.textBox_LineColor.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
+            this.textBox_LineColor.Size = new System.Drawing.Size(61, 23);
             this.textBox_LineColor.TabIndex = 12;
             // 
             // label3
@@ -328,22 +348,36 @@
             // 
             // button2
             // 
+            this.button2.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Standalone;
             this.button2.Location = new System.Drawing.Point(401, 276);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 21);
+            this.button2.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
+            this.button2.Size = new System.Drawing.Size(75, 25);
             this.button2.TabIndex = 1;
             this.button2.Text = "取消";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Values.ExtraText = "";
+            this.button2.Values.Image = null;
+            this.button2.Values.ImageStates.ImageCheckedNormal = null;
+            this.button2.Values.ImageStates.ImageCheckedPressed = null;
+            this.button2.Values.ImageStates.ImageCheckedTracking = null;
+            this.button2.Values.Text = "取消";
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
+            this.button3.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Standalone;
             this.button3.Location = new System.Drawing.Point(319, 276);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 21);
+            this.button3.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
+            this.button3.Size = new System.Drawing.Size(75, 25);
             this.button3.TabIndex = 2;
             this.button3.Text = "确定";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Values.ExtraText = "";
+            this.button3.Values.Image = null;
+            this.button3.Values.ImageStates.ImageCheckedNormal = null;
+            this.button3.Values.ImageStates.ImageCheckedPressed = null;
+            this.button3.Values.ImageStates.ImageCheckedTracking = null;
+            this.button3.Values.Text = "确定";
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label_CollectId
@@ -375,7 +409,7 @@
             this.tabPage2.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_LineWidth)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.numericUpDown_LineWidth)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -386,29 +420,31 @@
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox_LineColor;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton button1;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBox_LineColor;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox_LineStyle;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox comboBox_LineStyle;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown numericUpDown_LineWidth;
+        private ComponentFactory.Krypton.Toolkit.KryptonNumericUpDown numericUpDown_LineWidth;
+        
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ComboBox comboBox_SymbolType;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton button2;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton button3;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox comboBox_SymbolType;
+        
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox_remark;
-        private System.Windows.Forms.TextBox textBox_ProtectStationName;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBox_remark;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBox_ProtectStationName;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox_Mileage;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBox_Mileage;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label_CollectId;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox_TestPileID;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBox_TestPileID;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox_PipelineName;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBox_PipelineName;
         private System.Windows.Forms.Label label5;
         private InputMeasure inputMeasure2;
         private System.Windows.Forms.Label label11;

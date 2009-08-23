@@ -9,36 +9,37 @@ using System.Windows.Forms;
 
 namespace Voltage
 {
-    public partial class GetDataArithmetic : Form
+    public partial class GetDataArithmetic : ComponentFactory.Krypton.Toolkit.KryptonForm
     {
         public DataSet ds;
         public GetDataArithmetic()
         {
             InitializeComponent();
+            this.kryptonDropButton1.Text = NullTxt;
         }
-
+        public string NullTxt = "(请选择采集器编号)";
         private void button2_Click(object sender, EventArgs e)
         {
             this.dataGridView1.Rows.Clear();
-            if (this.textBox_CollectId.Text.Trim() == "")
+            if (this.kryptonDropButton1.Text.Trim() == NullTxt)
             {
                 MessageBox.Show("请先选择采集编号");
                 return;
             }
             //   string[] CollectIdList = this.textBox_CollectId.Text.Substring("'", "").Split(',');
-            ArrayList CollectIdList = new ArrayList(this.textBox_CollectId.Text.Replace("'", "").Split(','));
+            ArrayList CollectIdList = new ArrayList(this.kryptonDropButton1.Text.Replace("'", "").Split(','));
             ArrayList[] list = new ArrayList[CollectIdList.Count];
             for (int i = 0; i < list.Length; i++)
             {
                 list[i] = new ArrayList();
             }
-            this.ds = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text, "select CollectId,DataTime,DataValue from DataTable where CollectId in (" + this.textBox_CollectId.Text + ") and DataTime>=#" + this.dateTimePicker_StartTime.Value.ToString() + "# and DataTime<=#" + this.dateTimePicker_EndTime.Value.ToString() + "# order by DataTime asc");
+            this.ds = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text, "select CollectInfo.CollectId as CollectId,CollectInfoId,DataTime,DataValue from DataTable left join CollectInfo on DataTable.CollectInfoId=CollectInfo.ID where CollectInfoId in (" + this.kryptonDropButton1.Text + ") and DataTime>=#" + this.dateTimePicker_StartTime.Value.ToString() + "# and DataTime<=#" + this.dateTimePicker_EndTime.Value.ToString() + "# order by DataTime asc");
             if (ds.Tables[0].Rows.Count > 0)
             {
                 foreach (DataRow row in this.ds.Tables[0].Rows)
                 {
 
-                    int index = CollectIdList.IndexOf(row["CollectId"].ToString());
+                    int index = CollectIdList.IndexOf(row["CollectInfoId"].ToString());
                     list[index].Add(row["DataValue"].ToString());
                 }
                 for (int i = 0; i < list.Length; i++)
@@ -62,7 +63,8 @@ namespace Voltage
                 variance += Math.Pow((Convert.ToDouble(dataValue) - average), 2);
             }
             variance = variance / DataValueList.Count;
-            this.dataGridView1.Rows.Add(new object[] { CollectId, average, variance });
+
+            this.dataGridView1.Rows.Add(new object[] { CollectId, average.ToString("f3"), variance.ToString("f3") });
         }
         private void GetDataArithmetic_Load(object sender, EventArgs e)
         {
@@ -73,11 +75,36 @@ namespace Voltage
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ArrayList list = new ArrayList();
-            GetCollectID get = new GetCollectID(list, this.textBox_CollectId.Text.Split(','));
+            ArrayList CollectInfoList = new ArrayList();
+            GetCollectInfoId get = new GetCollectInfoId(CollectInfoList);
+            //GetCollectID get = new GetCollectID(list, this.kryptonDropButton1.Text.Split(','));
             if (get.ShowDialog() == DialogResult.OK)
             {
-                this.textBox_CollectId.Text = list[0].ToString();
+               
+                string CollectInfoListString = "";
+                foreach (string CollectInfoId in CollectInfoList)
+                    CollectInfoListString += CollectInfoId + ",";
+                if (CollectInfoList.Count != 0)
+                    CollectInfoListString = CollectInfoListString.Substring(0, CollectInfoListString.Length - 1);
+                this.kryptonDropButton1.Text = CollectInfoListString;
+            }
+        }
+
+        private void button1_Click(object sender, ComponentFactory.Krypton.Toolkit.ContextPositionMenuArgs e)
+        {
+            ArrayList CollectInfoList = new ArrayList();
+            GetCollectInfoId get = new GetCollectInfoId(CollectInfoList);
+            //GetCollectID get = new GetCollectID(list, this.kryptonDropButton1.Text.Split(','));
+            if (get.ShowDialog() == DialogResult.OK)
+            {
+
+                string CollectInfoListString = "";
+                foreach (string CollectInfoId in CollectInfoList)
+                    CollectInfoListString += CollectInfoId + ",";
+                if (CollectInfoList.Count != 0)
+                    CollectInfoListString = CollectInfoListString.Substring(0, CollectInfoListString.Length - 1);
+                if (CollectInfoListString.Trim() != "")
+                    this.kryptonDropButton1.Text = CollectInfoListString;
             }
         }
     }

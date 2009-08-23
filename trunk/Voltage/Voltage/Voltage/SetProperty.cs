@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using Voltage.Properties;
 namespace Voltage
 {
-    public partial class SetProperty : Form
+    public partial class SetProperty : ComponentFactory.Krypton.Toolkit.KryptonForm
     {
         public SetProperty()
         {

@@ -9,7 +9,7 @@ using System.Data.OleDb;
 
 namespace Voltage
 {
-    public partial class ViewCollectInfo : Form
+    public partial class ViewCollectInfo : ComponentFactory.Krypton.Toolkit.KryptonForm
     {
         public string CollectId;
         public bool isInfoExist;

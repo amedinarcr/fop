@@ -44,6 +44,12 @@
             this.绘图GToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.普通绘图PToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.单时间点绘图SToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.皮肤PToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.office2007ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.office2007ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.office2003ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.blackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.systemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.SerialInfo = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -58,22 +64,24 @@
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.panel_charting = new System.Windows.Forms.Panel();
+            this.splitContainer1 = new ComponentFactory.Krypton.Toolkit.KryptonSplitContainer();
+            this.panel_charting = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panel_charting)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.开始SToolStripMenuItem,
             this.数据DToolStripMenuItem,
-            this.绘图GToolStripMenuItem});
+            this.绘图GToolStripMenuItem,
+            this.皮肤PToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(993, 24);
@@ -90,13 +98,13 @@
             this.设置SToolStripMenuItem,
             this.退出EToolStripMenuItem});
             this.开始SToolStripMenuItem.Name = "开始SToolStripMenuItem";
-            this.开始SToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.开始SToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.开始SToolStripMenuItem.Text = "硬件(&H)";
             // 
             // MenuItem_Serial
             // 
             this.MenuItem_Serial.Name = "MenuItem_Serial";
-            this.MenuItem_Serial.Size = new System.Drawing.Size(147, 22);
+            this.MenuItem_Serial.Size = new System.Drawing.Size(150, 22);
             this.MenuItem_Serial.Text = "打开串口(&O)";
             this.MenuItem_Serial.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             this.MenuItem_Serial.Visible = false;
@@ -106,7 +114,7 @@
             // 
             this.校时ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("校时ToolStripMenuItem.Image")));
             this.校时ToolStripMenuItem.Name = "校时ToolStripMenuItem";
-            this.校时ToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.校时ToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.校时ToolStripMenuItem.Text = "校时(&T)";
             this.校时ToolStripMenuItem.Click += new System.EventHandler(this.校时ToolStripMenuItem_Click);
             // 
@@ -114,7 +122,7 @@
             // 
             this.读取数据RToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("读取数据RToolStripMenuItem1.Image")));
             this.读取数据RToolStripMenuItem1.Name = "读取数据RToolStripMenuItem1";
-            this.读取数据RToolStripMenuItem1.Size = new System.Drawing.Size(147, 22);
+            this.读取数据RToolStripMenuItem1.Size = new System.Drawing.Size(150, 22);
             this.读取数据RToolStripMenuItem1.Text = "读取数据(R)";
             this.读取数据RToolStripMenuItem1.Click += new System.EventHandler(this.读取数据RToolStripMenuItem1_Click);
             // 
@@ -122,21 +130,21 @@
             // 
             this.清空数据表CToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("清空数据表CToolStripMenuItem.Image")));
             this.清空数据表CToolStripMenuItem.Name = "清空数据表CToolStripMenuItem";
-            this.清空数据表CToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.清空数据表CToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.清空数据表CToolStripMenuItem.Text = "清空数据表(&C)";
             this.清空数据表CToolStripMenuItem.Click += new System.EventHandler(this.清空数据表CToolStripMenuItem_Click);
             // 
             // 设置SToolStripMenuItem
             // 
             this.设置SToolStripMenuItem.Name = "设置SToolStripMenuItem";
-            this.设置SToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.设置SToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.设置SToolStripMenuItem.Text = "设置(&S)";
             this.设置SToolStripMenuItem.Click += new System.EventHandler(this.设置SToolStripMenuItem_Click);
             // 
             // 退出EToolStripMenuItem
             // 
             this.退出EToolStripMenuItem.Name = "退出EToolStripMenuItem";
-            this.退出EToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.退出EToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.退出EToolStripMenuItem.Text = "退出(E)";
             this.退出EToolStripMenuItem.Click += new System.EventHandler(this.退出EToolStripMenuItem_Click);
             // 
@@ -147,14 +155,14 @@
             this.导入数据RToolStripMenuItem,
             this.定时导出TToolStripMenuItem});
             this.数据DToolStripMenuItem.Name = "数据DToolStripMenuItem";
-            this.数据DToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.数据DToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.数据DToolStripMenuItem.Text = "数据(&D)";
             // 
             // 导出数据OToolStripMenuItem
             // 
             this.导出数据OToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("导出数据OToolStripMenuItem.Image")));
             this.导出数据OToolStripMenuItem.Name = "导出数据OToolStripMenuItem";
-            this.导出数据OToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.导出数据OToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.导出数据OToolStripMenuItem.Text = "导出数据(&O)";
             this.导出数据OToolStripMenuItem.Click += new System.EventHandler(this.导出数据OToolStripMenuItem_Click);
             // 
@@ -162,7 +170,7 @@
             // 
             this.导入数据RToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("导入数据RToolStripMenuItem.Image")));
             this.导入数据RToolStripMenuItem.Name = "导入数据RToolStripMenuItem";
-            this.导入数据RToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.导入数据RToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.导入数据RToolStripMenuItem.Text = "导入数据(&R)";
             this.导入数据RToolStripMenuItem.Click += new System.EventHandler(this.导入数据RToolStripMenuItem_Click);
             // 
@@ -170,7 +178,7 @@
             // 
             this.定时导出TToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("定时导出TToolStripMenuItem.Image")));
             this.定时导出TToolStripMenuItem.Name = "定时导出TToolStripMenuItem";
-            this.定时导出TToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.定时导出TToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.定时导出TToolStripMenuItem.Text = "定时导出设置(&T)";
             this.定时导出TToolStripMenuItem.Click += new System.EventHandler(this.定时导出TToolStripMenuItem_Click);
             // 
@@ -180,14 +188,14 @@
             this.普通绘图PToolStripMenuItem,
             this.单时间点绘图SToolStripMenuItem});
             this.绘图GToolStripMenuItem.Name = "绘图GToolStripMenuItem";
-            this.绘图GToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.绘图GToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.绘图GToolStripMenuItem.Text = "绘图(&G)";
             // 
             // 普通绘图PToolStripMenuItem
             // 
             this.普通绘图PToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("普通绘图PToolStripMenuItem.Image")));
             this.普通绘图PToolStripMenuItem.Name = "普通绘图PToolStripMenuItem";
-            this.普通绘图PToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.普通绘图PToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.普通绘图PToolStripMenuItem.Text = "普通绘图(&P)";
             this.普通绘图PToolStripMenuItem.Click += new System.EventHandler(this.普通绘图PToolStripMenuItem_Click);
             // 
@@ -195,16 +203,65 @@
             // 
             this.单时间点绘图SToolStripMenuItem.Image = global::Voltage.Properties.Resources._03886;
             this.单时间点绘图SToolStripMenuItem.Name = "单时间点绘图SToolStripMenuItem";
-            this.单时间点绘图SToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.单时间点绘图SToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.单时间点绘图SToolStripMenuItem.Text = "单时间点绘图(&S)";
             this.单时间点绘图SToolStripMenuItem.Click += new System.EventHandler(this.单时间点绘图SToolStripMenuItem_Click);
             // 
+            // 皮肤PToolStripMenuItem
+            // 
+            this.皮肤PToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.office2007ToolStripMenuItem,
+            this.office2007ToolStripMenuItem1,
+            this.office2003ToolStripMenuItem,
+            this.blackToolStripMenuItem,
+            this.systemToolStripMenuItem});
+            this.皮肤PToolStripMenuItem.Name = "皮肤PToolStripMenuItem";
+            this.皮肤PToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.皮肤PToolStripMenuItem.Text = "皮肤(&P)";
+            // 
+            // office2007ToolStripMenuItem
+            // 
+            this.office2007ToolStripMenuItem.Name = "office2007ToolStripMenuItem";
+            this.office2007ToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.office2007ToolStripMenuItem.Text = "Office 2007 Blue";
+            this.office2007ToolStripMenuItem.Click += new System.EventHandler(this.office2007ToolStripMenuItem_Click);
+            // 
+            // office2007ToolStripMenuItem1
+            // 
+            this.office2007ToolStripMenuItem1.Name = "office2007ToolStripMenuItem1";
+            this.office2007ToolStripMenuItem1.Size = new System.Drawing.Size(164, 22);
+            this.office2007ToolStripMenuItem1.Text = "Office 2007 Silver";
+            this.office2007ToolStripMenuItem1.Click += new System.EventHandler(this.office2007ToolStripMenuItem1_Click);
+            // 
+            // office2003ToolStripMenuItem
+            // 
+            this.office2003ToolStripMenuItem.Name = "office2003ToolStripMenuItem";
+            this.office2003ToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.office2003ToolStripMenuItem.Text = "Office 2003";
+            this.office2003ToolStripMenuItem.Click += new System.EventHandler(this.office2003ToolStripMenuItem_Click);
+            // 
+            // blackToolStripMenuItem
+            // 
+            this.blackToolStripMenuItem.Name = "blackToolStripMenuItem";
+            this.blackToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.blackToolStripMenuItem.Text = "Black";
+            this.blackToolStripMenuItem.Click += new System.EventHandler(this.blackToolStripMenuItem_Click);
+            // 
+            // systemToolStripMenuItem
+            // 
+            this.systemToolStripMenuItem.Name = "systemToolStripMenuItem";
+            this.systemToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.systemToolStripMenuItem.Text = "System";
+            this.systemToolStripMenuItem.Click += new System.EventHandler(this.systemToolStripMenuItem_Click);
+            // 
             // statusStrip1
             // 
+            this.statusStrip1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SerialInfo});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 535);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 492);
             this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode;
             this.statusStrip1.Size = new System.Drawing.Size(993, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
@@ -216,6 +273,7 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.toolStripButton2,
@@ -229,7 +287,6 @@
             this.toolStripButton8});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.toolStrip1.Size = new System.Drawing.Size(993, 25);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
@@ -332,7 +389,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.panel_charting);
-            this.splitContainer1.Size = new System.Drawing.Size(993, 486);
+            this.splitContainer1.Size = new System.Drawing.Size(993, 443);
             this.splitContainer1.SplitterDistance = 0;
             this.splitContainer1.SplitterWidth = 1;
             this.splitContainer1.TabIndex = 6;
@@ -342,19 +399,22 @@
             this.panel_charting.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_charting.Location = new System.Drawing.Point(0, 0);
             this.panel_charting.Name = "panel_charting";
-            this.panel_charting.Size = new System.Drawing.Size(993, 485);
+            this.panel_charting.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
+            this.panel_charting.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient;
+            this.panel_charting.Size = new System.Drawing.Size(993, 442);
             this.panel_charting.TabIndex = 9;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(993, 557);
+            this.ClientSize = new System.Drawing.Size(993, 514);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "阴极保护电位自动采集系统";
@@ -369,6 +429,7 @@
             this.toolStrip1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panel_charting)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,8 +445,9 @@
         private System.Windows.Forms.ToolStripMenuItem 导出数据OToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 导入数据RToolStripMenuItem;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Panel panel_charting;
+        private ComponentFactory.Krypton.Toolkit.KryptonSplitContainer splitContainer1;
+        private ComponentFactory.Krypton.Toolkit.KryptonPanel panel_charting;
+        
         private System.Windows.Forms.ToolStripMenuItem MenuItem_Serial;
         private System.Windows.Forms.ToolStripMenuItem 校时ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 读取数据RToolStripMenuItem1;
@@ -407,5 +469,11 @@
         private System.Windows.Forms.ToolStripButton toolStripButton7;
         private System.Windows.Forms.ToolStripButton toolStripButton8;
         private System.Windows.Forms.ToolStripStatusLabel SerialInfo;
+        private System.Windows.Forms.ToolStripMenuItem 皮肤PToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem office2007ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem office2007ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem office2003ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem blackToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem systemToolStripMenuItem;
     }
 }

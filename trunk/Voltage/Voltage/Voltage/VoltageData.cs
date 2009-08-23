@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Text;
@@ -78,6 +79,21 @@ namespace Voltage
             if(!File.Exists(fileName))
 
                 VoltageData.OutPut(fileName, 1, startTime, endTime);
+        }
+
+        /// <summary>
+        /// 获取数据不为空的采集器编号
+        /// </summary>
+        /// <returns></returns>
+        public static System.Collections.ArrayList GetCollectInfoIdList()
+        {
+            DataSet ds = OleHelper.ExecuteDataset("select distinct CollectInfoId from DataTable");
+            ArrayList result = new ArrayList();
+            foreach (DataRow row in ds.Tables[0].Rows)
+            {
+                result.Add(row[0].ToString());
+            }
+            return result;
         }
     }
 }

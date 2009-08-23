@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.numericUpDown_date = new System.Windows.Forms.NumericUpDown();
-            this.comboBox_SetdateType = new System.Windows.Forms.ComboBox();
+            this.button1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.numericUpDown_date = new ComponentFactory.Krypton.Toolkit.KryptonNumericUpDown();
+            this.comboBox_SetdateType = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.button2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.dateTimePicker1 = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_date)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,17 +42,17 @@
             // 
             this.button1.Location = new System.Drawing.Point(256, 68);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(69, 23);
+            this.button1.Size = new System.Drawing.Size(69, 25);
             this.button1.TabIndex = 7;
             this.button1.Text = "设置";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseMnemonic = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // numericUpDown_date
             // 
             this.numericUpDown_date.Location = new System.Drawing.Point(162, 70);
             this.numericUpDown_date.Name = "numericUpDown_date";
-            this.numericUpDown_date.Size = new System.Drawing.Size(88, 21);
+            this.numericUpDown_date.Size = new System.Drawing.Size(88, 25);
             this.numericUpDown_date.TabIndex = 6;
             // 
             // comboBox_SetdateType
@@ -94,10 +94,10 @@
             // 
             this.button2.Location = new System.Drawing.Point(256, 30);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(69, 23);
+            this.button2.Size = new System.Drawing.Size(69, 25);
             this.button2.TabIndex = 11;
             this.button2.Text = "设置";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseMnemonic = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // dateTimePicker1
@@ -105,7 +105,7 @@
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(85, 30);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(165, 21);
+            this.dateTimePicker1.Size = new System.Drawing.Size(165, 25);
             this.dateTimePicker1.TabIndex = 13;
             // 
             // SetMachineTime
@@ -136,12 +136,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.NumericUpDown numericUpDown_date;
-        private System.Windows.Forms.ComboBox comboBox_SetdateType;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton button1;
+        private ComponentFactory.Krypton.Toolkit.KryptonNumericUpDown numericUpDown_date;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox comboBox_SetdateType;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton button2;
+        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dateTimePicker1;
     }
 }

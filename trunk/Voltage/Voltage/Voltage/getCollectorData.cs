@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using System.Threading;
 namespace Voltage
 {
-    public partial class getCollectorData : Form
+    public partial class getCollectorData : ComponentFactory.Krypton.Toolkit.KryptonForm
     {
         public StringBuilder data;
         public string oldString="";

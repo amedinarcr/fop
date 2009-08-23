@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox_CollectAddress = new System.Windows.Forms.TextBox();
+            this.textBox_CollectAddress = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox_AdminName = new System.Windows.Forms.TextBox();
+            this.textBox_AdminName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox_AdminPhone = new System.Windows.Forms.TextBox();
+            this.textBox_AdminPhone = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox_AdminAddress = new System.Windows.Forms.TextBox();
+            this.textBox_AdminAddress = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label_CollectId = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox_remark = new System.Windows.Forms.TextBox();
+            this.button1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.button2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.textBox_remark = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 20);
+            this.label1.Location = new System.Drawing.Point(25, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 0;
@@ -63,7 +63,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 139);
+            this.label2.Location = new System.Drawing.Point(25, 139);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 13);
             this.label2.TabIndex = 2;
@@ -79,7 +79,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 50);
+            this.label3.Location = new System.Drawing.Point(25, 50);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 13);
             this.label3.TabIndex = 4;
@@ -95,7 +95,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 78);
+            this.label4.Location = new System.Drawing.Point(25, 78);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 13);
             this.label4.TabIndex = 6;
@@ -111,7 +111,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 108);
+            this.label5.Location = new System.Drawing.Point(25, 108);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 13);
             this.label5.TabIndex = 8;
@@ -131,20 +131,20 @@
             // 
             this.button1.Location = new System.Drawing.Point(278, 254);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 25);
             this.button1.TabIndex = 11;
             this.button1.Text = "保存";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseMnemonic = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(367, 254);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(75, 25);
             this.button2.TabIndex = 12;
             this.button2.Text = "关闭";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseMnemonic = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox_remark
@@ -159,7 +159,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(23, 171);
+            this.label6.Location = new System.Drawing.Point(25, 171);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 13);
             this.label6.TabIndex = 14;
@@ -198,18 +198,18 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox_CollectAddress;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBox_CollectAddress;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox_AdminName;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBox_AdminName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox_AdminPhone;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBox_AdminPhone;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox_AdminAddress;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBox_AdminAddress;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label_CollectId;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox_remark;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton button1;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton button2;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBox_remark;
         private System.Windows.Forms.Label label6;
     }
 }

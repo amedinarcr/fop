@@ -9,7 +9,7 @@ using System.IO.Ports;
 
 namespace Voltage
 {
-    public partial class OpenSerial : Form
+    public partial class OpenSerial : ComponentFactory.Krypton.Toolkit.KryptonForm
     {
         private PortData portData;
         public OpenSerial(PortData portData)
