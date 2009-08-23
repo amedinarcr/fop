@@ -31,9 +31,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.textBox2 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.textBox3 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -95,7 +95,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "InputMeasure";
-            this.Size = new System.Drawing.Size(173, 21);
+            this.Size = new System.Drawing.Size(173, 25);
             this.Load += new System.EventHandler(this.InputMeasure_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -107,8 +107,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBox1;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBox2;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBox3;
     }
 }

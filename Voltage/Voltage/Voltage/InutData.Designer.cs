@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.button2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox_fileName = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.textBox_fileName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.button3 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox_DataExist = new System.Windows.Forms.ComboBox();
+            this.comboBox_DataExist = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.button4 = new System.Windows.Forms.Button();
+            this.button4 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,10 +45,10 @@
             // 
             this.button1.Location = new System.Drawing.Point(427, 337);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 25);
             this.button1.TabIndex = 1;
             this.button1.Text = "关闭";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseMnemonic = true;
             this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -56,10 +56,10 @@
             // 
             this.button2.Location = new System.Drawing.Point(335, 337);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(75, 25);
             this.button2.TabIndex = 2;
             this.button2.Text = "导入";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseMnemonic = true;
             this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -75,7 +75,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.Size = new System.Drawing.Size(488, 273);
             this.dataGridView1.TabIndex = 4;
@@ -94,17 +94,17 @@
             // 
             this.textBox_fileName.Location = new System.Drawing.Point(73, 12);
             this.textBox_fileName.Name = "textBox_fileName";
-            this.textBox_fileName.Size = new System.Drawing.Size(269, 21);
+            this.textBox_fileName.Size = new System.Drawing.Size(269, 25);
             this.textBox_fileName.TabIndex = 7;
             // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(348, 12);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(75, 25);
             this.button3.TabIndex = 8;
             this.button3.Text = "选择文件";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseMnemonic = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label4
@@ -138,10 +138,10 @@
             // 
             this.button4.Location = new System.Drawing.Point(430, 12);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(75, 25);
             this.button4.TabIndex = 11;
             this.button4.Text = "导入";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseMnemonic = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // InputData
@@ -174,16 +174,16 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton button1;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton button2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox_fileName;
-        private System.Windows.Forms.Button button3;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBox_fileName;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton button3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox_DataExist;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox comboBox_DataExist;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Button button4;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton button4;
 
     }
 }

@@ -9,11 +9,12 @@ using Voltage.Properties;
 
 namespace Voltage
 {
-    public partial class LoginSystem : Form
+    public partial class LoginSystem : ComponentFactory.Krypton.Toolkit.KryptonForm
     {
         public LoginSystem()
         {
             InitializeComponent();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

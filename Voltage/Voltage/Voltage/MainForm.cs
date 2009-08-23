@@ -16,8 +16,10 @@ namespace Voltage
     {
         public PortData portData;
         public  string AppName="阴极保护电位自动采集系统";
+        public ComponentFactory.Krypton.Toolkit.KryptonManager kryptonManager;
         public MainForm()
         {
+            this.components = new System.ComponentModel.Container();
             InitializeComponent();
             Form.CheckForIllegalCrossThreadCalls = false;
         }
@@ -29,6 +31,8 @@ namespace Voltage
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+
+            this.kryptonManager = new KryptonManager(this.components);
             //DataSet ds = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text, "select CollectId,DataTime,DataValue from DataTable where CollectId in ('0001','0002') and DataTime>=#2008-12-20 8:00:01# and DataTime<#2008-12-20 8:00:20#");
             Program.mainForm.ShowCharting(3, null);
             this.LoadSerialMenuItem(); //开启手动打开串口服务
@@ -470,6 +474,34 @@ namespace Voltage
             if (this.portData != null)
                 if (this.portData.port != null && this.portData.port.IsOpen == false)
                     this.portData.port.Close();
+        }
+
+        private void office2007ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.kryptonManager.GlobalPaletteMode= PaletteModeManager.Office2007Blue;
+          
+        }
+
+        private void office2007ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.kryptonManager.GlobalPaletteMode = PaletteModeManager.Office2007Silver;
+        }
+
+        private void office2003ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.kryptonManager.GlobalPaletteMode = PaletteModeManager.ProfessionalOffice2003;
+        }
+
+        private void blackToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.kryptonManager.GlobalPaletteMode = PaletteModeManager.Office2007Black;
+
+        }
+
+        private void systemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.kryptonManager.GlobalPaletteMode = PaletteModeManager.ProfessionalSystem;
+
         }
     }
 }

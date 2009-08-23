@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Voltage
 {
-    public partial class Form1 : Form
+    public partial class Form1 : ComponentFactory.Krypton.Toolkit.KryptonForm
     {
         public DataTable VoltageTable;
         //参数

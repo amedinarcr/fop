@@ -9,7 +9,7 @@ using Excel;
 
 namespace Voltage
 {
-    public partial class test : Form
+    public partial class test : ComponentFactory.Krypton.Toolkit.KryptonForm
     {
         public test()
         {

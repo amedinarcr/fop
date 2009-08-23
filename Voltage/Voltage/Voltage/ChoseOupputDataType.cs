@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Voltage
 {
-    public partial class ChoseOupputDataType : Form
+    public partial class ChoseOupputDataType : ComponentFactory.Krypton.Toolkit.KryptonForm
     {
         private int DataType;
         public BackgroundWorker bWorker;

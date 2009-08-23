@@ -9,7 +9,7 @@ using System.Threading;
 using System.Data.OleDb;
 namespace Voltage
 {
-    public partial class InputData : Form
+    public partial class InputData : ComponentFactory.Krypton.Toolkit.KryptonForm
     {
         public StringBuilder data;
         public string oldString="";

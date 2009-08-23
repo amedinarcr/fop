@@ -11,7 +11,7 @@ using System.Drawing.Drawing2D;
 
 namespace Voltage
 {
-    public partial class OneTimeZendChart : Form
+    public partial class OneTimeZendChart : ComponentFactory.Krypton.Toolkit.KryptonForm
     {
         public OneTimeZendChart()
         {

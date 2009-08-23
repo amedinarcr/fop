@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Voltage
 {
-    public partial class ModifyData : Form
+    public partial class ModifyData : ComponentFactory.Krypton.Toolkit.KryptonForm
     {
         private int DataId;
         public ModifyData(int DataId)

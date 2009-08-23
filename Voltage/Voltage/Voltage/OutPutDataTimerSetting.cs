@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Voltage
 {
-    public partial class OutPutDataTimerSetting : Form
+    public partial class OutPutDataTimerSetting : ComponentFactory.Krypton.Toolkit.KryptonForm
     {
         public OutPutDataTimerSetting()
         {

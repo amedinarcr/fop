@@ -32,12 +32,12 @@
             this.listBox_Source = new System.Windows.Forms.ListBox();
             this.listBox_Des = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.button1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.button2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.button3 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.button4 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.button5 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.button6 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.SuspendLayout();
             // 
             // label1
@@ -66,7 +66,7 @@
             this.listBox_Des.FormattingEnabled = true;
             this.listBox_Des.HorizontalScrollbar = true;
             this.listBox_Des.ItemHeight = 12;
-            this.listBox_Des.Location = new System.Drawing.Point(210, 49);
+            this.listBox_Des.Location = new System.Drawing.Point(250, 49);
             this.listBox_Des.Name = "listBox_Des";
             this.listBox_Des.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listBox_Des.Size = new System.Drawing.Size(120, 256);
@@ -76,7 +76,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(223, 24);
+            this.label2.Location = new System.Drawing.Point(225, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 12);
             this.label2.TabIndex = 2;
@@ -86,60 +86,60 @@
             // 
             this.button1.Location = new System.Drawing.Point(146, 93);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(57, 23);
+            this.button1.Size = new System.Drawing.Size(57, 25);
             this.button1.TabIndex = 4;
             this.button1.Text = ">";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseMnemonic = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(146, 132);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(57, 23);
+            this.button2.Size = new System.Drawing.Size(57, 25);
             this.button2.TabIndex = 5;
             this.button2.Text = ">>";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseMnemonic = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(147, 172);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(57, 23);
+            this.button3.Size = new System.Drawing.Size(57, 25);
             this.button3.TabIndex = 6;
             this.button3.Text = "<";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseMnemonic = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(146, 210);
+            this.button4.Location = new System.Drawing.Point(146, 250);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(57, 23);
+            this.button4.Size = new System.Drawing.Size(57, 25);
             this.button4.TabIndex = 7;
             this.button4.Text = "<<";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseMnemonic = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(273, 323);
+            this.button5.Location = new System.Drawing.Point(273, 325);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(57, 23);
+            this.button5.Size = new System.Drawing.Size(57, 25);
             this.button5.TabIndex = 8;
             this.button5.Text = "关闭";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button5.UseMnemonic = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(199, 323);
+            this.button6.Location = new System.Drawing.Point(199, 325);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(57, 23);
+            this.button6.Size = new System.Drawing.Size(57, 25);
             this.button6.TabIndex = 9;
             this.button6.Text = "确定";
-            this.button6.UseVisualStyleBackColor = true;
+            this.button6.UseMnemonic = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // GetCollectID
@@ -174,11 +174,11 @@
         private System.Windows.Forms.ListBox listBox_Source;
         private System.Windows.Forms.ListBox listBox_Des;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton button1;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton button2;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton button3;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton button4;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton button5;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton button6;
     }
 }

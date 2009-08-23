@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox_CollectId = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
+            this.button1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.button2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.textBox_CollectId = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -47,38 +47,61 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.CalendarDayOfWeekStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.CalendarDay;
+            this.dateTimePicker1.CalendarDayStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.CalendarDay;
+            this.dateTimePicker1.CalendarHeaderStyle = ComponentFactory.Krypton.Toolkit.HeaderStyle.Calendar;
+            this.dateTimePicker1.CalendarTodayDate = new System.DateTime(2009, 8, 22, 0, 0, 0, 0);
+            this.dateTimePicker1.DropButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.InputControl;
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.InputControlStyle = ComponentFactory.Krypton.Toolkit.InputControlStyle.Standalone;
             this.dateTimePicker1.Location = new System.Drawing.Point(273, 3);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 21);
             this.dateTimePicker1.TabIndex = 1;
+            this.dateTimePicker1.UpDownButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.InputControl;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(479, 3);
+            this.button1.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Standalone;
+            this.button1.Location = new System.Drawing.Point(479, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
+            this.button1.Size = new System.Drawing.Size(75, 25);
             this.button1.TabIndex = 2;
             this.button1.Text = "显示";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Values.ExtraText = "";
+            this.button1.Values.Image = null;
+            this.button1.Values.ImageStates.ImageCheckedNormal = null;
+            this.button1.Values.ImageStates.ImageCheckedPressed = null;
+            this.button1.Values.ImageStates.ImageCheckedTracking = null;
+            this.button1.Values.Text = "显示";
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
+            this.button2.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Standalone;
             this.button2.Location = new System.Drawing.Point(170, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(44, 23);
+            this.button2.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
+            this.button2.Size = new System.Drawing.Size(44, 25);
             this.button2.TabIndex = 12;
             this.button2.Text = "选择";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Values.ExtraText = "";
+            this.button2.Values.Image = null;
+            this.button2.Values.ImageStates.ImageCheckedNormal = null;
+            this.button2.Values.ImageStates.ImageCheckedPressed = null;
+            this.button2.Values.ImageStates.ImageCheckedTracking = null;
+            this.button2.Values.Text = "选择";
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox_CollectId
             // 
             this.textBox_CollectId.Enabled = false;
+            this.textBox_CollectId.InputControlStyle = ComponentFactory.Krypton.Toolkit.InputControlStyle.Standalone;
             this.textBox_CollectId.Location = new System.Drawing.Point(73, 3);
             this.textBox_CollectId.Name = "textBox_CollectId";
-            this.textBox_CollectId.Size = new System.Drawing.Size(91, 21);
+            this.textBox_CollectId.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
+            this.textBox_CollectId.Size = new System.Drawing.Size(91, 23);
             this.textBox_CollectId.TabIndex = 11;
             // 
             // label2
@@ -111,10 +134,10 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox_CollectId;
+        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dateTimePicker1;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton button1;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton button2;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBox_CollectId;
         private System.Windows.Forms.Label label2;
     }
 }

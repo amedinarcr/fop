@@ -11,7 +11,7 @@ using System.Data.OleDb;
 
 namespace Voltage
 {
-    public partial class SetCollectProperty : Form
+    public partial class SetCollectProperty : ComponentFactory.Krypton.Toolkit.KryptonForm
     {
         public LineItem lineItem;
         public string CollectId;

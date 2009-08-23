@@ -109,20 +109,25 @@ namespace Voltage
             }
         
             //绑定采集器编号
+            System.Collections.ArrayList CollectInfoIdList = VoltageData.GetCollectInfoIdList();
             foreach (DataRow row in CollectInfoDataSet.Tables[0].Rows)
             {
                 TreeNode ProtectStationNameNode = this.treeView1.Nodes.Find("ProtectStationName_" + row["ProtectStationName"].ToString(), true)[0];
                 if (ProtectStationNameNode.Nodes.IndexOfKey("CollectId_" + row["CollectId"].ToString()) == -1)
                 {
-                    TreeNode node = new TreeNode(row["CollectId"].ToString());
-                    node.Name = "CollectId_"+row["ID"].ToString();
-                    node.ImageIndex = 2;
-                    node.SelectedImageIndex = 2;
-                    ProtectStationNameNode.Nodes.Add(node);                    
+                    if (CollectInfoIdList.IndexOf(row["ID"].ToString()) != -1)
+                    {
+                        TreeNode node = new TreeNode(row["CollectId"].ToString());
+                        node.Name = "CollectId_" + row["ID"].ToString();
+                        node.ImageIndex = 2;
+                        node.SelectedImageIndex = 2;
+                        ProtectStationNameNode.Nodes.Add(node);
+                    }
                 }
             }
 
             this.treeView1.ExpandAll();
         }
+
     }
 }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
@@ -38,7 +38,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(0, 8);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 20);
+            this.comboBox1.Size = new System.Drawing.Size(125, 20);
             this.comboBox1.TabIndex = 0;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -64,7 +64,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox comboBox1;
         private System.Windows.Forms.Panel panel1;
     }
 }

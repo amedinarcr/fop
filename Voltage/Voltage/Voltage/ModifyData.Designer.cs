@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox_DataTableId = new System.Windows.Forms.TextBox();
+            this.textBox_DataTableId = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox_DataValue = new System.Windows.Forms.TextBox();
+            this.textBox_DataValue = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
+            this.button1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.button2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.label_DataId = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -43,7 +43,7 @@
             // 
             this.textBox_DataTableId.Location = new System.Drawing.Point(98, 54);
             this.textBox_DataTableId.Name = "textBox_DataTableId";
-            this.textBox_DataTableId.Size = new System.Drawing.Size(125, 21);
+            this.textBox_DataTableId.Size = new System.Drawing.Size(125, 25);
             this.textBox_DataTableId.TabIndex = 3;
             // 
             // label2
@@ -59,13 +59,13 @@
             // 
             this.textBox_DataValue.Location = new System.Drawing.Point(98, 20);
             this.textBox_DataValue.Name = "textBox_DataValue";
-            this.textBox_DataValue.Size = new System.Drawing.Size(125, 21);
+            this.textBox_DataValue.Size = new System.Drawing.Size(125, 25);
             this.textBox_DataValue.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(51, 23);
+            this.label3.Location = new System.Drawing.Point(51, 25);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 12);
             this.label3.TabIndex = 4;
@@ -86,27 +86,27 @@
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(98, 87);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 21);
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 25);
             this.dateTimePicker1.TabIndex = 7;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(221, 130);
+            this.button1.Location = new System.Drawing.Point(225, 130);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 25);
             this.button1.TabIndex = 10;
             this.button1.Text = "关闭";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseMnemonic = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(140, 130);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(75, 25);
             this.button2.TabIndex = 11;
             this.button2.Text = "修改";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseMnemonic = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label_DataId
@@ -147,14 +147,14 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox_DataTableId;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBox_DataTableId;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox_DataValue;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBox_DataValue;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dateTimePicker1;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton button1;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton button2;
         private System.Windows.Forms.Label label_DataId;
     }
 }

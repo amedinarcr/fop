@@ -25,8 +25,9 @@ namespace Voltage
 
         private void GetCollectInfoId_Load(object sender, EventArgs e)
         {
-            this.buttonSpecAny1.Click += new EventHandler(buttonSpecAny1_Click);
-            this.buttonSpecAny2.Click += new EventHandler(buttonSpecAny2_Click);
+          
+            buttonSpecHeaderGroup1.Click += new EventHandler(buttonSpecAny1_Click);
+            this.buttonSpecHeaderGroup2.Click += new EventHandler(buttonSpecAny2_Click);
             TreeView treeView = this.dataTree1.treeView1;
             treeView.CheckBoxes = true;
             treeView.AfterCheck += new TreeViewEventHandler(treeView_AfterCheck);
@@ -46,7 +47,11 @@ namespace Voltage
 
         void treeView_AfterCheck(object sender, TreeViewEventArgs e)
         {
-            
+            if (e.Node.Nodes.Count > 0)
+            {
+                foreach (TreeNode node in e.Node.Nodes)
+                    node.Checked = e.Node.Checked;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

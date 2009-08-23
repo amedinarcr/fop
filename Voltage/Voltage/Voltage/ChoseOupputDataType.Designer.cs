@@ -30,15 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChoseOupputDataType));
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.comboBox1 = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.button2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.wizardControl1 = new WizardBase.WizardControl();
             this.startStep1 = new WizardBase.StartStep();
             this.startStep2 = new WizardBase.StartStep();
-            this.dateTimePicker_EndTime = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker_EndTime = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker_StartTime = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker_StartTime = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.finishStep1 = new WizardBase.FinishStep();
             this.label5 = new System.Windows.Forms.Label();
             this.label_info = new System.Windows.Forms.Label();
@@ -72,10 +72,10 @@
             // 
             this.button2.Location = new System.Drawing.Point(637, 98);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(75, 25);
             this.button2.TabIndex = 3;
             this.button2.Text = "下一步";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseMnemonic = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // wizardControl1
@@ -135,13 +135,13 @@
             this.dateTimePicker_EndTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker_EndTime.Location = new System.Drawing.Point(248, 155);
             this.dateTimePicker_EndTime.Name = "dateTimePicker_EndTime";
-            this.dateTimePicker_EndTime.Size = new System.Drawing.Size(262, 21);
+            this.dateTimePicker_EndTime.Size = new System.Drawing.Size(262, 25);
             this.dateTimePicker_EndTime.TabIndex = 10;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(191, 123);
+            this.label2.Location = new System.Drawing.Point(191, 125);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 7;
@@ -161,7 +161,7 @@
             this.dateTimePicker_StartTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker_StartTime.Location = new System.Drawing.Point(248, 117);
             this.dateTimePicker_StartTime.Name = "dateTimePicker_StartTime";
-            this.dateTimePicker_StartTime.Size = new System.Drawing.Size(262, 21);
+            this.dateTimePicker_StartTime.Size = new System.Drawing.Size(262, 25);
             this.dateTimePicker_StartTime.TabIndex = 8;
             // 
             // finishStep1
@@ -184,7 +184,7 @@
             // label_info
             // 
             this.label_info.AutoSize = true;
-            this.label_info.Location = new System.Drawing.Point(230, 247);
+            this.label_info.Location = new System.Drawing.Point(250, 247);
             this.label_info.Name = "label_info";
             this.label_info.Size = new System.Drawing.Size(0, 12);
             this.label_info.TabIndex = 10;
@@ -226,16 +226,17 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button2;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox comboBox1;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton button2;
         private WizardBase.WizardControl wizardControl1;
         private WizardBase.StartStep startStep1;
         private WizardBase.FinishStep finishStep1;
         private WizardBase.StartStep startStep2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker_EndTime;
+        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dateTimePicker_EndTime;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker_StartTime;
+        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dateTimePicker_StartTime;
+        
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Label label_info;

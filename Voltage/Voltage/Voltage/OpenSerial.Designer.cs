@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button_OpenSerial = new System.Windows.Forms.Button();
-            this.comboBox_Serial = new System.Windows.Forms.ComboBox();
+            this.button_OpenSerial = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.comboBox_Serial = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -37,10 +37,10 @@
             // 
             this.button_OpenSerial.Location = new System.Drawing.Point(200, 27);
             this.button_OpenSerial.Name = "button_OpenSerial";
-            this.button_OpenSerial.Size = new System.Drawing.Size(75, 23);
+            this.button_OpenSerial.Size = new System.Drawing.Size(75, 25);
             this.button_OpenSerial.TabIndex = 3;
             this.button_OpenSerial.Text = "打开串口";
-            this.button_OpenSerial.UseVisualStyleBackColor = true;
+            this.button_OpenSerial.UseMnemonic = true;
             this.button_OpenSerial.Click += new System.EventHandler(this.button_OpenSerial_Click);
             // 
             // comboBox_Serial
@@ -83,8 +83,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button_OpenSerial;
-        private System.Windows.Forms.ComboBox comboBox_Serial;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton button_OpenSerial;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox comboBox_Serial;
         private System.Windows.Forms.Label label1;
     }
 }
