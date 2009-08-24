@@ -125,7 +125,15 @@ namespace Voltage
                     }
                 }
             }
-
+            //如果保护站没有采集器编号，则不显示该保护站节点
+            foreach (TreeNode PipelineNameNode in this.treeView1.Nodes[0].Nodes)
+            {
+                foreach (TreeNode ProtectStationNode in PipelineNameNode.Nodes)
+                {
+                    if (ProtectStationNode.Nodes.Count == 0)
+                        ProtectStationNode.Remove();
+                }
+            }
             this.treeView1.ExpandAll();
         }
 

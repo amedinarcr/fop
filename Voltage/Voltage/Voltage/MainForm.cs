@@ -17,6 +17,7 @@ namespace Voltage
         public PortData portData;
         public  string AppName="阴极保护电位自动采集系统";
         public ComponentFactory.Krypton.Toolkit.KryptonManager kryptonManager;
+        public UC_DataGridCharting MainControl;
         public MainForm()
         {
             this.components = new System.ComponentModel.Container();
@@ -36,7 +37,7 @@ namespace Voltage
             //DataSet ds = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text, "select CollectId,DataTime,DataValue from DataTable where CollectId in ('0001','0002') and DataTime>=#2008-12-20 8:00:01# and DataTime<#2008-12-20 8:00:20#");
             Program.mainForm.ShowCharting(3, null);
             this.LoadSerialMenuItem(); //开启手动打开串口服务
-            this.StartSerialService();  //打开检测串口服务
+            //this.StartSerialService();  //打开检测串口服务
 
             this.StartOutPutTimerService();//打开定时导出服务
         }
@@ -244,10 +245,15 @@ namespace Voltage
                     gridChartingDefault.Dock = DockStyle.Fill;
                     this.panel_charting.Controls.Clear();
                     this.panel_charting.Controls.Add(gridChartingDefault);
+                    this.MainControl = gridChartingDefault;
                     break;
             }
         }
 
+        public void UpdateCollectInfoTree()
+        {
+            this.MainControl.dataTree1.LoadData();
+        }
         private void 退出EToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();

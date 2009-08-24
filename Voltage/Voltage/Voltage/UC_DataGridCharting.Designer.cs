@@ -71,7 +71,7 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.dataGridView1);
-            this.splitContainer1.Panel1.Padding = new System.Windows.Forms.Padding(1);
+            this.splitContainer1.Panel1.Padding = new System.Windows.Forms.Padding(3);
             this.splitContainer1.Panel1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.splitContainer1.Panel1.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient;
             // 
@@ -81,7 +81,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.button_property);
             this.splitContainer1.Panel2.Controls.Add(this.button3);
             this.splitContainer1.Panel2.Controls.Add(this.button2);
-            this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(1);
+            this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(3);
             this.splitContainer1.Panel2.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.splitContainer1.Panel2.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient;
             this.splitContainer1.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.LowProfile;
@@ -101,13 +101,13 @@
             this.dataGridView1.GridStyles.StyleColumn = ComponentFactory.Krypton.Toolkit.GridStyle.List;
             this.dataGridView1.GridStyles.StyleDataCells = ComponentFactory.Krypton.Toolkit.GridStyle.List;
             this.dataGridView1.GridStyles.StyleRow = ComponentFactory.Krypton.Toolkit.GridStyle.List;
-            this.dataGridView1.Location = new System.Drawing.Point(1, 1);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(533, 365);
+            this.dataGridView1.Size = new System.Drawing.Size(529, 361);
             this.dataGridView1.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellLeave);
@@ -287,7 +287,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonButton button4;
        
         private ComponentFactory.Krypton.Toolkit.KryptonSplitContainer splitContainer2;
-        private DataTree dataTree1;
+        public DataTree dataTree1;
         private ComponentFactory.Krypton.Toolkit.KryptonButton button_property;
         private ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup kryptonHeaderGroup1;
 

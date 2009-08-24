@@ -115,6 +115,7 @@ namespace Voltage
             CollectDataTable.Columns.Add("Longtitude");
             CollectDataTable.Columns.Add("Latitude");
             CollectDataTable.Columns.Add("ID");
+            CollectDataTable.Columns.Add("CollectInfoId");
             foreach (string CollectInfoId in CollectInfoList)
             {
                 DataSet topDataSet = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text, "select top 1 * from DataTable left join CollectInfo on DataTable.CollectInfoId=CollectInfo.ID where CollectInfo.ID=" + CollectInfoId + " order by DataTime desc");
@@ -129,6 +130,7 @@ namespace Voltage
                         newRow[column.ColumnName] = topRow[column.ColumnName].ToString();
                 }
 
+                newRow["CollectInfoId"] = CollectInfoId;
                 try
                 {
                     string titude = newRow["Latitude"].ToString();
@@ -148,6 +150,7 @@ namespace Voltage
             {
                 this.dataGridView1.DataSource = CollectDataTable;
                 this.dataGridView1.Columns["ID"].Visible = false;
+                this.dataGridView1.Columns["CollectInfoId"].Visible = false;
             };
             this.Invoke(update);
             this.isDetail = false;
@@ -223,6 +226,7 @@ namespace Voltage
                         this.dataGridView1.Rows.Remove(row);
                     }
                     MessageBox.Show("删除成功");
+                   
                 }
                 else
                 {
@@ -232,9 +236,10 @@ namespace Voltage
                     {
                         foreach (DataGridViewRow row in this.dataGridView1.SelectedRows)
                         {
-                            string CollectId = row.Cells["DataTable.CollectId"].Value.ToString();
-                            OleHelper.ExecuteNonQuery(OleHelper.Conn, CommandType.Text, "delete from DataTable where CollectId='" + CollectId + "'");
+                            string CollectInfoId = row.Cells["CollectInfoId"].Value.ToString();
+                            OleHelper.ExecuteNonQuery(OleHelper.Conn, CommandType.Text, "delete from DataTable where CollectInfoId=" + CollectInfoId + "");
                             this.dataGridView1.Rows.Remove(row);
+                            this.dataTree1.LoadData();
                         }
                         //MessageBox.Show("删除成功");                    
                     }                    
