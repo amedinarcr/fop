@@ -30,7 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OneTimeZendChart));
-            this.splitContainer2 = new ComponentFactory.Krypton.Toolkit.KryptonSplitContainer();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.uC_SearchOneTimeData1 = new Voltage.UC_SearchOneTimeData();
+            this.zedGraphControl1 = new ZedGraph.ZedGraphControl();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -41,10 +43,6 @@
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
-            this.zedGraphControl1 = new ZedGraph.ZedGraphControl();
-            this.uC_SearchOneTimeData1 = new Voltage.UC_SearchOneTimeData();
-            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
@@ -70,8 +68,32 @@
             this.splitContainer2.SplitterDistance = 44;
             this.splitContainer2.TabIndex = 1;
             // 
+            // uC_SearchOneTimeData1
+            // 
+            this.uC_SearchOneTimeData1.Location = new System.Drawing.Point(0, 9);
+            this.uC_SearchOneTimeData1.Name = "uC_SearchOneTimeData1";
+            this.uC_SearchOneTimeData1.Size = new System.Drawing.Size(880, 27);
+            this.uC_SearchOneTimeData1.TabIndex = 0;
+            // 
+            // zedGraphControl1
+            // 
+            this.zedGraphControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.zedGraphControl1.IsShowPointValues = true;
+            this.zedGraphControl1.Location = new System.Drawing.Point(0, 0);
+            this.zedGraphControl1.Name = "zedGraphControl1";
+            this.zedGraphControl1.ScrollGrace = 0;
+            this.zedGraphControl1.ScrollMaxX = 0;
+            this.zedGraphControl1.ScrollMaxY = 0;
+            this.zedGraphControl1.ScrollMaxY2 = 0;
+            this.zedGraphControl1.ScrollMinX = 0;
+            this.zedGraphControl1.ScrollMinY = 0;
+            this.zedGraphControl1.ScrollMinY2 = 0;
+            this.zedGraphControl1.Size = new System.Drawing.Size(978, 453);
+            this.zedGraphControl1.TabIndex = 2;
+            // 
             // toolStrip1
             // 
+            this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.toolStripButton2,
@@ -81,9 +103,7 @@
             this.toolStripSeparator2,
             this.toolStripButton5,
             this.toolStripButton6,
-            this.toolStripButton7,
-            this.toolStripComboBox1,
-            this.toolStripButton8});
+            this.toolStripButton7});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(978, 25);
@@ -163,43 +183,6 @@
             this.toolStripButton7.Text = "打印";
             this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
             // 
-            // zedGraphControl1
-            // 
-            this.zedGraphControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.zedGraphControl1.IsShowPointValues = true;
-            this.zedGraphControl1.Location = new System.Drawing.Point(0, 0);
-            this.zedGraphControl1.Name = "zedGraphControl1";
-            this.zedGraphControl1.ScrollGrace = 0;
-            this.zedGraphControl1.ScrollMaxX = 0;
-            this.zedGraphControl1.ScrollMaxY = 0;
-            this.zedGraphControl1.ScrollMaxY2 = 0;
-            this.zedGraphControl1.ScrollMinX = 0;
-            this.zedGraphControl1.ScrollMinY = 0;
-            this.zedGraphControl1.ScrollMinY2 = 0;
-            this.zedGraphControl1.Size = new System.Drawing.Size(978, 453);
-            this.zedGraphControl1.TabIndex = 2;
-            // 
-            // uC_SearchOneTimeData1
-            // 
-            this.uC_SearchOneTimeData1.Location = new System.Drawing.Point(0, 9);
-            this.uC_SearchOneTimeData1.Name = "uC_SearchOneTimeData1";
-            this.uC_SearchOneTimeData1.Size = new System.Drawing.Size(880, 27);
-            this.uC_SearchOneTimeData1.TabIndex = 0;
-            // 
-            // toolStripComboBox1
-            // 
-            this.toolStripComboBox1.Name = "toolStripComboBox1";
-            this.toolStripComboBox1.Size = new System.Drawing.Size(125, 25);
-            // 
-            // toolStripButton8
-            // 
-            this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton8.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton8.Image")));
-            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton8.Name = "toolStripButton8";
-            this.toolStripButton8.Size = new System.Drawing.Size(25, 22);
-            this.toolStripButton8.Text = "toolStripButton8";
-            // 
             // OneTimeZendChart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -222,7 +205,7 @@
 
         #endregion
 
-        private ComponentFactory.Krypton.Toolkit.KryptonSplitContainer splitContainer2;
+        private System.Windows.Forms.SplitContainer splitContainer2;
         private UC_SearchOneTimeData uC_SearchOneTimeData1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
@@ -235,8 +218,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButton6;
         private System.Windows.Forms.ToolStripButton toolStripButton7;
         private ZedGraph.ZedGraphControl zedGraphControl1;
-        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
-        private System.Windows.Forms.ToolStripButton toolStripButton8;
 
     }
 }
