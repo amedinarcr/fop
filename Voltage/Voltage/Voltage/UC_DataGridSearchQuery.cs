@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Voltage
 {
-    public partial class UC_DataGridSearchQuery : UserControl
+    public partial class UC_DataGridSearchQuery : UserControl 
     {
         public DataSet ds;
         public int Type;
@@ -21,6 +21,7 @@ namespace Voltage
             this.dateTimePicker_StartTime.CustomFormat = "yyyy-MM-dd HH:mm:ss";
             this.dateTimePicker_EndTime.CustomFormat = "yyyy-MM-dd HH:mm:ss";
             this.kryptonDropButton1.Text = NullTxt;
+
         }
         public string NullTxt = "(请选择采集器编号)";
         public UC_DataGridSearchQuery(int Type)
@@ -61,7 +62,7 @@ namespace Voltage
                 MessageBox.Show("请先选择采集编号");
                 return;
             }
-            this.ds = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text, "select CollectInfo.CollectId as CollectId,DataTime,DataValue from DataTable left join CollectInfo on DataTable.CollectInfoId=CollectInfo.ID where DataTable.CollectInfoId in (" + this.kryptonDropButton1.Text + ") and DataTime>=#" + this.dateTimePicker_StartTime.Value.ToString() + "# and DataTime<=#" + this.dateTimePicker_EndTime.Value.ToString() + "# order by DataTime asc");
+            this.ds = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text, "select CollectInfo.CollectId as CollectId,DataTime,DataValue,PipelineName,Mileage,ProtectStationName,TestPileID from DataTable left join CollectInfo on DataTable.CollectInfoId=CollectInfo.ID where DataTable.CollectInfoId in (" + this.kryptonDropButton1.Text + ") and DataTime>=#" + this.dateTimePicker_StartTime.Value.ToString() + "# and DataTime<=#" + this.dateTimePicker_EndTime.Value.ToString() + "# order by DataTime asc");
             if (ds.Tables[0].Rows.Count > 0)
             {
                 ZendChart zend=this.ParentForm as ZendChart;
