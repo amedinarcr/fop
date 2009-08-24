@@ -31,23 +31,26 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ZendChart));
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.button_ShowHidden = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.comboBox_CollectId = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
-            this.splitContainer2 = new ComponentFactory.Krypton.Toolkit.KryptonSplitContainer();
+            this._button1 = new System.Windows.Forms.Button();
+            this._button_ShowHidden = new System.Windows.Forms.Button();
+            this._comboBox_CollectId = new System.Windows.Forms.ComboBox();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.uC_DataGridSearchQuery1 = new Voltage.UC_DataGridSearchQuery();
             this.zedGraphControl1 = new ZedGraph.ZedGraphControl();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
+            this.comboBox_CollectId = new System.Windows.Forms.ToolStripComboBox();
+            this.button_ShowHidden = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.button1 = new System.Windows.Forms.ToolStripButton();
             this.groupBox4.SuspendLayout();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -57,77 +60,51 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.button1);
-            this.groupBox4.Controls.Add(this.button_ShowHidden);
-            this.groupBox4.Controls.Add(this.comboBox_CollectId);
+            this.groupBox4.Controls.Add(this._button1);
+            this.groupBox4.Controls.Add(this._button_ShowHidden);
+            this.groupBox4.Controls.Add(this._comboBox_CollectId);
             this.groupBox4.Location = new System.Drawing.Point(822, 516);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.groupBox4.Size = new System.Drawing.Size(187, 93);
             this.groupBox4.TabIndex = 6;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "基本属性";
             // 
-            // button1
+            // _button1
             // 
-            this.button1.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Standalone;
-            this.button1.Location = new System.Drawing.Point(104, 53);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.button1.Name = "button1";
-            this.button1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
-            this.button1.Size = new System.Drawing.Size(74, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "属性";
-            this.button1.Values.ExtraText = "";
-            this.button1.Values.Image = null;
-            this.button1.Values.ImageStates.ImageCheckedNormal = null;
-            this.button1.Values.ImageStates.ImageCheckedPressed = null;
-            this.button1.Values.ImageStates.ImageCheckedTracking = null;
-            this.button1.Values.Text = "属性";
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this._button1.Location = new System.Drawing.Point(106, 55);
+            this._button1.Name = "_button1";
+            this._button1.Size = new System.Drawing.Size(75, 21);
+            this._button1.TabIndex = 5;
+            this._button1.Text = "属性";
+            this._button1.UseVisualStyleBackColor = true;
+            this._button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button_ShowHidden
+            // _button_ShowHidden
             // 
-            this.button_ShowHidden.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Standalone;
-            this.button_ShowHidden.Location = new System.Drawing.Point(7, 53);
-            this.button_ShowHidden.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.button_ShowHidden.Name = "button_ShowHidden";
-            this.button_ShowHidden.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
-            this.button_ShowHidden.Size = new System.Drawing.Size(74, 23);
-            this.button_ShowHidden.TabIndex = 4;
-            this.button_ShowHidden.Text = "button1";
-            this.button_ShowHidden.Values.ExtraText = "";
-            this.button_ShowHidden.Values.Image = null;
-            this.button_ShowHidden.Values.ImageStates.ImageCheckedNormal = null;
-            this.button_ShowHidden.Values.ImageStates.ImageCheckedPressed = null;
-            this.button_ShowHidden.Values.ImageStates.ImageCheckedTracking = null;
-            this.button_ShowHidden.Values.Text = "button1";
-            this.button_ShowHidden.Click += new System.EventHandler(this.button_ShowHidden_Click);
+            this._button_ShowHidden.Location = new System.Drawing.Point(7, 55);
+            this._button_ShowHidden.Name = "_button_ShowHidden";
+            this._button_ShowHidden.Size = new System.Drawing.Size(75, 21);
+            this._button_ShowHidden.TabIndex = 4;
+            this._button_ShowHidden.Text = "button1";
+            this._button_ShowHidden.UseVisualStyleBackColor = true;
+            this._button_ShowHidden.Click += new System.EventHandler(this.button_ShowHidden_Click);
             // 
-            // comboBox_CollectId
+            // _comboBox_CollectId
             // 
-            this.comboBox_CollectId.DropBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ControlClient;
-            this.comboBox_CollectId.DropButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.InputControl;
-            this.comboBox_CollectId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_CollectId.DropDownWidth = 174;
-            this.comboBox_CollectId.FormattingEnabled = true;
-            this.comboBox_CollectId.InputControlStyle = ComponentFactory.Krypton.Toolkit.InputControlStyle.Standalone;
-            this.comboBox_CollectId.ItemStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.ListItem;
-            this.comboBox_CollectId.Location = new System.Drawing.Point(7, 21);
-            this.comboBox_CollectId.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.comboBox_CollectId.Name = "comboBox_CollectId";
-            this.comboBox_CollectId.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
-            this.comboBox_CollectId.Size = new System.Drawing.Size(174, 23);
-            this.comboBox_CollectId.TabIndex = 3;
-            this.comboBox_CollectId.SelectedIndexChanged += new System.EventHandler(this.comboBox_CollectId_SelectedIndexChanged);
+            this._comboBox_CollectId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._comboBox_CollectId.FormattingEnabled = true;
+            this._comboBox_CollectId.Location = new System.Drawing.Point(7, 22);
+            this._comboBox_CollectId.Name = "_comboBox_CollectId";
+            this._comboBox_CollectId.Size = new System.Drawing.Size(174, 20);
+            this._comboBox_CollectId.TabIndex = 3;
+            this._comboBox_CollectId.SelectedIndexChanged += new System.EventHandler(this.comboBox_CollectId_SelectedIndexChanged);
             // 
             // splitContainer2
             // 
             this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer2.IsSplitterFixed = true;
             this.splitContainer2.Location = new System.Drawing.Point(0, 25);
-            this.splitContainer2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -140,15 +117,13 @@
             this.splitContainer2.Panel2.Controls.Add(this.zedGraphControl1);
             this.splitContainer2.Size = new System.Drawing.Size(978, 485);
             this.splitContainer2.SplitterDistance = 44;
-            this.splitContainer2.SplitterWidth = 3;
             this.splitContainer2.TabIndex = 1;
             // 
             // uC_DataGridSearchQuery1
             // 
-            this.uC_DataGridSearchQuery1.Location = new System.Drawing.Point(2, 9);
-            this.uC_DataGridSearchQuery1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.uC_DataGridSearchQuery1.Location = new System.Drawing.Point(3, 9);
             this.uC_DataGridSearchQuery1.Name = "uC_DataGridSearchQuery1";
-            this.uC_DataGridSearchQuery1.Size = new System.Drawing.Size(978, 27);
+            this.uC_DataGridSearchQuery1.Size = new System.Drawing.Size(978, 28);
             this.uC_DataGridSearchQuery1.TabIndex = 0;
             this.uC_DataGridSearchQuery1.Load += new System.EventHandler(this.uC_DataGridSearchQuery1_Load);
             // 
@@ -158,7 +133,6 @@
             this.zedGraphControl1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.zedGraphControl1.IsShowPointValues = true;
             this.zedGraphControl1.Location = new System.Drawing.Point(0, 0);
-            this.zedGraphControl1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.zedGraphControl1.Name = "zedGraphControl1";
             this.zedGraphControl1.ScrollGrace = 0;
             this.zedGraphControl1.ScrollMaxX = 0;
@@ -167,8 +141,9 @@
             this.zedGraphControl1.ScrollMinX = 0;
             this.zedGraphControl1.ScrollMinY = 0;
             this.zedGraphControl1.ScrollMinY2 = 0;
-            this.zedGraphControl1.Size = new System.Drawing.Size(978, 438);
+            this.zedGraphControl1.Size = new System.Drawing.Size(978, 437);
             this.zedGraphControl1.TabIndex = 2;
+            this.zedGraphControl1.Load += new System.EventHandler(this.zedGraphControl1_Load);
             // 
             // toolStrip1
             // 
@@ -176,11 +151,17 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.toolStripButton2,
+            this.toolStripSeparator1,
             this.toolStripButton3,
             this.toolStripButton4,
+            this.toolStripSeparator2,
             this.toolStripButton5,
             this.toolStripButton6,
-            this.toolStripButton7});
+            this.toolStripButton7,
+            this.toolStripSeparator3,
+            this.comboBox_CollectId,
+            this.button_ShowHidden,
+            this.button1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(978, 25);
@@ -205,6 +186,11 @@
             this.toolStripButton2.Text = "保存到文件";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
             // toolStripButton3
             // 
             this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
@@ -223,6 +209,11 @@
             this.toolStripButton4.Text = "取消所有缩放";
             this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
             // toolStripButton5
             // 
             this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
@@ -234,7 +225,6 @@
             // 
             // toolStripButton6
             // 
-            this.toolStripButton6.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
             this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton6.Name = "toolStripButton6";
@@ -251,25 +241,34 @@
             this.toolStripButton7.Text = "打印";
             this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
             // 
-            // toolStripSeparator1
+            // comboBox_CollectId
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.comboBox_CollectId.Name = "comboBox_CollectId";
+            this.comboBox_CollectId.Size = new System.Drawing.Size(121, 25);
+            this.comboBox_CollectId.SelectedIndexChanged +=new System.EventHandler(comboBox_CollectId_SelectedIndexChanged);
             // 
-            // toolStripSeparator2
+            // button_ShowHidden
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.button_ShowHidden.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.button_ShowHidden.Image = ((System.Drawing.Image)(resources.GetObject("button_ShowHidden.Image")));
+            this.button_ShowHidden.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.button_ShowHidden.Name = "button_ShowHidden";
+            this.button_ShowHidden.Size = new System.Drawing.Size(35, 22);
+            this.button_ShowHidden.Text = "隐藏";
+            this.button_ShowHidden.Click += new System.EventHandler(this.button_ShowHidden_Click);
             // 
-            // toolStripButton8
+            // toolStripSeparator3
             // 
-            this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton8.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton8.Image")));
-            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton8.Name = "toolStripButton8";
-            this.toolStripButton8.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton8.Text = "toolStripButton8";
-            this.toolStripButton8.Click += new System.EventHandler(this.toolStripButton8_Click);
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // button1
+            // 
+            this.button1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(53, 22);
+            this.button1.Text = "   属性   ";
+            this.button1.Click +=new System.EventHandler(button1_Click);
             // 
             // ZendChart
             // 
@@ -279,8 +278,6 @@
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.splitContainer2);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "ZendChart";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "绘图";
@@ -298,11 +295,11 @@
 
         #endregion
 
-        private ComponentFactory.Krypton.Toolkit.KryptonButton button1;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton button_ShowHidden;
-        private ComponentFactory.Krypton.Toolkit.KryptonComboBox comboBox_CollectId;
+        private System.Windows.Forms.Button _button1;
+        private System.Windows.Forms.Button _button_ShowHidden;
+        private System.Windows.Forms.ComboBox _comboBox_CollectId;
         public System.Windows.Forms.GroupBox groupBox4;
-        private ComponentFactory.Krypton.Toolkit.KryptonSplitContainer splitContainer2;
+        private System.Windows.Forms.SplitContainer splitContainer2;
         private UC_DataGridSearchQuery uC_DataGridSearchQuery1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
@@ -314,8 +311,11 @@
         private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.ToolStripButton toolStripButton6;
         private System.Windows.Forms.ToolStripButton toolStripButton7;
+        private System.Windows.Forms.ToolStripComboBox comboBox_CollectId;
         private ZedGraph.ZedGraphControl zedGraphControl1;
-        private System.Windows.Forms.ToolStripButton toolStripButton8;
+        private System.Windows.Forms.ToolStripButton button_ShowHidden;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripButton button1;
 
     }
 }

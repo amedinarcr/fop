@@ -160,15 +160,14 @@
   <data name="toolStripButton4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAbxJREFUOE+Nk6Fv
-        20AUxp2/YJVGylYYFv8BrRI41Dgs7AzN7EoDYTGrmQ3LLrBgU04jLfPBkWkHw2JYMDmngamSc/72Lm1c
-        q3GmnPR0p5O/3/ue37seZh6c19VLRG9/Pnm3gHa0hWqxgE4iRHGMaBY3iQ7gbYC6F9gtEmLmAyuFBd1Z
-        wIkQEsUUkQf5KCFkAf0MCDpHEbmhOFqeeKiDIeAPkS8aJ9C6qoonY7I7XrPA7wbUwfLBCuENgNEn2t2q
-        eta7WgoCqMK6UN2AtlDNcBvK7/jTd2o9HZHcZt8B/kq1AfM7HNSfKaP7Eeg7lPW3zVyrgH3Jzx1s4pDE
-        ZfVzVW6//VgfAuCQuO9Qxg/45V2+Aixkg7U3xPLM2QHkShsu8ppNOxzAdbC+aDuwgLIqnzTyZG7FW6k0
-        5klKDt4Gr+nGS49DsxRf9/Xus1rhVqiSOiDqydRDljDwxMdBK21/fYRhmnGyKqnewobh9znmcUbiayg5
-        r8oVN+LuCIQFLGR+EzeT6YSEY4zpX/DYNcXjVaWLlCI7DumaMkazwTwXImkg20KlhmdHhup/EJ4MzTIb
-        YDwaII3bL/nk1/v+w3/xPMANOT9ReAAAAABJRU5ErkJggg==
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAXFJREFUOE+NkyGT
+        wjAUhMs/QJ5EIvsTKk9WIiORkZWRlZHISOSTyMiTkchIZOS5vX2hQG8oDJnZSdrpfm+Tl64w9GimsRpl
+        dVt/PCtgrrkxhYAyWljnYAd3L/QEnwPSUVAHjRgMcE4IfKeADyE0Ocr2iKcIiRnlFxCurWUa6uX21IR9
+        B5gOMUxJGKYUIF8Afwgwe7MMwJ5mGtG3QLe5zr90cmROKWuKtAyYG9PAvUdB2TYoOwIVwOoKiKnAmIUE
+        +GbFdg3QVKtSiVHjFyHO0sznc4H85GdANWu17RqpZ8UJoHPms6ybCogEBIkwu6UEbYO8+Z9AAeVC4+iq
+        WeO70TPB4+Ldu3HtsYWITPtl5KmqGoXyB0G/6+FHg0A9tVL7ayjvQ42q+1WFY4RzvppTdCjnADm8gGiP
+        9ZRvUlMVzyK4FvnUoWRf9RKydMsM74RKxgckJ4/gX1yqd5AwsjO+Rd+18G7hQN/9xjUJ2961V4B++wdU
+        0rvLaia8WQAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="toolStripButton5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -207,7 +206,7 @@
         tXYAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="toolStripButton8.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="button_ShowHidden.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAgxJREFUOE+lkvtL
