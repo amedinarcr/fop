@@ -177,6 +177,29 @@ namespace Voltage
             }
         }
 
+        public static int InsertDefaultCollectInfo(String CollectId)
+        {
+            string insertSql = "insert into CollectInfo(CollectId,ProtectStationName,TestPileID,PipelineName,Mileage,Latitude,Remark,LineWidth,LineStyle,LineColor,SymbolType) values(@CollectId,@ProtectStationName,@TestPileID,@PipelineName,@Mileage,@Latitude,@Remark,@LineWidth,@LineStyle,@LineColor,@SymbolType)";
+            OleDbParameter p_CollectId = new OleDbParameter("CollectId", CollectId);
+            OleDbParameter p_ProtectStationName = new OleDbParameter("@ProtectStationName", "");
+            OleDbParameter p_TestPileID = new OleDbParameter("@TestPileID", "");
+            OleDbParameter p_PipelineName = new OleDbParameter("PipelineName", Voltage.Properties.Settings.Default.PipelineName);
+            OleDbParameter p_Mileage = new OleDbParameter("@Mileage", "");
+            OleDbParameter p_Latitude = new OleDbParameter("@Latitude", ",,&,,");
+            OleDbParameter p_Remark = new OleDbParameter("@Remark", "");
+            OleDbParameter p_LineWidth = new OleDbParameter("@LineWidth", "1");
+            p_LineWidth.OleDbType = OleDbType.Integer;
+            OleDbParameter p_LineStyle = new OleDbParameter("@LineStyle", "0");
+            p_LineStyle.OleDbType = OleDbType.Integer;
+            OleDbParameter p_LineColor = new OleDbParameter("@LineColor", "-65536");
+            p_LineColor.OleDbType = OleDbType.Integer;
+            OleDbParameter p_SymbolType = new OleDbParameter("@SymbolType", "0");
+            p_SymbolType.OleDbType = OleDbType.Integer;
+            OleHelper.ExecuteNonQuery(OleHelper.Conn, CommandType.Text, insertSql, new OleDbParameter[] { p_CollectId, p_ProtectStationName, p_TestPileID, p_PipelineName, p_Mileage, p_Latitude, p_Remark, p_LineWidth, p_LineStyle, p_LineColor, p_SymbolType });
+            return Convert.ToInt32(OleHelper.ExecuteScalar(OleHelper.Conn, CommandType.Text, "select top 1 ID from CollectInfo order by ID desc"));
+
+        }
+
 
 
 

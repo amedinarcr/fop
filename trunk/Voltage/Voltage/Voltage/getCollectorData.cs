@@ -31,6 +31,7 @@ namespace Voltage
                 this.label2.Text = "正在读取数据，请稍候...";
                 this.label1.Text = "";
                 this.dataGridView1.Visible = false;
+
                 task = new Thread(new ThreadStart(receiveData));
                 task.Start();
             }
@@ -148,9 +149,21 @@ namespace Voltage
 
         private void button1_Click(object sender, EventArgs e)
         {
-            task.Abort();
-            DialogResult = DialogResult.Cancel;
-            //this.Close();
+            if (task != null&task.IsAlive)
+            {
+                if (MessageBox.Show("正在导入数据，你确定要取消吗？", "取消导入", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    task.Abort();
+                    DialogResult = DialogResult.Cancel;
+                }
+                else
+                {
+
+                }
+            }
+            else
+                DialogResult = DialogResult.Cancel;
+          
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -179,16 +192,16 @@ namespace Voltage
                 DateTime dataTime = Convert.ToDateTime(row["DataTime"].ToString());
 
                 //首先检查采集器信息表中是否有相应的配置信息，如果没有则添加默认配置
-                string CollectInfoId = OleHelper.ExecuteScalar(OleHelper.Conn, CommandType.Text, "select ID from CollectInfo where CollectId='" + CollectId + "' and PipeLineName='" + Voltage.Properties.Settings.Default.PipelineName + "'").ToString();
+                object CollectInfoId = OleHelper.ExecuteScalar(OleHelper.Conn, CommandType.Text, "select ID from CollectInfo where CollectId='" + CollectId + "' and PipeLineName='" + Voltage.Properties.Settings.Default.PipelineName + "'");
                 if (CollectInfoId == null)
                 {
-                    
+                    CollectInfoId = Lib.InsertDefaultCollectInfo(CollectId).ToString();
                 }
-                string querySql = "Select DataId from DataTable where CollectId='" + CollectId + "' and DataTime=#" + dataTime.ToString() + "#";
+                string querySql = "Select DataId from DataTable where CollectInfoId=" + CollectInfoId.ToString() + " and DataTime=#" + dataTime.ToString() + "#";
               
                 if (OleHelper.ExecuteScalar(OleHelper.Conn, CommandType.Text, querySql) == null)
                 {
-                    string insertSql = "insert into DataTable(CollectId,DataTime,DataValue,DataTableId) values('" + CollectId + "',#" + row["DataTime"].ToString() + "#," + row["DataValue"].ToString() + ",'"+row["DataTableId"].ToString()+"')";
+                    string insertSql = "insert into DataTable(CollectInfoId,DataTime,DataValue,DataTableId) values(" + CollectInfoId + ",#" + row["DataTime"].ToString() + "#," + row["DataValue"].ToString() + ",'"+row["DataTableId"].ToString()+"')";
                     OleHelper.ExecuteNonQuery(OleHelper.Conn, CommandType.Text, insertSql);
                     insertCount++;
                     UpdateForm update = delegate()
@@ -232,6 +245,7 @@ namespace Voltage
                     break;
                 case "DataTime":
                     e.Column.HeaderText = "采集时间";
+                    e.Column.DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss";
                     break;
                 case "DataValue":
                     e.Column.HeaderText = "电位值";

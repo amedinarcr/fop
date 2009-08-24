@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.label1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.dateTimePicker1 = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.button1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.button2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.textBox_CollectId = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -113,19 +115,31 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "采集器编号";
             // 
+            // kryptonPanel1
+            // 
+            this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
+            this.kryptonPanel1.Name = "kryptonPanel1";
+            this.kryptonPanel1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
+            this.kryptonPanel1.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient;
+            this.kryptonPanel1.Size = new System.Drawing.Size(880, 27);
+            this.kryptonPanel1.TabIndex = 13;
+            // 
             // UC_SearchOneTimeData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox_CollectId);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.kryptonPanel1);
+            this.kryptonPanel1.Controls.Add(this.button2);
+            this.kryptonPanel1.Controls.Add(this.textBox_CollectId);
+            this.kryptonPanel1.Controls.Add(this.label2);
+            this.kryptonPanel1.Controls.Add(this.button1);
+            this.kryptonPanel1.Controls.Add(this.dateTimePicker1);
+            this.kryptonPanel1.Controls.Add(this.label1);
             this.Name = "UC_SearchOneTimeData";
             this.Size = new System.Drawing.Size(880, 27);
             this.Load += new System.EventHandler(this.UC_SearchOneTimeData_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,11 +147,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel label1;
         private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dateTimePicker1;
         private ComponentFactory.Krypton.Toolkit.KryptonButton button1;
         private ComponentFactory.Krypton.Toolkit.KryptonButton button2;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBox_CollectId;
-        private System.Windows.Forms.Label label2;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel label2;
+        private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
     }
 }

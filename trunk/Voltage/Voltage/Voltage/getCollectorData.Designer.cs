@@ -30,30 +30,46 @@
         {
             this.button1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.button2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.dataGridView1 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.label2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
+            this.button1.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Standalone;
             this.button1.Location = new System.Drawing.Point(427, 302);
             this.button1.Name = "button1";
+            this.button1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.button1.Size = new System.Drawing.Size(75, 25);
             this.button1.TabIndex = 1;
             this.button1.Text = "关闭";
-            this.button1.UseMnemonic = true;
+            this.button1.Values.ExtraText = "";
+            this.button1.Values.Image = null;
+            this.button1.Values.ImageStates.ImageCheckedNormal = null;
+            this.button1.Values.ImageStates.ImageCheckedPressed = null;
+            this.button1.Values.ImageStates.ImageCheckedTracking = null;
+            this.button1.Values.Text = "关闭";
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
+            this.button2.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Standalone;
             this.button2.Location = new System.Drawing.Point(335, 302);
             this.button2.Name = "button2";
+            this.button2.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.button2.Size = new System.Drawing.Size(75, 25);
             this.button2.TabIndex = 2;
             this.button2.Text = "导入";
-            this.button2.UseMnemonic = true;
+            this.button2.Values.ExtraText = "";
+            this.button2.Values.Image = null;
+            this.button2.Values.ImageStates.ImageCheckedNormal = null;
+            this.button2.Values.ImageStates.ImageCheckedPressed = null;
+            this.button2.Values.ImageStates.ImageCheckedTracking = null;
+            this.button2.Values.Text = "导入";
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
@@ -94,16 +110,27 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "label2";
             // 
+            // kryptonPanel1
+            // 
+            this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
+            this.kryptonPanel1.Name = "kryptonPanel1";
+            this.kryptonPanel1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
+            this.kryptonPanel1.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient;
+            this.kryptonPanel1.Size = new System.Drawing.Size(517, 336);
+            this.kryptonPanel1.TabIndex = 6;
+            // 
             // getCollectorData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(517, 336);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.kryptonPanel1);
+            this.kryptonPanel1.Controls.Add(this.label2);
+            this.kryptonPanel1.Controls.Add(this.dataGridView1);
+            this.kryptonPanel1.Controls.Add(this.label1);
+            this.kryptonPanel1.Controls.Add(this.button2);
+            this.kryptonPanel1.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -114,6 +141,7 @@
             this.Load += new System.EventHandler(this.getCollectorData_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.getCollectorData_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,9 +151,11 @@
 
         private ComponentFactory.Krypton.Toolkit.KryptonButton button1;
         private ComponentFactory.Krypton.Toolkit.KryptonButton button2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label2;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel label1;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dataGridView1;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel label2;
+        private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
+        
 
     }
 }
