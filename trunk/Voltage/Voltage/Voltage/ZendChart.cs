@@ -28,6 +28,7 @@ namespace Voltage
         {
             this.splitContainer2.Panel2.Enabled = false;
             GraphPane myPane = this.zedGraphControl1.GraphPane;
+
             myPane.YAxis.Scale.Min = 0;
             myPane.YAxis.Scale.Max = 1.5;
             // Set the titles
@@ -68,7 +69,7 @@ namespace Voltage
             // from chart fraction 0.0 to 1.0
             box.Location.CoordinateFrame = CoordType.XChartFractionYScale;
             myPane.GraphObjList.Add(box);
-            
+
 
         }
 
@@ -77,10 +78,8 @@ namespace Voltage
             // Get a reference to the GraphPane
             GraphPane myPane = this.zedGraphControl1.GraphPane;
 
-            
-   
             myPane.CurveList.Clear();
-                       
+
             ArrayList CollectIdList = this.getCollectIdList(ds);
             this.comboBox_CollectId.Items.Clear();
             propertys = new LineItemProperty[CollectIdList.Count];
@@ -95,7 +94,9 @@ namespace Voltage
                 {
                     if (CollectId == row["CollectId"].ToString())
                     {
-                        list.Add((double)new XDate(Convert.ToDateTime(row["DataTime"].ToString())), Convert.ToDouble(row["DataValue"].ToString()));
+                        string label;
+                        label = "(" + row["DataTime"].ToString() + "," + row["DataValue"].ToString() + ")" + "测试桩号:" + row["PipelineName"].ToString();          
+                        list.Add((double)new XDate(Convert.ToDateTime(row["DataTime"].ToString())), Convert.ToDouble(row["DataValue"].ToString()),label);
                     }
                 }
                 
@@ -390,7 +391,7 @@ namespace Voltage
 
         }
 
-        private void toolStripButton8_Click(object sender, EventArgs e)
+        private void zedGraphControl1_Load(object sender, EventArgs e)
         {
 
         }
