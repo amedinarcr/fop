@@ -40,7 +40,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker_StartTime = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.finishStep1 = new WizardBase.FinishStep();
-            this.label5 = new System.Windows.Forms.Label();
             this.label_info = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
@@ -60,22 +59,35 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ControlClient;
+            this.comboBox1.DropButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.InputControl;
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.DropDownWidth = 133;
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.InputControlStyle = ComponentFactory.Krypton.Toolkit.InputControlStyle.Standalone;
+            this.comboBox1.ItemStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.ListItem;
             this.comboBox1.Location = new System.Drawing.Point(255, 117);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(133, 20);
+            this.comboBox1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
+            this.comboBox1.Size = new System.Drawing.Size(133, 23);
             this.comboBox1.TabIndex = 1;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // button2
             // 
+            this.button2.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Standalone;
             this.button2.Location = new System.Drawing.Point(637, 98);
             this.button2.Name = "button2";
+            this.button2.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.button2.Size = new System.Drawing.Size(75, 25);
             this.button2.TabIndex = 3;
             this.button2.Text = "下一步";
-            this.button2.UseMnemonic = true;
+            this.button2.Values.ExtraText = "";
+            this.button2.Values.Image = null;
+            this.button2.Values.ImageStates.ImageCheckedNormal = null;
+            this.button2.Values.ImageStates.ImageCheckedPressed = null;
+            this.button2.Values.ImageStates.ImageCheckedTracking = null;
+            this.button2.Values.Text = "下一步";
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // wizardControl1
@@ -103,8 +115,8 @@
             this.startStep1,
             this.startStep2,
             this.finishStep1});
-            this.wizardControl1.NextButtonClick +=new WizardBase.GenericCancelEventHandler<WizardBase.WizardControl>(wizardControl1_NextButtonClick);
-            this.wizardControl1.BackButtonClick += new System.ComponentModel.CancelEventHandler(wizardControl1_BackButtonClick);
+            this.wizardControl1.NextButtonClick += new WizardBase.GenericCancelEventHandler<WizardBase.WizardControl>(wizardControl1_NextButtonClick); 
+            this.wizardControl1.BackButtonClick +=new System.ComponentModel.CancelEventHandler(wizardControl1_BackButtonClick);
             this.wizardControl1.FinishButtonClick += new System.EventHandler(this.wizardControl1_FinishButtonClick);
             this.wizardControl1.CancelButtonClick += new System.EventHandler(this.wizardControl1_CancelButtonClick);
             // 
@@ -132,11 +144,18 @@
             // 
             // dateTimePicker_EndTime
             // 
+            this.dateTimePicker_EndTime.CalendarDayOfWeekStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.CalendarDay;
+            this.dateTimePicker_EndTime.CalendarDayStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.CalendarDay;
+            this.dateTimePicker_EndTime.CalendarHeaderStyle = ComponentFactory.Krypton.Toolkit.HeaderStyle.Calendar;
+            this.dateTimePicker_EndTime.CalendarTodayDate = new System.DateTime(2009, 8, 24, 0, 0, 0, 0);
+            this.dateTimePicker_EndTime.DropButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.InputControl;
             this.dateTimePicker_EndTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker_EndTime.InputControlStyle = ComponentFactory.Krypton.Toolkit.InputControlStyle.Standalone;
             this.dateTimePicker_EndTime.Location = new System.Drawing.Point(248, 155);
             this.dateTimePicker_EndTime.Name = "dateTimePicker_EndTime";
-            this.dateTimePicker_EndTime.Size = new System.Drawing.Size(262, 25);
+            this.dateTimePicker_EndTime.Size = new System.Drawing.Size(262, 21);
             this.dateTimePicker_EndTime.TabIndex = 10;
+            this.dateTimePicker_EndTime.UpDownButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.InputControl;
             // 
             // label2
             // 
@@ -158,28 +177,25 @@
             // 
             // dateTimePicker_StartTime
             // 
+            this.dateTimePicker_StartTime.CalendarDayOfWeekStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.CalendarDay;
+            this.dateTimePicker_StartTime.CalendarDayStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.CalendarDay;
+            this.dateTimePicker_StartTime.CalendarHeaderStyle = ComponentFactory.Krypton.Toolkit.HeaderStyle.Calendar;
+            this.dateTimePicker_StartTime.CalendarTodayDate = new System.DateTime(2009, 8, 24, 0, 0, 0, 0);
+            this.dateTimePicker_StartTime.DropButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.InputControl;
             this.dateTimePicker_StartTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker_StartTime.InputControlStyle = ComponentFactory.Krypton.Toolkit.InputControlStyle.Standalone;
             this.dateTimePicker_StartTime.Location = new System.Drawing.Point(248, 117);
             this.dateTimePicker_StartTime.Name = "dateTimePicker_StartTime";
-            this.dateTimePicker_StartTime.Size = new System.Drawing.Size(262, 25);
+            this.dateTimePicker_StartTime.Size = new System.Drawing.Size(262, 21);
             this.dateTimePicker_StartTime.TabIndex = 8;
+            this.dateTimePicker_StartTime.UpDownButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.InputControl;
             // 
             // finishStep1
             // 
             this.finishStep1.BindingImage = ((System.Drawing.Image)(resources.GetObject("finishStep1.BindingImage")));
-            this.finishStep1.Controls.Add(this.label5);
             this.finishStep1.Controls.Add(this.label_info);
             this.finishStep1.Controls.Add(this.label4);
             this.finishStep1.Name = "finishStep1";
-            // 
-            // label5
-            // 
-            this.label5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(177, 201);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(225, 34);
-            this.label5.TabIndex = 11;
-            this.label5.Visible = false;
             // 
             // label_info
             // 
@@ -240,6 +256,5 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Label label_info;
-        private System.Windows.Forms.Label label5;
     }
 }
