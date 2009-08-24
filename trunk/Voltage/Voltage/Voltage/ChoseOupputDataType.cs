@@ -68,8 +68,11 @@ namespace Voltage
         private void wizardControl1_NextButtonClick(object sender, EventArgs e)
         {
             nNextBackCount+=1;
+
             if (nNextBackCount==2)
             {
+                this.wizardControl1.BackButtonEnabled = false;
+                this.wizardControl1.NextButtonEnabled = false;
                 this.label4.Text = "正在导出数据，请稍候...";
                 switch (DataType)
                 {
@@ -95,6 +98,8 @@ namespace Voltage
                     fileName += ".xls";
                 }
                 bWorker.RunWorkerAsync(fileName);
+                this.wizardControl1.BackButtonEnabled = true;
+                this.wizardControl1.NextButtonEnabled = true;
             }
         }
         private void wizardControl1_BackButtonClick(object sender, EventArgs e)
