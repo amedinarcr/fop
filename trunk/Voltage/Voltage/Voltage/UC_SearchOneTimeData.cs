@@ -25,7 +25,7 @@ namespace Voltage
                 MessageBox.Show("请先选择采集编号");
                 return;
             }
-            string sql = "select CollectInfo.CollectId as CollectId,DataValue,Mileage from DataTable left join CollectInfo on DataTable.CollectInfoId=CollectInfo.ID where DataTable.CollectInfoId in (" + this.textBox_CollectId.Text + ") and DataTime=#" + this.dateTimePicker1.Value.ToString() + "#";
+            string sql = "select CollectInfo.CollectId as CollectId,DataValue,Mileage,PipelineName from DataTable left join CollectInfo on DataTable.CollectInfoId=CollectInfo.ID where DataTable.CollectInfoId in (" + this.textBox_CollectId.Text + ") and DataTime=#" + this.dateTimePicker1.Value.ToString() + "#";
             DataSet ds = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text,sql);
             OneTimeZendChart zend = this.ParentForm as OneTimeZendChart;
             zend.ShowChartingForOneTime(ds);

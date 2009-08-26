@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OneTimeZendChart));
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.uC_SearchOneTimeData1 = new Voltage.UC_SearchOneTimeData();
             this.zedGraphControl1 = new ZedGraph.ZedGraphControl();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -43,6 +42,7 @@
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.uC_SearchOneTimeData1 = new Voltage.UC_SearchOneTimeData();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
@@ -51,6 +51,7 @@
             // 
             // splitContainer2
             // 
+            this.splitContainer2.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer2.IsSplitterFixed = true;
             this.splitContainer2.Location = new System.Drawing.Point(0, 25);
@@ -67,13 +68,6 @@
             this.splitContainer2.Size = new System.Drawing.Size(978, 501);
             this.splitContainer2.SplitterDistance = 44;
             this.splitContainer2.TabIndex = 1;
-            // 
-            // uC_SearchOneTimeData1
-            // 
-            this.uC_SearchOneTimeData1.Location = new System.Drawing.Point(0, 9);
-            this.uC_SearchOneTimeData1.Name = "uC_SearchOneTimeData1";
-            this.uC_SearchOneTimeData1.Size = new System.Drawing.Size(880, 27);
-            this.uC_SearchOneTimeData1.TabIndex = 0;
             // 
             // zedGraphControl1
             // 
@@ -93,7 +87,7 @@
             // 
             // toolStrip1
             // 
-            this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.toolStripButton2,
@@ -182,6 +176,13 @@
             this.toolStripButton7.Size = new System.Drawing.Size(51, 22);
             this.toolStripButton7.Text = "打印";
             this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
+            // 
+            // uC_SearchOneTimeData1
+            // 
+            this.uC_SearchOneTimeData1.Location = new System.Drawing.Point(0, 9);
+            this.uC_SearchOneTimeData1.Name = "uC_SearchOneTimeData1";
+            this.uC_SearchOneTimeData1.Size = new System.Drawing.Size(880, 27);
+            this.uC_SearchOneTimeData1.TabIndex = 0;
             // 
             // OneTimeZendChart
             // 

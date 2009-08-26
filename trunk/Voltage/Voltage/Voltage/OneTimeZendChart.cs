@@ -143,10 +143,12 @@ namespace Voltage
                     //if (CollectId == row["CollectId"].ToString())
                     //{
                     // list.Add((double)new XDate(Convert.ToDouble(row["CollectId"].ToString())), Convert.ToDouble(row["DataValue"].ToString()));
+                    string label;
+                    label = "(" + row["Mileage"].ToString() + "," + row["DataValue"].ToString() + ")" + "测试桩号:" + row["PipelineName"].ToString();          
                     if (row["Mileage"].ToString().Trim() == "")
-                        list.Add(0, Convert.ToDouble(row["DataValue"].ToString()));
+                        list.Add(0, Convert.ToDouble(row["DataValue"].ToString()),label);
                     else
-                        list.Add(Convert.ToDouble(row["Mileage"].ToString()), Convert.ToDouble(row["DataValue"].ToString()));
+                        list.Add(Convert.ToDouble(row["Mileage"].ToString()), Convert.ToDouble(row["DataValue"].ToString()),label);
 
                     //}
                 }
