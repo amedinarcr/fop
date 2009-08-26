@@ -35,7 +35,6 @@
             this._button_ShowHidden = new System.Windows.Forms.Button();
             this._comboBox_CollectId = new System.Windows.Forms.ComboBox();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.uC_DataGridSearchQuery1 = new Voltage.UC_DataGridSearchQuery();
             this.zedGraphControl1 = new ZedGraph.ZedGraphControl();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -47,10 +46,11 @@
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.comboBox_CollectId = new System.Windows.Forms.ToolStripComboBox();
             this.button_ShowHidden = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.button1 = new System.Windows.Forms.ToolStripButton();
+            this.uC_DataGridSearchQuery1 = new Voltage.UC_DataGridSearchQuery();
             this.groupBox4.SuspendLayout();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -63,12 +63,14 @@
             this.groupBox4.Controls.Add(this._button1);
             this.groupBox4.Controls.Add(this._button_ShowHidden);
             this.groupBox4.Controls.Add(this._comboBox_CollectId);
+            this.groupBox4.Enabled = false;
             this.groupBox4.Location = new System.Drawing.Point(822, 516);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(187, 93);
             this.groupBox4.TabIndex = 6;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "基本属性";
+            this.groupBox4.Visible = false;
             // 
             // _button1
             // 
@@ -102,6 +104,9 @@
             // 
             // splitContainer2
             // 
+            this.splitContainer2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer2.IsSplitterFixed = true;
             this.splitContainer2.Location = new System.Drawing.Point(0, 25);
@@ -115,17 +120,9 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.zedGraphControl1);
-            this.splitContainer2.Size = new System.Drawing.Size(978, 485);
+            this.splitContainer2.Size = new System.Drawing.Size(978, 487);
             this.splitContainer2.SplitterDistance = 44;
             this.splitContainer2.TabIndex = 1;
-            // 
-            // uC_DataGridSearchQuery1
-            // 
-            this.uC_DataGridSearchQuery1.Location = new System.Drawing.Point(3, 9);
-            this.uC_DataGridSearchQuery1.Name = "uC_DataGridSearchQuery1";
-            this.uC_DataGridSearchQuery1.Size = new System.Drawing.Size(978, 28);
-            this.uC_DataGridSearchQuery1.TabIndex = 0;
-            this.uC_DataGridSearchQuery1.Load += new System.EventHandler(this.uC_DataGridSearchQuery1_Load);
             // 
             // zedGraphControl1
             // 
@@ -141,7 +138,7 @@
             this.zedGraphControl1.ScrollMinX = 0;
             this.zedGraphControl1.ScrollMinY = 0;
             this.zedGraphControl1.ScrollMinY2 = 0;
-            this.zedGraphControl1.Size = new System.Drawing.Size(978, 437);
+            this.zedGraphControl1.Size = new System.Drawing.Size(978, 439);
             this.zedGraphControl1.TabIndex = 2;
             this.zedGraphControl1.Load += new System.EventHandler(this.zedGraphControl1_Load);
             // 
@@ -241,11 +238,16 @@
             this.toolStripButton7.Text = "打印";
             this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
             // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
             // comboBox_CollectId
             // 
             this.comboBox_CollectId.Name = "comboBox_CollectId";
             this.comboBox_CollectId.Size = new System.Drawing.Size(121, 25);
-            this.comboBox_CollectId.SelectedIndexChanged +=new System.EventHandler(comboBox_CollectId_SelectedIndexChanged);
+            this.comboBox_CollectId.SelectedIndexChanged += new System.EventHandler(this.comboBox_CollectId_SelectedIndexChanged);
             // 
             // button_ShowHidden
             // 
@@ -257,18 +259,21 @@
             this.button_ShowHidden.Text = "隐藏";
             this.button_ShowHidden.Click += new System.EventHandler(this.button_ShowHidden_Click);
             // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
-            // 
             // button1
             // 
             this.button1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(53, 22);
             this.button1.Text = "   属性   ";
-            this.button1.Click +=new System.EventHandler(button1_Click);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // uC_DataGridSearchQuery1
+            // 
+            this.uC_DataGridSearchQuery1.Location = new System.Drawing.Point(3, 9);
+            this.uC_DataGridSearchQuery1.Name = "uC_DataGridSearchQuery1";
+            this.uC_DataGridSearchQuery1.Size = new System.Drawing.Size(978, 28);
+            this.uC_DataGridSearchQuery1.TabIndex = 0;
+            this.uC_DataGridSearchQuery1.Load += new System.EventHandler(this.uC_DataGridSearchQuery1_Load);
             // 
             // ZendChart
             // 

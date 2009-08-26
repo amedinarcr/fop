@@ -104,7 +104,7 @@ namespace Voltage
                 lineItem[i] = myPane.AddCurve(CollectId, list, Color.Red, SymbolType.Circle);
                 lineItem[i].Line.IsAntiAlias = true;
                 DataRow lineInfoRow = this.getDataRowByCollectId(CollectId, LineInfoTable);
-                if (lineInfoRow != null)
+                if (lineInfoRow != null && Convert.ToInt32(lineInfoRow["LineColor"].ToString())!= -65536)
                 {
                     lineItem[i].Line.Width = Convert.ToInt32(lineInfoRow["LineWidth"].ToString());
                     lineItem[i].Line.Style = (DashStyle)Enum.Parse(typeof(DashStyle), lineInfoRow["LineStyle"].ToString());

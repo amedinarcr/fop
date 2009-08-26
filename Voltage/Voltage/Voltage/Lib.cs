@@ -146,18 +146,18 @@ namespace Voltage
             Random RandomNum_Sencond = new Random((int)DateTime.Now.Ticks);
 
             //  为了在白色背景上显示，尽量生成深色 
-            int int_Red = RandomNum_First.Next(256);
+            int int_Red = 100+RandomNum_First.Next(156);
             int int_Green = RandomNum_Sencond.Next(256);
             int int_Blue = (int_Red + int_Green > 400) ? 0 : 400 - int_Red - int_Green;
             int_Blue = (int_Blue > 255) ? 255 : int_Blue;
 
-            return System.Drawing.Color.FromArgb(int_Red, int_Green, int_Blue);
+            return System.Drawing.Color.FromArgb(250,int_Red, int_Green, int_Blue);
         }
 
         public static string GetNewFileName()
         {
             string dir = Voltage.Properties.Settings.Default.OutPutDataDir;
-            return dir + System.DateTime.Now.ToString(Voltage.Properties.Settings.Default.PipelineName + "_" + Voltage.Properties.Settings.Default.ProtectStationName + "_yyyyMMddHHmmss");
+            return dir + System.DateTime.Now.ToString(Voltage.Properties.Settings.Default.PipelineName.Trim() + "_" + Voltage.Properties.Settings.Default.ProtectStationName.Trim() + "_yyyyMMddHHmmss");
         }
 
         public static string parseLatitude(string latitude)
