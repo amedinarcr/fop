@@ -18,8 +18,6 @@ namespace Voltage
         {
            
             InitializeComponent();
-            //this.comboBox_Zoom.Items.AddRange(new object[] { "50%", "80%", "100%", "150%", "200%", "300%" });
-            //this.comboBox_Zoom.SelectedIndex = 2;
         }
         public LineItemProperty[] propertys;
         public LineItem[] lineItem;
@@ -27,6 +25,9 @@ namespace Voltage
         private void Form2_Load(object sender, EventArgs e)
         {
             this.splitContainer2.Panel2.Enabled = false;
+            this.button1.Visible = false;
+            this.comboBox_CollectId.Visible = false;
+            this.button_ShowHidden.Visible = false;
             GraphPane myPane = this.zedGraphControl1.GraphPane;
 
             myPane.YAxis.Scale.Min = 0;
@@ -95,7 +96,7 @@ namespace Voltage
                     if (CollectId == row["CollectId"].ToString())
                     {
                         string label;
-                        label = "(" + row["DataTime"].ToString() + "," + row["DataValue"].ToString() + ")" + "测试桩号:" + row["PipelineName"].ToString();          
+                        label = "(" + row["DataTime"].ToString() + "," + row["DataValue"].ToString() + ")" + "测试桩号:" + row["TestPileID"].ToString();          
                         list.Add((double)new XDate(Convert.ToDateTime(row["DataTime"].ToString())), Convert.ToDouble(row["DataValue"].ToString()),label);
                     }
                 }
@@ -156,6 +157,14 @@ namespace Voltage
 
             this.splitContainer2.Panel2.Enabled = true;
         }
+
+        public void setControlVisible()
+        {
+            this.button1.Visible = true;
+            this.button_ShowHidden.Visible = true;
+            this.comboBox_CollectId.Visible = true;
+        }
+
         public DataRow getDataRowByCollectId(string CollectId,DataTable dt)
         {
             foreach (DataRow row in dt.Rows)
