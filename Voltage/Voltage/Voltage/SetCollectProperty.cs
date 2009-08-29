@@ -104,7 +104,7 @@ namespace Voltage
                 lineItem.Symbol.Size = 4.0F;
             }
             this.DialogResult = DialogResult.OK;
-
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -156,9 +156,11 @@ namespace Voltage
     
         }
 
+
         private void textBox_TestPileID_TextChanged(object sender, EventArgs e)
         {
 
         }
+
     }
 }
