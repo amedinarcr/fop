@@ -28,12 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.inputMeasure2 = new Voltage.InputMeasure();
             this.label11 = new System.Windows.Forms.Label();
-            this.inputMeasure1 = new Voltage.InputMeasure();
             this.textBox_TestPileID = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox_PipelineName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
@@ -58,11 +55,11 @@
             this.button2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.button3 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.label_CollectId = new System.Windows.Forms.Label();
+            this.inputMeasure2 = new Voltage.InputMeasure(2);
+            this.inputMeasure1 = new Voltage.InputMeasure(1);
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
-         
-            //((System.ComponentModel.ISupportInitialize)(this.numericUpDown_LineWidth)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -78,8 +75,8 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.inputMeasure2);
-            this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.inputMeasure1);
+            this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.textBox_TestPileID);
             this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Controls.Add(this.textBox_PipelineName);
@@ -99,13 +96,6 @@
             this.tabPage2.Text = "采集点信息";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // inputMeasure2
-            // 
-            this.inputMeasure2.Location = new System.Drawing.Point(92, 128);
-            this.inputMeasure2.Name = "inputMeasure2";
-            this.inputMeasure2.Size = new System.Drawing.Size(173, 25);
-            this.inputMeasure2.TabIndex = 33;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -114,13 +104,6 @@
             this.label11.Size = new System.Drawing.Size(29, 12);
             this.label11.TabIndex = 32;
             this.label11.Text = "纬度";
-            // 
-            // inputMeasure1
-            // 
-            this.inputMeasure1.Location = new System.Drawing.Point(93, 97);
-            this.inputMeasure1.Name = "inputMeasure1";
-            this.inputMeasure1.Size = new System.Drawing.Size(173, 25);
-            this.inputMeasure1.TabIndex = 31;
             // 
             // textBox_TestPileID
             // 
@@ -244,11 +227,17 @@
             // 
             // comboBox_SymbolType
             // 
+            this.comboBox_SymbolType.DropBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ControlClient;
+            this.comboBox_SymbolType.DropButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.InputControl;
             this.comboBox_SymbolType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_SymbolType.DropDownWidth = 125;
             this.comboBox_SymbolType.FormattingEnabled = true;
+            this.comboBox_SymbolType.InputControlStyle = ComponentFactory.Krypton.Toolkit.InputControlStyle.Standalone;
+            this.comboBox_SymbolType.ItemStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.ListItem;
             this.comboBox_SymbolType.Location = new System.Drawing.Point(79, 115);
             this.comboBox_SymbolType.Name = "comboBox_SymbolType";
-            this.comboBox_SymbolType.Size = new System.Drawing.Size(125, 20);
+            this.comboBox_SymbolType.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
+            this.comboBox_SymbolType.Size = new System.Drawing.Size(125, 23);
             this.comboBox_SymbolType.TabIndex = 15;
             // 
             // label4
@@ -298,17 +287,23 @@
             // 
             // comboBox_LineStyle
             // 
+            this.comboBox_LineStyle.DropBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ControlClient;
+            this.comboBox_LineStyle.DropButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.InputControl;
             this.comboBox_LineStyle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_LineStyle.DropDownWidth = 80;
             this.comboBox_LineStyle.FormattingEnabled = true;
+            this.comboBox_LineStyle.InputControlStyle = ComponentFactory.Krypton.Toolkit.InputControlStyle.Standalone;
             this.comboBox_LineStyle.Items.AddRange(new object[] {
             "Solid",
             "Dash",
             "Dot",
             "DashDot",
             "DashDotDot"});
+            this.comboBox_LineStyle.ItemStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.ListItem;
             this.comboBox_LineStyle.Location = new System.Drawing.Point(79, 52);
             this.comboBox_LineStyle.Name = "comboBox_LineStyle";
-            this.comboBox_LineStyle.Size = new System.Drawing.Size(80, 20);
+            this.comboBox_LineStyle.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
+            this.comboBox_LineStyle.Size = new System.Drawing.Size(80, 23);
             this.comboBox_LineStyle.TabIndex = 10;
             // 
             // label2
@@ -322,6 +317,7 @@
             // 
             // numericUpDown_LineWidth
             // 
+            this.numericUpDown_LineWidth.InputControlStyle = ComponentFactory.Krypton.Toolkit.InputControlStyle.Standalone;
             this.numericUpDown_LineWidth.Location = new System.Drawing.Point(79, 20);
             this.numericUpDown_LineWidth.Minimum = new decimal(new int[] {
             1,
@@ -329,8 +325,10 @@
             0,
             0});
             this.numericUpDown_LineWidth.Name = "numericUpDown_LineWidth";
-            this.numericUpDown_LineWidth.Size = new System.Drawing.Size(80, 21);
+            this.numericUpDown_LineWidth.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
+            this.numericUpDown_LineWidth.Size = new System.Drawing.Size(80, 22);
             this.numericUpDown_LineWidth.TabIndex = 8;
+            this.numericUpDown_LineWidth.UpDownButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.InputControl;
             this.numericUpDown_LineWidth.Value = new decimal(new int[] {
             1,
             0,
@@ -389,6 +387,21 @@
             this.label_CollectId.TabIndex = 3;
             this.label_CollectId.Visible = false;
             // 
+            // inputMeasure2
+            // 
+            this.inputMeasure2.Location = new System.Drawing.Point(93, 129);
+            this.inputMeasure2.Name = "inputMeasure2";
+            this.inputMeasure2.Size = new System.Drawing.Size(173, 23);
+            this.inputMeasure2.TabIndex = 34;
+
+            // 
+            // inputMeasure1
+            // 
+            this.inputMeasure1.Location = new System.Drawing.Point(93, 97);
+            this.inputMeasure1.Name = "inputMeasure1";
+            this.inputMeasure1.Size = new System.Drawing.Size(173, 23);
+            this.inputMeasure1.TabIndex = 33;
+            // 
             // SetCollectProperty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -409,7 +422,6 @@
             this.tabPage2.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            //((System.ComponentModel.ISupportInitialize)(this.numericUpDown_LineWidth)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -446,8 +458,10 @@
         private System.Windows.Forms.Label label7;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBox_PipelineName;
         private System.Windows.Forms.Label label5;
-        private InputMeasure inputMeasure2;
+
         private System.Windows.Forms.Label label11;
+        private InputMeasure inputMeasure2;
         private InputMeasure inputMeasure1;
+
     }
 }
