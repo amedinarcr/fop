@@ -40,7 +40,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker_StartTime = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.finishStep1 = new WizardBase.FinishStep();
-            this.label_info = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.startStep1.SuspendLayout();
@@ -98,7 +97,7 @@
             this.wizardControl1.CancelButtonEnabled = true;
             this.wizardControl1.CancelButtonText = "取消";
             this.wizardControl1.CancelButtonVisible = true;
-            this.wizardControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wizardControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.wizardControl1.EulaButtonEnabled = true;
             this.wizardControl1.EulaButtonText = "";
             this.wizardControl1.EulaButtonVisible = true;
@@ -115,8 +114,8 @@
             this.startStep1,
             this.startStep2,
             this.finishStep1});
-            this.wizardControl1.NextButtonClick += new WizardBase.GenericCancelEventHandler<WizardBase.WizardControl>(wizardControl1_NextButtonClick);
-            this.wizardControl1.BackButtonClick += new System.ComponentModel.CancelEventHandler(wizardControl1_BackButtonClick);
+            this.wizardControl1.NextButtonClick +=new WizardBase.GenericCancelEventHandler<WizardBase.WizardControl>(wizardControl1_NextButtonClick);
+            this.wizardControl1.BackButtonClick +=new System.ComponentModel.CancelEventHandler(wizardControl1_BackButtonClick);
             this.wizardControl1.FinishButtonClick += new System.EventHandler(this.wizardControl1_FinishButtonClick);
             this.wizardControl1.CancelButtonClick += new System.EventHandler(this.wizardControl1_CancelButtonClick);
             // 
@@ -137,9 +136,10 @@
             this.startStep2.Controls.Add(this.label2);
             this.startStep2.Controls.Add(this.label3);
             this.startStep2.Controls.Add(this.dateTimePicker_StartTime);
+            this.startStep2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.startStep2.Icon = null;
             this.startStep2.Name = "startStep2";
-            this.startStep2.Subtitle = "choose the range of the time";
+            this.startStep2.Subtitle = "";
             this.startStep2.Title = "选择时间范围";
             // 
             // dateTimePicker_EndTime
@@ -192,27 +192,18 @@
             // 
             // finishStep1
             // 
-            this.finishStep1.BindingImage = null;
-            this.finishStep1.Controls.Add(this.label_info);
+            this.finishStep1.BindingImage = ((System.Drawing.Image)(resources.GetObject("finishStep1.BindingImage")));
             this.finishStep1.Controls.Add(this.label4);
             this.finishStep1.Name = "finishStep1";
             this.finishStep1.Pair = ((WizardBase.ColorPair)(resources.GetObject("finishStep1.Pair")));
             // 
-            // label_info
-            // 
-            this.label_info.AutoSize = true;
-            this.label_info.Location = new System.Drawing.Point(250, 247);
-            this.label_info.Name = "label_info";
-            this.label_info.Size = new System.Drawing.Size(0, 12);
-            this.label_info.TabIndex = 10;
-            // 
             // label4
             // 
-            this.label4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(177, 144);
+            this.label4.Location = new System.Drawing.Point(108, 121);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(225, 33);
+            this.label4.Size = new System.Drawing.Size(407, 142);
             this.label4.TabIndex = 0;
             this.label4.Text = "正在保存数据......";
             // 
@@ -236,7 +227,6 @@
             this.startStep2.ResumeLayout(false);
             this.startStep2.PerformLayout();
             this.finishStep1.ResumeLayout(false);
-            this.finishStep1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -257,6 +247,5 @@
         
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-        private System.Windows.Forms.Label label_info;
     }
 }
