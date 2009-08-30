@@ -71,9 +71,8 @@ namespace Voltage
 
             if (nNextBackCount==2)
             {
-                this.wizardControl1.BackButtonEnabled = false;
-                this.wizardControl1.NextButtonEnabled = false;
-                this.label4.Text = "正在导出数据，请稍候...";
+                this.wizardControl1.BackButtonVisible = false;
+                this.wizardControl1.NextButtonVisible = false;
                 switch (DataType)
                 {
                     case 0:
@@ -98,8 +97,8 @@ namespace Voltage
                     fileName += ".xls";
                 }
                 bWorker.RunWorkerAsync(fileName);
-                this.wizardControl1.BackButtonEnabled = true;
-                this.wizardControl1.NextButtonEnabled = true;
+
+
             }
         }
         private void wizardControl1_BackButtonClick(object sender, EventArgs e)
@@ -120,6 +119,9 @@ namespace Voltage
             if (!e.Cancelled && e.Error == null)
             {
                 this.label4.Text = "导出成功";
+                this.wizardControl1.BackButtonVisible = true;
+                this.wizardControl1.NextButtonVisible = true;
+                this.wizardControl1.CancelButtonVisible = false;
             }
             if (e.Cancelled)
             {
