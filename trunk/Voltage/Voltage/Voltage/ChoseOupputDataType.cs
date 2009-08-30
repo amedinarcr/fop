@@ -104,6 +104,7 @@ namespace Voltage
         private void wizardControl1_BackButtonClick(object sender, EventArgs e)
         {
             nNextBackCount -= 1;
+            this.wizardControl1.CancelButtonVisible = true;
         }
         private void wizardControl1_CancelButtonClick(object sender, EventArgs e)
         {
@@ -118,7 +119,18 @@ namespace Voltage
         {
             if (!e.Cancelled && e.Error == null)
             {
-                this.label4.Text = "导出成功";
+                string fileName = Lib.GetNewFileName();
+                if (this.DataType == 0)
+                {
+                    fileName += ".xml";
+                }
+                if (this.DataType == 1)
+                {
+                    fileName += ".xls";
+                }
+                this.label4.Text = "导出成功\n";
+                this.label4.Text += "文件位置为：";
+                this.label4.Text += fileName;
                 this.wizardControl1.BackButtonVisible = true;
                 this.wizardControl1.NextButtonVisible = true;
                 this.wizardControl1.CancelButtonVisible = false;
