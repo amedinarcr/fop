@@ -115,14 +115,14 @@
             this.startStep1,
             this.startStep2,
             this.finishStep1});
-            this.wizardControl1.NextButtonClick += new WizardBase.GenericCancelEventHandler<WizardBase.WizardControl>(wizardControl1_NextButtonClick); 
-            this.wizardControl1.BackButtonClick +=new System.ComponentModel.CancelEventHandler(wizardControl1_BackButtonClick);
+            this.wizardControl1.NextButtonClick += new WizardBase.GenericCancelEventHandler<WizardBase.WizardControl>(wizardControl1_NextButtonClick);
+            this.wizardControl1.BackButtonClick += new System.ComponentModel.CancelEventHandler(wizardControl1_BackButtonClick);
             this.wizardControl1.FinishButtonClick += new System.EventHandler(this.wizardControl1_FinishButtonClick);
             this.wizardControl1.CancelButtonClick += new System.EventHandler(this.wizardControl1_CancelButtonClick);
             // 
             // startStep1
             // 
-            this.startStep1.BindingImage = ((System.Drawing.Image)(resources.GetObject("startStep1.BindingImage")));
+            this.startStep1.BindingImage = null;
             this.startStep1.Controls.Add(this.label1);
             this.startStep1.Controls.Add(this.comboBox1);
             this.startStep1.Icon = null;
@@ -132,7 +132,7 @@
             // 
             // startStep2
             // 
-            this.startStep2.BindingImage = ((System.Drawing.Image)(resources.GetObject("startStep2.BindingImage")));
+            this.startStep2.BindingImage = null;
             this.startStep2.Controls.Add(this.dateTimePicker_EndTime);
             this.startStep2.Controls.Add(this.label2);
             this.startStep2.Controls.Add(this.label3);
@@ -192,10 +192,11 @@
             // 
             // finishStep1
             // 
-            this.finishStep1.BindingImage = ((System.Drawing.Image)(resources.GetObject("finishStep1.BindingImage")));
+            this.finishStep1.BindingImage = null;
             this.finishStep1.Controls.Add(this.label_info);
             this.finishStep1.Controls.Add(this.label4);
             this.finishStep1.Name = "finishStep1";
+            this.finishStep1.Pair = ((WizardBase.ColorPair)(resources.GetObject("finishStep1.Pair")));
             // 
             // label_info
             // 
@@ -207,10 +208,11 @@
             // 
             // label4
             // 
+            this.label4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(177, 153);
+            this.label4.Location = new System.Drawing.Point(177, 144);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(225, 34);
+            this.label4.Size = new System.Drawing.Size(225, 33);
             this.label4.TabIndex = 0;
             this.label4.Text = "正在保存数据......";
             // 
