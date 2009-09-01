@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OneTimeZendChart));
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer2 = new ComponentFactory.Krypton.Toolkit.KryptonSplitContainer();
             this.zedGraphControl1 = new ZedGraph.ZedGraphControl();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -43,7 +43,10 @@
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.uC_SearchOneTimeData1 = new Voltage.UC_SearchOneTimeData();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2.Panel1)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2.Panel2)).BeginInit();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -51,20 +54,31 @@
             // 
             // splitContainer2
             // 
+            this.splitContainer2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer2.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.splitContainer2.ContainerBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient;
+            this.splitContainer2.Cursor = System.Windows.Forms.Cursors.Default;
             this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer2.IsSplitterFixed = true;
             this.splitContainer2.Location = new System.Drawing.Point(0, 25);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.splitContainer2.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             // 
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.Controls.Add(this.uC_SearchOneTimeData1);
+            this.splitContainer2.Panel1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
+            this.splitContainer2.Panel1.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient;
             // 
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.zedGraphControl1);
+            this.splitContainer2.Panel2.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
+            this.splitContainer2.Panel2.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient;
+            this.splitContainer2.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.LowProfile;
             this.splitContainer2.Size = new System.Drawing.Size(978, 501);
             this.splitContainer2.SplitterDistance = 44;
             this.splitContainer2.TabIndex = 1;
@@ -82,7 +96,7 @@
             this.zedGraphControl1.ScrollMinX = 0;
             this.zedGraphControl1.ScrollMinY = 0;
             this.zedGraphControl1.ScrollMinY2 = 0;
-            this.zedGraphControl1.Size = new System.Drawing.Size(978, 453);
+            this.zedGraphControl1.Size = new System.Drawing.Size(978, 452);
             this.zedGraphControl1.TabIndex = 2;
             // 
             // toolStrip1
@@ -194,8 +208,11 @@
             this.Name = "OneTimeZendChart";
             this.Text = "单时间点绘图";
             this.Load += new System.EventHandler(this.Form2_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2.Panel1)).EndInit();
             this.splitContainer2.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2.Panel2)).EndInit();
             this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -206,7 +223,7 @@
 
         #endregion
 
-        private System.Windows.Forms.SplitContainer splitContainer2;
+        private ComponentFactory.Krypton.Toolkit.KryptonSplitContainer splitContainer2;
         private UC_SearchOneTimeData uC_SearchOneTimeData1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;

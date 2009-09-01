@@ -12,6 +12,7 @@ namespace Voltage
         { }
 
         public static OleDbConnection Conn
+
         {
             get 
             {
@@ -19,6 +20,7 @@ namespace Voltage
                 //return new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\(E-drive)\Voltage Google\Voltage\Voltage\Voltage\bin\Debug\SerialData.mdb");
                 string path = @"C:\Documents and Settings\yongfazh\My Documents\project\Voltage\Voltage\Voltage\Voltage\bin\Debug\SerialData.mdb";
                 path = "c:\\SerialData.mdb";
+                path = System.Windows.Forms.Application.StartupPath + "\\SerialData.mdb";
                 return new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source="+path);
             }
         }

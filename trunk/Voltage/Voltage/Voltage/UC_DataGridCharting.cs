@@ -33,7 +33,7 @@ namespace Voltage
             DataSet ds = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text, querySql);
             this.oneCollectDataSet = ds;
             this.dataGridView1.DataSource = ds.Tables[0];
-            this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            //this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.dataGridView1.Columns["DataValue"].DefaultCellStyle.Format = "F3";
             this.dataGridView1.Columns["DataTime"].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss";
             this.dataGridView1.Columns["DataId"].Visible = false;
@@ -206,7 +206,7 @@ namespace Voltage
                 {
                     this.CurrentIndex = this.dataGridView1.SelectedRows[0].Index;
                     this.ViewDetail(this.dataGridView1.SelectedRows[0].Index);                  
-                    this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+                    //this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
                     this.isDetail = true;
                 }
 
@@ -280,19 +280,36 @@ namespace Voltage
             else
             {
 
-
                 string CollectInfoId = this.dataGridView1.SelectedRows[0].Cells["ID"].Value.ToString();
            
 
                 SetCollectProperty set = new SetCollectProperty(null,CollectInfoId );
                 if (set.ShowDialog() == DialogResult.OK)
                 {
-                    //DataSet ds = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text, "select * from CollectInfo where CollectId='" + CollectId.ToString()+"'");
-                    //DataGridViewRow selectRow = this.dataGridView1.SelectedRows[0];
-                    //DataRow datarow = ds.Tables[0].Rows[0];
-                    //selectRow.Cells["ProtectStationName"].Value = datarow["ProtectStationName"].ToString();
-                    //selectRow.Cells["TestPileID"].Value = datarow["TestPileID"].ToString();
-                    ////selectRow.Cells["DataTableId"].Value = datarow["DataTableId"].ToString();
+                    DataSet ds = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text, "select * from CollectInfo where ID=" + CollectInfoId.ToString());
+                    DataGridViewRow selectRow = this.dataGridView1.SelectedRows[0];
+                    DataRow datarow = ds.Tables[0].Rows[0];
+                    selectRow.Cells["ProtectStationName"].Value = datarow["ProtectStationName"].ToString();
+                    selectRow.Cells["TestPileID"].Value = datarow["TestPileID"].ToString();
+                    selectRow.Cells["Mileage"].Value = datarow["Mileage"].ToString();
+                    
+
+                    try
+                    {
+                        string titude = datarow["Latitude"].ToString();
+                        selectRow.Cells["Latitude"].Value = Lib.parseLatitude(titude.Substring(titude.IndexOf('&') + 1));
+                        selectRow.Cells["Longtitude"].Value = Lib.parseLatitude(titude.Substring(0, titude.IndexOf('&')));
+                       
+                    }
+                    catch (Exception)
+                    {
+                        selectRow.Cells["Latitude"].Value = "格式错误";
+                        selectRow.Cells["Longtitude"].Value = "格式错误";
+                    }
+
+                    Program.mainForm.UpdateCollectInfoTree();
+
+                    //selectRow.Cells["DataTableId"].Value = datarow["DataTableId"].ToString();
                     //selectRow.DefaultCellStyle.BackColor = Color.White;
                     //Program.mainForm.ShowCharting(3, null);
                 }

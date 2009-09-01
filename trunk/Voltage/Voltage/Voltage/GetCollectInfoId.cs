@@ -12,6 +12,7 @@ namespace Voltage
     public partial class GetCollectInfoId : KryptonForm
     {
         public ArrayList CollectInfoList;
+        public ArrayList CollectList;
         public GetCollectInfoId()
         {
             InitializeComponent();

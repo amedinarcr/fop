@@ -85,8 +85,8 @@
             this.splitContainer1.Panel2.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.splitContainer1.Panel2.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient;
             this.splitContainer1.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.LowProfile;
-            this.splitContainer1.Size = new System.Drawing.Size(672, 367);
-            this.splitContainer1.SplitterDistance = 535;
+            this.splitContainer1.Size = new System.Drawing.Size(699, 367);
+            this.splitContainer1.SplitterDistance = 562;
             this.splitContainer1.TabIndex = 0;
             // 
             // dataGridView1
@@ -107,7 +107,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(529, 361);
+            this.dataGridView1.Size = new System.Drawing.Size(556, 361);
             this.dataGridView1.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellLeave);
@@ -210,7 +210,7 @@
             this.splitContainer2.Panel2.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient;
             this.splitContainer2.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.LowProfile;
             this.splitContainer2.Size = new System.Drawing.Size(844, 367);
-            this.splitContainer2.SplitterDistance = 167;
+            this.splitContainer2.SplitterDistance = 140;
             this.splitContainer2.TabIndex = 1;
             // 
             // kryptonHeaderGroup1
@@ -229,7 +229,7 @@
             // 
             this.kryptonHeaderGroup1.Panel.Controls.Add(this.dataTree1);
             this.kryptonHeaderGroup1.Panel.Padding = new System.Windows.Forms.Padding(1);
-            this.kryptonHeaderGroup1.Size = new System.Drawing.Size(161, 361);
+            this.kryptonHeaderGroup1.Size = new System.Drawing.Size(134, 361);
             this.kryptonHeaderGroup1.TabIndex = 1;
             this.kryptonHeaderGroup1.Text = "采集器编号";
             this.kryptonHeaderGroup1.ValuesPrimary.Description = "";
@@ -244,7 +244,7 @@
             this.dataTree1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataTree1.Location = new System.Drawing.Point(1, 1);
             this.dataTree1.Name = "dataTree1";
-            this.dataTree1.Size = new System.Drawing.Size(157, 306);
+            this.dataTree1.Size = new System.Drawing.Size(130, 306);
             this.dataTree1.TabIndex = 0;
             this.dataTree1.Load += new System.EventHandler(this.dataTree1_Load);
             // 

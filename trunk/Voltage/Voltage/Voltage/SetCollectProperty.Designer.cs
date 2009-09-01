@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SetCollectProperty));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label11 = new System.Windows.Forms.Label();
@@ -45,8 +46,6 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.comboBox_SymbolType = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.textBox_LineColor = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox_LineStyle = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,8 +54,9 @@
             this.button2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.button3 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.label_CollectId = new System.Windows.Forms.Label();
-            this.inputMeasure2 = new Voltage.InputMeasure(2);
-            this.inputMeasure1 = new Voltage.InputMeasure(1);
+            this.kryptonColorButton1 = new ComponentFactory.Krypton.Toolkit.KryptonColorButton();
+            this.inputMeasure2 = new Voltage.InputMeasure();
+            this.inputMeasure1 = new Voltage.InputMeasure();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -208,10 +208,9 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.kryptonColorButton1);
             this.tabPage1.Controls.Add(this.comboBox_SymbolType);
             this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.textBox_LineColor);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.comboBox_LineStyle);
             this.tabPage1.Controls.Add(this.label2);
@@ -243,43 +242,16 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 117);
+            this.label4.Location = new System.Drawing.Point(18, 119);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 12);
             this.label4.TabIndex = 14;
             this.label4.Text = "节点类型";
             // 
-            // button1
-            // 
-            this.button1.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Standalone;
-            this.button1.Location = new System.Drawing.Point(146, 83);
-            this.button1.Name = "button1";
-            this.button1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
-            this.button1.Size = new System.Drawing.Size(39, 25);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Get";
-            this.button1.Values.ExtraText = "";
-            this.button1.Values.Image = null;
-            this.button1.Values.ImageStates.ImageCheckedNormal = null;
-            this.button1.Values.ImageStates.ImageCheckedPressed = null;
-            this.button1.Values.ImageStates.ImageCheckedTracking = null;
-            this.button1.Values.Text = "Get";
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // textBox_LineColor
-            // 
-            this.textBox_LineColor.Enabled = false;
-            this.textBox_LineColor.InputControlStyle = ComponentFactory.Krypton.Toolkit.InputControlStyle.Standalone;
-            this.textBox_LineColor.Location = new System.Drawing.Point(79, 83);
-            this.textBox_LineColor.Name = "textBox_LineColor";
-            this.textBox_LineColor.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
-            this.textBox_LineColor.Size = new System.Drawing.Size(61, 23);
-            this.textBox_LineColor.TabIndex = 12;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 86);
+            this.label3.Location = new System.Drawing.Point(18, 89);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 12);
             this.label3.TabIndex = 11;
@@ -309,7 +281,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 54);
+            this.label2.Location = new System.Drawing.Point(18, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 9;
@@ -338,7 +310,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 22);
+            this.label1.Location = new System.Drawing.Point(18, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 7;
@@ -387,13 +359,27 @@
             this.label_CollectId.TabIndex = 3;
             this.label_CollectId.Visible = false;
             // 
+            // kryptonColorButton1
+            // 
+            this.kryptonColorButton1.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Standalone;
+            this.kryptonColorButton1.Location = new System.Drawing.Point(79, 83);
+            this.kryptonColorButton1.Name = "kryptonColorButton1";
+            this.kryptonColorButton1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
+            this.kryptonColorButton1.Size = new System.Drawing.Size(125, 25);
+            this.kryptonColorButton1.TabIndex = 16;
+            this.kryptonColorButton1.Values.ExtraText = "";
+            this.kryptonColorButton1.Values.Image = ((System.Drawing.Image)(resources.GetObject("kryptonColorButton1.Values.Image")));
+            this.kryptonColorButton1.Values.ImageStates.ImageCheckedNormal = null;
+            this.kryptonColorButton1.Values.ImageStates.ImageCheckedPressed = null;
+            this.kryptonColorButton1.Values.ImageStates.ImageCheckedTracking = null;
+            this.kryptonColorButton1.Values.Text = "";
+            // 
             // inputMeasure2
             // 
             this.inputMeasure2.Location = new System.Drawing.Point(93, 129);
             this.inputMeasure2.Name = "inputMeasure2";
             this.inputMeasure2.Size = new System.Drawing.Size(173, 23);
             this.inputMeasure2.TabIndex = 34;
-
             // 
             // inputMeasure1
             // 
@@ -432,8 +418,6 @@
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton button1;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBox_LineColor;
         private System.Windows.Forms.Label label3;
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox comboBox_LineStyle;
         private System.Windows.Forms.Label label2;
@@ -462,6 +446,7 @@
         private System.Windows.Forms.Label label11;
         private InputMeasure inputMeasure2;
         private InputMeasure inputMeasure1;
+        private ComponentFactory.Krypton.Toolkit.KryptonColorButton kryptonColorButton1;
 
     }
 }

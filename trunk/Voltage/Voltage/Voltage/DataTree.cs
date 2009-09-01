@@ -74,7 +74,8 @@ namespace Voltage
             rootNode.SelectedImageIndex = 3;
             this.treeView1.Nodes.Add(rootNode);
 
-            DataSet CollectInfoDataSet = OleHelper.ExecuteDataset("Select * from CollectInfo");
+
+            DataSet CollectInfoDataSet = OleHelper.ExecuteDataset("Select * from CollectInfo where ID in (select distinct CollectInfoId from DataTable)");
             foreach (DataRow row in CollectInfoDataSet.Tables[0].Rows)
             {
                 if (this.treeView1.Nodes[0].Nodes.IndexOfKey("PipeLineName_" + row["PipeLineName"].ToString()) == -1)
@@ -112,7 +113,8 @@ namespace Voltage
             System.Collections.ArrayList CollectInfoIdList = VoltageData.GetCollectInfoIdList();
             foreach (DataRow row in CollectInfoDataSet.Tables[0].Rows)
             {
-                TreeNode ProtectStationNameNode = this.treeView1.Nodes.Find("ProtectStationName_" + row["ProtectStationName"].ToString(), true)[0];
+                TreeNode PipeLineNameNode = this.treeView1.Nodes.Find("PipeLineName_" + row["PipeLineName"].ToString(), true)[0];
+                TreeNode ProtectStationNameNode = PipeLineNameNode.Nodes.Find("ProtectStationName_" + row["ProtectStationName"].ToString(), true)[0];
                 if (ProtectStationNameNode.Nodes.IndexOfKey("CollectId_" + row["CollectId"].ToString()) == -1)
                 {
                     if (CollectInfoIdList.IndexOf(row["ID"].ToString()) != -1)
@@ -128,12 +130,16 @@ namespace Voltage
             //如果保护站没有采集器编号，则不显示该保护站节点
             foreach (TreeNode PipelineNameNode in this.treeView1.Nodes[0].Nodes)
             {
+                if (PipelineNameNode.GetNodeCount(false) == 0)
+                    PipelineNameNode.Remove();
+                //MessageBox.Show(PipelineNameNode.Nodes[0].Text);
                 foreach (TreeNode ProtectStationNode in PipelineNameNode.Nodes)
                 {
                     if (ProtectStationNode.Nodes.Count == 0)
                         ProtectStationNode.Remove();
                 }
             }
+            this.treeView1.Invalidate();
             this.treeView1.ExpandAll();
         }
 

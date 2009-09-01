@@ -20,7 +20,7 @@ namespace Voltage
         public UC_DataGridCharting MainControl;
         public MainForm()
         {
-            this.components = new System.ComponentModel.Container();
+            //this.components = new System.ComponentModel.Container();
             InitializeComponent();
             Form.CheckForIllegalCrossThreadCalls = false;
         }
@@ -32,15 +32,17 @@ namespace Voltage
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            this.components = new System.ComponentModel.Container();
             this.kryptonManager = new KryptonManager(this.components);
             //DataSet ds = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text, "select CollectId,DataTime,DataValue from DataTable where CollectId in ('0001','0002') and DataTime>=#2008-12-20 8:00:01# and DataTime<#2008-12-20 8:00:20#");
             Program.mainForm.ShowCharting(3, null);
-            this.LoadSerialMenuItem(); //开启手动打开串口服务
-            //this.StartSerialService();  //打开检测串口服务
-
+            //this.LoadSerialMenuItem(); //开启手动打开串口服务
+            this.StartSerialService();  //打开检测串口服务
             this.StartOutPutTimerService();//打开定时导出服务
         }
+
+
+        
         public void StartSerialService()
         {
             Timer t = new Timer();
@@ -62,7 +64,9 @@ namespace Voltage
         {
             if (Voltage.Properties.Settings.Default.IsOpenOutPutTimer)
             {
-                VoltageData.OutPutTimer(Voltage.Properties.Settings.Default.OutPutDataDir);
+                int CurrentDay = DateTime.Now.Day;
+                if (CurrentDay == Voltage.Properties.Settings.Default.OutPutDay)
+                    VoltageData.OutPutTimer(Voltage.Properties.Settings.Default.OutPutDataDir);
             }
             else
             {
@@ -484,30 +488,43 @@ namespace Voltage
 
         private void office2007ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.kryptonManager.GlobalPaletteMode= PaletteModeManager.Office2007Blue;
-          
+  
+            this.ChangePaletteMode("Office2007Blue");
         }
 
         private void office2007ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            this.kryptonManager.GlobalPaletteMode = PaletteModeManager.Office2007Silver;
+
+            this.ChangePaletteMode("Office2007Silver");
         }
 
         private void office2003ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.kryptonManager.GlobalPaletteMode = PaletteModeManager.ProfessionalOffice2003;
+          
+            this.ChangePaletteMode("ProfessionalOffice2003");
         }
 
         private void blackToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.kryptonManager.GlobalPaletteMode = PaletteModeManager.Office2007Black;
-
+            this.ChangePaletteMode("Office2007Black");
         }
 
         private void systemToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.kryptonManager.GlobalPaletteMode = PaletteModeManager.ProfessionalSystem;
-
+            //this.kryptonManager.GlobalPaletteMode = PaletteModeManager.ProfessionalSystem;
+            this.ChangePaletteMode("ProfessionalSystem");
+        }
+        public void ChangePaletteMode(string PaletteName)
+        {
+            try
+            {
+                this.kryptonManager.GlobalPaletteMode = (PaletteModeManager)Enum.Parse(typeof(PaletteModeManager), PaletteName, false);
+                Lib.UpdateApplicationSetting("ThemeName", PaletteName);
+            }
+            catch (Exception ex)
+            {
+                this.kryptonManager.GlobalPaletteMode = PaletteModeManager.Office2007Blue;
+            }
         }
     }
 }

@@ -17,5 +17,11 @@
     <Setting Name="OutPutDataDir" Type="System.String" Scope="Application">
       <Value Profile="(Default)">c:\</Value>
     </Setting>
+    <Setting Name="ThemeName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="OutPutDay" Type="System.UInt32" Scope="Application">
+      <Value Profile="(Default)">15</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

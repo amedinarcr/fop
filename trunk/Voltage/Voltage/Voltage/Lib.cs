@@ -133,7 +133,7 @@ namespace Voltage
             {
                 configNode.InnerText = appSettingValue;
                 doc.Save(configFileName);
-                // 刷新应用程序设置，这样下次读取时才能读到最新的值。
+                // 刷新应用程序设置
                 Properties.Settings.Default.Reload();
             }
         }
@@ -169,7 +169,8 @@ namespace Voltage
                 int index2 = latitude.IndexOf(',', index1 + 1);
                 string b = latitude.Substring(index1 + 1, index2 - index1 - 1);
                 string c = latitude.Substring(index2 + 1);
-
+                if (a == "" && b == "" && c == "")
+                    return "";
                 return a + "°" + b + "'" + c + "''";
             }catch(Exception ex)
             {
@@ -191,7 +192,7 @@ namespace Voltage
             p_LineWidth.OleDbType = OleDbType.Integer;
             OleDbParameter p_LineStyle = new OleDbParameter("@LineStyle", "0");
             p_LineStyle.OleDbType = OleDbType.Integer;
-            OleDbParameter p_LineColor = new OleDbParameter("@LineColor", "-65536");
+            OleDbParameter p_LineColor = new OleDbParameter("@LineColor", Lib.GetRandomColor().ToArgb().ToString());
             p_LineColor.OleDbType = OleDbType.Integer;
             OleDbParameter p_SymbolType = new OleDbParameter("@SymbolType", "0");
             p_SymbolType.OleDbType = OleDbType.Integer;

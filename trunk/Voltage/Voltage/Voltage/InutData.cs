@@ -217,7 +217,7 @@ namespace Voltage
                     string PipelineName = row["PipelineName"].ToString();
                     string ID = row["ID"].ToString();
                     OleDbParameter p_PipelineName = new OleDbParameter("PipelineName", PipelineName);
-                    OleDbParameter p_CollectId = new OleDbParameter("CollectId", ID);
+                    OleDbParameter p_CollectId = new OleDbParameter("CollectId", row["CollectId"].ToString());
                     p_CollectId.OleDbType = OleDbType.Integer;
                     object CollectIdObject = OleHelper.ExecuteScalar(OleHelper.Conn, CommandType.Text, "select CollectId from CollectInfo where PipelineName=@PipelineName and ID=@CollectId", new OleDbParameter[] { p_PipelineName, p_CollectId });
                     if (CollectIdObject == null)
