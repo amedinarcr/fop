@@ -33,7 +33,7 @@ namespace Voltage
             {
                 list[i] = new ArrayList();
             }
-            this.ds = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text, "select CollectInfo.CollectId as CollectId,CollectInfoId,DataTime,DataValue from DataTable left join CollectInfo on DataTable.CollectInfoId=CollectInfo.ID where CollectInfoId in (" + this.kryptonDropButton1.Text + ") and DataTime>=#" + this.dateTimePicker_StartTime.Value.ToString() + "# and DataTime<=#" + this.dateTimePicker_EndTime.Value.ToString() + "# order by DataTime asc");
+            this.ds = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text, "select CollectInfo.CollectId as CollectId,PipeLineName,CollectInfoId,DataTime,DataValue from DataTable left join CollectInfo on DataTable.CollectInfoId=CollectInfo.ID where CollectInfoId in (" + this.kryptonDropButton1.Text + ") and DataTime>=#" + this.dateTimePicker_StartTime.Value.ToString() + "# and DataTime<=#" + this.dateTimePicker_EndTime.Value.ToString() + "# order by DataTime asc");
             if (ds.Tables[0].Rows.Count > 0)
             {
                 foreach (DataRow row in this.ds.Tables[0].Rows)
@@ -44,14 +44,14 @@ namespace Voltage
                 }
                 for (int i = 0; i < list.Length; i++)
                 {
-                    this.getResult(CollectIdList[i].ToString(), list[i]);
+                    this.getResult(ds.Tables[0].Rows[i]["PipeLineName"].ToString(), ds.Tables[0].Rows[i]["CollectId"].ToString(), list[i]);
                 }
             }
 
             else
                 MessageBox.Show("没有数据");
         }
-        public void getResult(string CollectId, ArrayList DataValueList)
+        public void getResult(string PipeLineName,string CollectId, ArrayList DataValueList)
         {
             double allValue = 0;
             foreach (string dataValue in DataValueList)
@@ -64,7 +64,7 @@ namespace Voltage
             }
             variance = variance / DataValueList.Count;
 
-            this.dataGridView1.Rows.Add(new object[] { CollectId, average.ToString("f3"), variance.ToString("f3") });
+            this.dataGridView1.Rows.Add(new object[] { PipeLineName,CollectId, average.ToString("f3"), variance.ToString("f3") });
         }
         private void GetDataArithmetic_Load(object sender, EventArgs e)
         {

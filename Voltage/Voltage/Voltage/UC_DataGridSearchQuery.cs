@@ -62,7 +62,7 @@ namespace Voltage
                 MessageBox.Show("请先选择采集编号");
                 return;
             }
-            this.ds = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text, "select CollectInfo.CollectId as CollectId,DataTime,TestPileID,DataValue,PipelineName,Mileage,ProtectStationName,TestPileID from DataTable left join CollectInfo on DataTable.CollectInfoId=CollectInfo.ID where DataTable.CollectInfoId in (" + this.kryptonDropButton1.Text + ") and DataTime>=#" + this.dateTimePicker_StartTime.Value.ToString() + "# and DataTime<=#" + this.dateTimePicker_EndTime.Value.ToString() + "# order by DataTime asc");
+            this.ds = OleHelper.ExecuteDataset(OleHelper.Conn, CommandType.Text, "select CollectInfo.ID as ID,CollectInfo.CollectId as CollectId,DataTime,TestPileID,DataValue,PipelineName,Mileage,ProtectStationName,TestPileID from DataTable left join CollectInfo on DataTable.CollectInfoId=CollectInfo.ID where DataTable.CollectInfoId in (" + this.kryptonDropButton1.Text + ") and DataTime>=#" + this.dateTimePicker_StartTime.Value.ToString() + "# and DataTime<=#" + this.dateTimePicker_EndTime.Value.ToString() + "# order by DataTime asc");
             if (ds.Tables[0].Rows.Count > 0)
             {
                 

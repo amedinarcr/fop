@@ -34,7 +34,8 @@
             this._button1 = new System.Windows.Forms.Button();
             this._button_ShowHidden = new System.Windows.Forms.Button();
             this._comboBox_CollectId = new System.Windows.Forms.ComboBox();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer2 = new ComponentFactory.Krypton.Toolkit.KryptonSplitContainer();
+            this.uC_DataGridSearchQuery1 = new Voltage.UC_DataGridSearchQuery();
             this.zedGraphControl1 = new ZedGraph.ZedGraphControl();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -50,9 +51,11 @@
             this.comboBox_CollectId = new System.Windows.Forms.ToolStripComboBox();
             this.button_ShowHidden = new System.Windows.Forms.ToolStripButton();
             this.button1 = new System.Windows.Forms.ToolStripButton();
-            this.uC_DataGridSearchQuery1 = new Voltage.UC_DataGridSearchQuery();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2.Panel1)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2.Panel2)).BeginInit();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -107,22 +110,37 @@
             this.splitContainer2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer2.ContainerBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient;
             this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer2.IsSplitterFixed = true;
             this.splitContainer2.Location = new System.Drawing.Point(0, 25);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.splitContainer2.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             // 
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.Controls.Add(this.uC_DataGridSearchQuery1);
+            this.splitContainer2.Panel1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
+            this.splitContainer2.Panel1.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient;
             // 
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.zedGraphControl1);
+            this.splitContainer2.Panel2.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
+            this.splitContainer2.Panel2.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient;
+            this.splitContainer2.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.LowProfile;
             this.splitContainer2.Size = new System.Drawing.Size(978, 487);
             this.splitContainer2.SplitterDistance = 44;
             this.splitContainer2.TabIndex = 1;
+            // 
+            // uC_DataGridSearchQuery1
+            // 
+            this.uC_DataGridSearchQuery1.Location = new System.Drawing.Point(3, 9);
+            this.uC_DataGridSearchQuery1.Name = "uC_DataGridSearchQuery1";
+            this.uC_DataGridSearchQuery1.Size = new System.Drawing.Size(978, 28);
+            this.uC_DataGridSearchQuery1.TabIndex = 0;
+            this.uC_DataGridSearchQuery1.Load += new System.EventHandler(this.uC_DataGridSearchQuery1_Load);
             // 
             // zedGraphControl1
             // 
@@ -138,7 +156,7 @@
             this.zedGraphControl1.ScrollMinX = 0;
             this.zedGraphControl1.ScrollMinY = 0;
             this.zedGraphControl1.ScrollMinY2 = 0;
-            this.zedGraphControl1.Size = new System.Drawing.Size(978, 439);
+            this.zedGraphControl1.Size = new System.Drawing.Size(978, 438);
             this.zedGraphControl1.TabIndex = 2;
             this.zedGraphControl1.Load += new System.EventHandler(this.zedGraphControl1_Load);
             // 
@@ -267,14 +285,6 @@
             this.button1.Text = "   属性   ";
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // uC_DataGridSearchQuery1
-            // 
-            this.uC_DataGridSearchQuery1.Location = new System.Drawing.Point(3, 9);
-            this.uC_DataGridSearchQuery1.Name = "uC_DataGridSearchQuery1";
-            this.uC_DataGridSearchQuery1.Size = new System.Drawing.Size(978, 28);
-            this.uC_DataGridSearchQuery1.TabIndex = 0;
-            this.uC_DataGridSearchQuery1.Load += new System.EventHandler(this.uC_DataGridSearchQuery1_Load);
-            // 
             // ZendChart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -288,8 +298,11 @@
             this.Text = "绘图";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2.Panel1)).EndInit();
             this.splitContainer2.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2.Panel2)).EndInit();
             this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -304,7 +317,7 @@
         private System.Windows.Forms.Button _button_ShowHidden;
         private System.Windows.Forms.ComboBox _comboBox_CollectId;
         public System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.SplitContainer splitContainer2;
+        private ComponentFactory.Krypton.Toolkit.KryptonSplitContainer splitContainer2;     
         private UC_DataGridSearchQuery uC_DataGridSearchQuery1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;

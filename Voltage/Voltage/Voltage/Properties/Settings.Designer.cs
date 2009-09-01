@@ -66,5 +66,23 @@ namespace Voltage.Properties {
                 return ((string)(this["OutPutDataDir"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ThemeName {
+            get {
+                return ((string)(this["ThemeName"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("15")]
+        public uint OutPutDay {
+            get {
+                return ((uint)(this["OutPutDay"]));
+            }
+        }
     }
 }

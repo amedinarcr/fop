@@ -117,4 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="kryptonColorButton1.Values.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALEAAA
+        CxABrSO9dQAAAPRJREFUOE/t0jELRVAUB/ArpXwEqzL5AiZfwGRSymQmk8lkMJmUUjarSZmUTfcz+Dbn
+        uafIc+99vbc/dQc55+d/OAqllMiufd8hTVMyTRPRdV0R1jFAdnzfh6MJsiwDWY20eV1XME0TAcMwYNs2
+        ISIF8jyHJEnAdV1Eqqr6DbBtG+Z5hqZpEGD3ojGECfq+B8dxrgbLshDpuo5DhIDneVCW5VVcFAUCbJxn
+        Cg5YlgU0TcOG51FVFcZxfEM4gP2yMAy5N0VRhGAQBHKgrms4FgbatuWAYRgQYCnu410JzjnP2HEcc9/g
+        PhKrxy3+tInfPPsDlLwABh4Wn1Qg1vgAAAAASUVORK5CYII=
+</value>
+  </data>
 </root>

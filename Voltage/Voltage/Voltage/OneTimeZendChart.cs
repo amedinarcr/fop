@@ -32,6 +32,9 @@ namespace Voltage
             myPane.Title.Text = "阴极电位保护系统";
             myPane.XAxis.Title.Text = "里程";
             myPane.YAxis.Title.Text = "电压";
+            myPane.Title.IsVisible = false;
+            myPane.XAxis.Title.IsVisible = false;
+            myPane.YAxis.Title.IsVisible = false;
             myPane.Title.FontSpec.GetFont(1111);
             myPane.XAxis.Title.FontSpec.Size = 12;
             myPane.YAxis.Title.FontSpec.Size = 12;

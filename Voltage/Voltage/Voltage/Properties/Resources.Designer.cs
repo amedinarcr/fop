@@ -60,6 +60,13 @@ namespace Voltage.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap _01165 {
+            get {
+                object obj = ResourceManager.GetObject("01165", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap _03886 {
             get {
                 object obj = ResourceManager.GetObject("03886", resourceCulture);

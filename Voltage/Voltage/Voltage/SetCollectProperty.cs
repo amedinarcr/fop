@@ -29,12 +29,11 @@ namespace Voltage
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.colorDialog1.Color = this.textBox_LineColor.BackColor;
-            if (this.colorDialog1.ShowDialog() == DialogResult.OK)
-            {
-                this.textBox_LineColor.BackColor = this.colorDialog1.Color;
-               
-            }
+            //this.textBox_LineColor.BackColor = this.colorDialog1.Color;
+            //if (this.colorDialog1.ShowDialog() == DialogResult.OK)
+            //{
+            //    this.textBox_LineColor.BackColor = this.colorDialog1.Color;               
+            //}
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -59,7 +58,7 @@ namespace Voltage
                 p_LineWidth.OleDbType = OleDbType.Integer;
                 OleDbParameter p_LineStyle = new OleDbParameter("@LineStyle", this.comboBox_LineStyle.SelectedIndex);
                 p_LineStyle.OleDbType = OleDbType.Integer;
-                OleDbParameter p_LineColor = new OleDbParameter("@LineColor", this.textBox_LineColor.BackColor.ToArgb());
+                OleDbParameter p_LineColor = new OleDbParameter("@LineColor",this.kryptonColorButton1.SelectedColor.ToArgb().ToString());
                 p_LineColor.OleDbType = OleDbType.Integer;
                 OleDbParameter p_SymbolType = new OleDbParameter("@SymbolType", this.comboBox_SymbolType.SelectedIndex);
                 p_SymbolType.OleDbType = OleDbType.Integer;
@@ -86,7 +85,7 @@ namespace Voltage
                 p_LineWidth.OleDbType = OleDbType.Integer;
                 OleDbParameter p_LineStyle = new OleDbParameter("@LineStyle", this.comboBox_LineStyle.SelectedIndex);
                 p_LineStyle.OleDbType = OleDbType.Integer;
-                OleDbParameter p_LineColor = new OleDbParameter("@LineColor", this.textBox_LineColor.BackColor.ToArgb());
+                OleDbParameter p_LineColor = new OleDbParameter("@LineColor", this.kryptonColorButton1.SelectedColor.ToArgb());
                 p_LineColor.OleDbType = OleDbType.Integer;
                 OleDbParameter p_SymbolType = new OleDbParameter("@SymbolType", this.comboBox_SymbolType.SelectedIndex);
                 p_SymbolType.OleDbType = OleDbType.Integer;
@@ -96,7 +95,7 @@ namespace Voltage
             {
                 lineItem.Line.Width = Convert.ToInt16(this.numericUpDown_LineWidth.Value);
                 lineItem.Line.Style = (DashStyle)Enum.Parse(typeof(DashStyle), this.comboBox_LineStyle.SelectedIndex.ToString());
-                lineItem.Line.Color = this.textBox_LineColor.BackColor;
+                lineItem.Line.Color = this.kryptonColorButton1.SelectedColor;
 
                 lineItem.Symbol.Type = (SymbolType)Enum.Parse(typeof(SymbolType), this.comboBox_SymbolType.Text);
                 lineItem.Symbol.Border.Color = lineItem.Line.Color;
@@ -124,7 +123,8 @@ namespace Voltage
                     DataRow row = ds.Tables[0].Rows[0];
                     this.numericUpDown_LineWidth.Value = Convert.ToDecimal(row["LineWidth"].ToString());
                     this.comboBox_LineStyle.SelectedIndex = Convert.ToInt32(row["LineStyle"].ToString());
-                    this.textBox_LineColor.BackColor = Color.FromArgb(Convert.ToInt32(row["LineColor"].ToString()));
+                    //this.textBox_LineColor.BackColor = Color.FromArgb(Convert.ToInt32(row["LineColor"].ToString()));
+                    this.kryptonColorButton1.SelectedColor = Color.FromArgb(Convert.ToInt32(row["LineColor"].ToString()));
                     this.comboBox_SymbolType.SelectedIndex = Convert.ToInt32(row["SymbolType"].ToString());
 
                     this.textBox_ProtectStationName.Text = row["ProtectStationName"].ToString();
@@ -142,7 +142,7 @@ namespace Voltage
                 else
                 {
                     this.isExist = false;
-                    this.textBox_LineColor.BackColor = Color.Red;
+                    this.kryptonColorButton1.SelectedColor = Color.Red;
                     this.textBox_ProtectStationName.Text = Voltage.Properties.Settings.Default.ProtectStationName;
                     this.textBox_PipelineName.Text = Voltage.Properties.Settings.Default.PipelineName;
                 }

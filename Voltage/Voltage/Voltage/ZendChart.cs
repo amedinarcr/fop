@@ -21,7 +21,7 @@ namespace Voltage
         }
         public LineItemProperty[] propertys;
         public LineItem[] lineItem;
-
+        public ArrayList CollectInfoIdList = new ArrayList();
         private void Form2_Load(object sender, EventArgs e)
         {
             this.splitContainer2.Panel2.Enabled = false;
@@ -82,21 +82,30 @@ namespace Voltage
             myPane.CurveList.Clear();
 
             ArrayList CollectIdList = this.getCollectIdList(ds);
+            this.CollectInfoIdList = this.getCollectInfoIdList(ds);
             this.comboBox_CollectId.Items.Clear();
+            
             propertys = new LineItemProperty[CollectIdList.Count];
             lineItem = new LineItem[CollectIdList.Count];
             int i = 0;
             DataTable LineInfoTable = this.getLineDataTable(CollectIdList);
             foreach (string CollectId in CollectIdList)
             {
-                this.comboBox_CollectId.Items.Add(CollectId);
+
+                int ComIndex=this.comboBox_CollectId.Items.Add(CollectId);
+               
                 PointPairList list = new PointPairList();
                 foreach (DataRow row in ds.Tables[0].Rows)
                 {
                     if (CollectId == row["CollectId"].ToString())
                     {
                         string label;
-                        label = "(" + row["DataTime"].ToString() + "," + row["DataValue"].ToString() + ")" + "测试桩号:" + row["TestPileID"].ToString();          
+                        label = "时间:" + row["DataTime"].ToString() +
+                            "\n电压值:" + row["DataValue"].ToString() +
+                            "\n采集器编号:" + row["CollectId"].ToString() +
+                            "\n保护站:" + row["ProtectStationName"].ToString() +
+                            "\n管线:" + row["PipelineName"].ToString() +
+                            "\n测试桩号:" + row["TestPileID"].ToString();          
                         list.Add((double)new XDate(Convert.ToDateTime(row["DataTime"].ToString())), Convert.ToDouble(row["DataValue"].ToString()),label);
                     }
                 }
@@ -105,7 +114,7 @@ namespace Voltage
                 lineItem[i] = myPane.AddCurve(CollectId, list, Color.Red, SymbolType.Circle);
                 lineItem[i].Line.IsAntiAlias = true;
                 DataRow lineInfoRow = this.getDataRowByCollectId(CollectId, LineInfoTable);
-                if (lineInfoRow != null && Convert.ToInt32(lineInfoRow["LineColor"].ToString())!= -65536)
+                if (lineInfoRow != null)
                 {
                     lineItem[i].Line.Width = Convert.ToInt32(lineInfoRow["LineWidth"].ToString());
                     lineItem[i].Line.Style = (DashStyle)Enum.Parse(typeof(DashStyle), lineInfoRow["LineStyle"].ToString());
@@ -156,6 +165,11 @@ namespace Voltage
             this.zedGraphControl1.Invalidate();
 
             this.splitContainer2.Panel2.Enabled = true;
+        }
+
+        private ArrayList getCollectInfoidList(DataSet ds)
+        {
+            throw new NotImplementedException();
         }
 
         public void setControlVisible()
@@ -258,6 +272,17 @@ namespace Voltage
             return CollectIdList;
         }
 
+        public ArrayList getCollectInfoIdList(DataSet ds)
+        {
+            ArrayList CollectIdList = new ArrayList();
+            foreach (DataRow row in ds.Tables[0].Rows)
+            {
+                if (CollectIdList.IndexOf(row["ID"].ToString()) == -1)
+                    CollectIdList.Add(row["ID"].ToString());
+            }
+            return CollectIdList;
+        }
+
         private void comboBox_CollectId_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -286,6 +311,10 @@ namespace Voltage
 
         private void button_ShowHidden_Click(object sender, EventArgs e)
         {
+            if (this.comboBox_CollectId.SelectedIndex < 0)
+            {
+                return;
+            }
             LineItemProperty property = propertys[this.comboBox_CollectId.SelectedIndex];
             if (property.isVisable == true)
             {
@@ -305,7 +334,9 @@ namespace Voltage
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SetCollectProperty set = new SetCollectProperty(this.lineItem[this.comboBox_CollectId.SelectedIndex],this.comboBox_CollectId.Text);
+            if (this.comboBox_CollectId.SelectedIndex < 0)
+                return;
+            SetCollectProperty set = new SetCollectProperty(this.lineItem[this.comboBox_CollectId.SelectedIndex],this.CollectInfoIdList[this.comboBox_CollectId.SelectedIndex].ToString());
             if (set.ShowDialog() == DialogResult.OK)
             {
                 this.zedGraphControl1.Invalidate();

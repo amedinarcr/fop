@@ -35,11 +35,12 @@
             this.label2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.label1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.dataGridView1 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.kryptonDropButton1 = new ComponentFactory.Krypton.Toolkit.KryptonDropButton();
+            this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.管线名称 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CollectId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Average = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Variance = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kryptonDropButton1 = new ComponentFactory.Krypton.Toolkit.KryptonDropButton();
-            this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
@@ -139,6 +140,7 @@
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.管线名称,
             this.CollectId,
             this.Average,
             this.Variance});
@@ -156,24 +158,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(525, 185);
             this.dataGridView1.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             this.dataGridView1.TabIndex = 25;
-            // 
-            // CollectId
-            // 
-            this.CollectId.HeaderText = "采集器编号";
-            this.CollectId.Name = "CollectId";
-            this.CollectId.ReadOnly = true;
-            // 
-            // Average
-            // 
-            this.Average.HeaderText = "平均值";
-            this.Average.Name = "Average";
-            this.Average.ReadOnly = true;
-            // 
-            // Variance
-            // 
-            this.Variance.HeaderText = "方差";
-            this.Variance.Name = "Variance";
-            this.Variance.ReadOnly = true;
             // 
             // kryptonDropButton1
             // 
@@ -209,6 +193,30 @@
             this.kryptonPanel1.Size = new System.Drawing.Size(545, 273);
             this.kryptonPanel1.TabIndex = 27;
             // 
+            // 管线名称
+            // 
+            this.管线名称.HeaderText = "管线名称";
+            this.管线名称.Name = "管线名称";
+            this.管线名称.ReadOnly = true;
+            // 
+            // CollectId
+            // 
+            this.CollectId.HeaderText = "采集器编号";
+            this.CollectId.Name = "CollectId";
+            this.CollectId.ReadOnly = true;
+            // 
+            // Average
+            // 
+            this.Average.HeaderText = "平均值";
+            this.Average.Name = "Average";
+            this.Average.ReadOnly = true;
+            // 
+            // Variance
+            // 
+            this.Variance.HeaderText = "方差";
+            this.Variance.Name = "Variance";
+            this.Variance.ReadOnly = true;
+            // 
             // GetDataArithmetic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -241,10 +249,11 @@
         private ComponentFactory.Krypton.Toolkit.KryptonLabel label2;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel label1;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dataGridView1;
+        private ComponentFactory.Krypton.Toolkit.KryptonDropButton kryptonDropButton1;
+        private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 管线名称;
         private System.Windows.Forms.DataGridViewTextBoxColumn CollectId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Average;
         private System.Windows.Forms.DataGridViewTextBoxColumn Variance;
-        private ComponentFactory.Krypton.Toolkit.KryptonDropButton kryptonDropButton1;
-        private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
     }
 }
